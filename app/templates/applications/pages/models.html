@@ -1,0 +1,140 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Current Models {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != 'No' %}
+
+        <div class="card card-stats mb-4 mb-lg-0">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="stats">
+                            <p>{{ message }}  </p>
+                            <a class="nav-link" href="/selectmodelgoal">
+                                <button class="btn btn-icon btn-3 btn-primary pull-right" type="button">
+                                    <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                                    <span class="btn-inner--text">New Model</span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Current Models</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div>
+                                <table class="table align-items-center">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">
+                                            Model
+                                        </th>
+                                        <th scope="col">
+                                            Description
+                                        </th>
+                                        <th scope="col">
+                                            Status
+                                        </th>
+                                        <th scope="col">Last Updated by</th>
+                                        <th scope="col">
+                                            Last Modified Date
+                                        </th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="list">
+                                    {% for profile in profiles %}
+                                        <tr>
+                                            <th scope="row" class="name">
+                                                <div class="media align-items-center">
+                                                    <a href="/showdashboard?param={{ profile['model_id'] }}" class="avatar rounded-circle mr-3">
+                                                        <img alt="Image placeholder"
+                                                             src="../static/assets/img/logos/{{ profile['ds_goal'] }}.png">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a href="/showdashboard?param={{ profile['model_id'] }}">
+                                                        <span class="mb-0 text-sm">{{ profile['model_name'] }}</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <td class="budget">
+                                                {{ profile['model_description'] }}
+                                            </td>
+                                            <td class="status">
+                                            <span class="badge badge-dot mr-4">
+                                              <i class="bg-green"></i> {{ profile['status'] }}
+                                            </span>
+                                            </td>
+                                            <td>
+                                                {{ profile['updated_by'] }}
+                                            </td>
+                                            <td class="date">
+                                                {{ profile['updated_on'] }}
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="dropdown">
+                                                    <a class="btn btn-sm btn-icon-only text-light" href="#"
+                                                       role="button"
+                                                       data-toggle="dropdown"
+                                                       aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                        <a class="dropdown-item" href="#">Dashboard</a>
+                                                        <a class="dropdown-item" href="#">Suspend</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+
+                        <div class="stats">
+                            <a class="nav-link" href="/selectmodelgoal">
+                                <button class="btn btn-icon btn-3 btn-primary pull-right" type="button">
+                                    <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                                    <span class="btn-inner--text">New Model</span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+
+{% endblock javascripts %}

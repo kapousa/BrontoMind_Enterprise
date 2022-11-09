@@ -1,0 +1,171 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h1 class="card-title ">Analysis Results</h1>
+                    <p class="card-category"></p>
+                </div>
+                <div class="card-body lead">
+                    <h2>Details</h2>
+                    We have reviwed the provided data and below is our reviewing results:
+                    <ol type="1">
+                        <li>You have data of
+                            <mark>{{ columns_list }}</mark>
+                            .
+                        </li>
+                        {% if nan_cols != '' %}
+                            <li>The columns
+                                <mark>{{ nan_cols }}</mark>
+                                are empty and will be removed before proccesing to create the model.
+                            </li>
+                        {% else %}
+                            <li>You don't have any empty column in your data.</li>
+                        {% endif %}
+                        <li>The final columns list to be used for creating the model is:
+                            <mark>{{ final_columns_list }}</mark>
+                            .
+                        </li>
+                        <li>You have number of records that contains empty values in some columns, the model ignores any
+                            record that have empty values.
+                        </li>
+                        <li>Number of rows after removing rows with some empty values is:
+                            <mark>{{ final_total_rows }}</mark>
+                            .
+                        </li>
+                    </ol>
+                    Based on above analysis results, BrontoMind can help you to do the following:
+                    <ol type="1">
+                        <li>Create prediction model to predict the value of one or more item from
+                            <mark>{{ columns_list }}</mark>
+                            and using the remaing columns as an input for this model.
+                        </li>
+                        <li>Build time series forecasting model to track the chages in the values of one from
+                            <mark>{{ numric_columns }}</mark>
+                            according the change in the date/time of one from:
+                            <mark>{{ datetime_columns }}</mark>
+                            .
+                        </li>
+                    </ol>
+                    <br/>
+                    <h2>Summary</h2>
+                    <div class="table-responsive">
+                        <div>
+                            <table class="table align-items-center">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">
+                                        Attribute
+                                    </th>
+                                    <th scope="col">
+                                        Feedback
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody class="list">
+                                <tr>
+                                    <th scope="row" class="name">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <span class="mb-0 text-sm">Data details</span>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="budget">
+                                        <mark>{{ columns_list }}</mark>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="name">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <span class="mb-0 text-sm">Empty columns</span>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="budget">
+                                        {% if nan_cols != '' %}
+                                            <mark>{{ nan_cols }}</mark>
+                                        {% else %}
+                                            You don't have any empty column in your data.
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="name">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <span class="mb-0 text-sm">considered columns</span>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="budget">
+                                        <mark>{{ final_columns_list }}</mark>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="name">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <span class="mb-0 text-sm">Number of modeling rows</span>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="budget">
+                                        <mark>{{ final_total_rows }}</mark>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="name">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <span class="mb-0 text-sm">Avilable models</span>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="budget">
+                                        {% if final_total_rows|int >= 100 %}
+                                            <l>
+                                                <li>
+                                                    <mark>Predication model</mark>
+                                                    <a href="/selectmodelgoal">(click to start)</a>
+                                                </li>
+                                                {% if numric_columns!= '' and datetime_columns!= '' %}
+                                                    <li>
+                                                        <mark>Forecasting time series modle</mark>
+                                                        <a href="/selectmodelgoal">(click to start)</a>
+                                                    </li>
+                                                {% endif %}
+                                            </l>
+                                        {% else %}
+                                            You donat engough data to create and machine learning model.
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+        });
+    </script>
+
+{% endblock javascripts %}
+

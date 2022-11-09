@@ -1,0 +1,114 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} What do you want to know from your data? {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="card card-nav-tabs">
+        <div class="card-header">
+            <h2>Model goal</h2>
+        </div>
+    </div>
+    <div class="card card-nav-tabs">
+        <div class="card-header">
+            What do you want to know from your data?
+            <span style="float: right">
+                <button type="button" class="btn btn-outline-default">
+                    <a href="/analysedata">Can't decide</a></button>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-nav-tabs">
+                <div class="card-header card-header-warning">
+                    Clustering
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Sort out your data</h4>
+                    <p class="card-text">Let BrontoMind to review all unstructured data and sort out them under related clusters. clustered data will help you to find related information in one place and produce accurate results.</p>
+                    <br/>
+                    <a href="/createmodel?t=13" class="btn btn-success">Connect to row data</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-nav-tabs">
+                <div class="card-header card-header-warning">
+                    Classification
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Classify your new data</h4>
+                    <p class="card-text">Benefit from current classified data to classify the new data with no effort.
+                        BrontoMind uses the Ai to put your new data under the correct class which helps you use it through
+                        the right workflow.</p>
+                    <br/>
+                    <a href="/createmodel?t=10" class="btn btn-danger">Connect to labeled data</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-nav-tabs">
+                <div class="card-header card-header-warning">
+                    Prediction
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Past leads the future</h4>
+                    <p class="card-text">Prediction model gives you the ability to predict relevant values to one or
+                        more specific data values from your dataset. The predict values helps to adjust your
+                        requirements to achieve your business's startegy objectives.</p>
+                    <a href="/createmodel?t=7" class="btn btn-primary">Create prediction model</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-nav-tabs">
+                <div class="card-header card-header-warning">
+                    Forecasting
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Track data changes</h4>
+                    <p class="card-text">Forecasting model is helping you to predict values in specific date or within
+                        certain periods of time. This model helps you to plan for your marketing and developing your
+                        business goals.</p>
+                    <br/>
+                    <a href="/createmodel?t=8" class="btn btn-default">Start forecasting model</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-nav-tabs">
+                <div class="card-header card-header-warning">
+                    Robotics <span class="badge badge-danger">Coming Soon</span>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Reduce human work</h4>
+                    <p class="card-text">Build agnet to automate your operations.</p>
+                    <br/><br/>
+                    <a href="#" class="btn btn-info" disabled="">Let's build a robot</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+
+{% endblock javascripts %}
+

@@ -1,0 +1,8 @@
+,ID Nation,Nation,ID Year,Year,Population,Slug Nation
+0,01000US,United States,2019,2019,328239523,united-states
+1,01000US,United States,2018,2018,327167439,united-states
+2,01000US,United States,2017,2017,325719178,united-states
+3,01000US,United States,2016,2016,323127515,united-states
+4,01000US,United States,2015,2015,321418821,united-states
+5,01000US,United States,2014,2014,318857056,united-states
+6,01000US,United States,2013,2013,316128839,united-states

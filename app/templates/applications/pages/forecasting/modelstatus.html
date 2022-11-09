@@ -1,0 +1,225 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Congratulations!</strong> Your model have been created successfully.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Model Dashboard</h4>
+                    <p class="card-category"></p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table"/>
+                        <table class="table align-items-center">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Model Name</th>
+                                <th scope="col">Last Run time</th>
+                                <th scope="col">Created On</th>
+                                <th scope="col">Updated On</th>
+                                <th scope="col">Run</th>
+                                <th scope="col">Update</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody class="list">
+                            <tr>
+                                <td class="budget">{{ fname }}</td>
+                                <td>{{ last_run_time }}</td>
+                                <td>{{ created_on }}</td>
+                                <td>{{ updated_on }}</td>
+                                <td class="budget">
+                                    <a href="/createmodel">
+                                        <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="ni ni-button-play"></i>
+                                            </span>
+                                        </button>
+                                    </a>
+                                </td>
+                                <td class="budget">
+                                    <a href="/createmodel">
+                                        <button class="btn btn-icon btn-2 btn-success" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="ni ni-ungroup"></i>
+                                            </span>
+                                        </button>
+                                    </a>
+                                </td>
+                                <td class="td-actions text-center">
+                                    <a data-toggle="modal" data-target="#exampleModal">
+                                        <button class="btn btn-icon btn-2 btn-danger" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="ni ni-fat-remove"></i>
+                                            </span>
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h2 class="card-title ">
+                        The forecasting of the <b>{{  depended_factor }}</b> of the <b>{{forecasting_factor }}</b>
+                    </h2>
+                    <p class="card-category"></p>
+                </div>
+                <div class="card-body">
+                        {%  include plot_image_path %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card card-chart">
+                <div class="card-header card-header-warning">
+                    <div>
+                        <h3>Embedding the model</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Webpage</h4>
+                    <p class="card-category">Embed your model's results into your own web solution.</p>
+                    <a class="nav-link" data-toggle="modal" data-target="#forecastingwebpageModal"
+                       href="#forecastingwebpageModal">
+                        <button type="button" class="btn btn-success pull-right">Create Webpage</button>
+                    </a>
+                    <div class="ripple-container"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card card-chart">
+                <div class="card-header card-header-warning">
+                    <div>
+                        <h3>Export the model</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">APIs</h4>
+                    <p class="card-category">APIs library to integrate your model with other system.</p>
+                    <form name="downloadapisdocument" method="get" action="/downloadapisdocument">
+                        <button type="submit" class="btn btn-danger pull-right">Download APIs Document</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <h4 class="card-title">Sample Data</h4>
+                    <p class="card-category">10 sample rows from your dataset</p>
+                </div>
+                <div class="card-body table-responsive">
+                    {% for sample in sample_data %}
+                        {{ sample|safe }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+    <script>
+        // Global parameters:
+        // do not resize the chart canvas when its container does (keep at 600x400px)
+        //Chart.defaults.global.responsive = false;
+
+        // define the chart data
+        var chartData = {
+            labels: [{% for item in X_test %}
+                "{{item}}".substr(0, 10),
+            {% endfor %}],
+            datasets: [{
+                label: 'Actual {{ dependedfactor }}',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(0,0,255,0.4)",
+                borderColor: "rgba(0,0,255,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(0,0,255,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(0,0,255,1)",
+                pointHoverBorderColor: "rgba(0,0,255,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [{% for item in y_test %}
+                    {{item}},
+                {% endfor %}],
+                spanGaps: false
+            },
+                {
+                    label: 'Prediected Price',
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(255,1,1,0.4)",
+                    borderColor: "rgba(255,1,1,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(255,1,1,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(255,1,1,1)",
+                    pointHoverBorderColor: "rgba(255,1,1,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [{% for item in y_pred %}
+                        {{item}},
+                    {% endfor %}],
+                    spanGaps: false
+                }]
+
+        }
+
+        // get chart canvas
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        // create the chart using the chart canvas
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: {}
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+{% endblock javascripts %}

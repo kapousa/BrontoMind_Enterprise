@@ -1,0 +1,143 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Congratulations!</strong> Your model have been created successfully.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h2 class="card-title ">Model Status</h2>
+                    <p class="card-category"></p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table"/>
+                        <table class="table align-items-center">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Model Name</th>
+                                <th scope="col">Last Run time</th>
+                                <th scope="col">Created On</th>
+                                <th scope="col">Updated On</th>
+                                <th scope="col">Run</th>
+                                <th scope="col">Update</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody class="list">
+                            <tr>
+                                <td class="budget">{{ fname }}</td>
+                                <td>{{ last_run_time }}</td>
+                                <td>{{ created_on }}</td>
+                                <td>{{ updated_on }}</td>
+                                <td class="budget">
+                                    <a href="/createmodel?t={{ ds_goal }}">
+                                        <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="ni ni-button-play"></i>
+                                            </span>
+                                        </button>
+                                    </a>
+                                </td>
+                                <td class="budget">
+                                    <a href="/createmodel">
+                                        <button class="btn btn-icon btn-2 btn-success" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="ni ni-ungroup"></i>
+                                            </span>
+                                        </button>
+                                    </a>
+                                </td>
+                                <td class="td-actions text-center">
+                                    <a data-toggle="modal" data-target="#exampleModal">
+                                        <button class="btn btn-icon btn-2 btn-danger" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="ni ni-fat-remove"></i>
+                                            </span>
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h2 class="card-title ">The classification confusion matrix</h2>
+                    <p class="card-category"></p>
+                </div>
+                <div class="card-body">
+                        {%  include plot_image_path %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="card card-chart">
+            <div class="card-header card-header-warning">
+                <div>
+                    <h4 class="card-title ">Export the model</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Webpage</h4>
+                <p class="card-category">Create web page tp predict values and also you can embed this page into
+                    your system.</p>
+                <a class="nav-link" data-toggle="modal" data-target="#webpageModal" href="#webpageModal">
+                    <button type="button" class="btn btn-success pull-right">Create Webpage</button>
+                </a>
+                <div class="ripple-container"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card card-chart">
+            <div class="card-header card-header-warning">
+                <div>
+                    <h4 class="card-title ">Integrate woth other systems</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">APIs</h4>
+                <p class="card-category">APIs library to integrate your model with other system without any new line of code or hardware needed.</p>
+                <form name="downloadapisdocument" method="get" action="/downloadapisdocument">
+                    <button type="submit" class="btn btn-danger pull-right">Download APIs Document</button>
+                </form>
+                <div class="ripple-container"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+
+{% endblock javascripts %}

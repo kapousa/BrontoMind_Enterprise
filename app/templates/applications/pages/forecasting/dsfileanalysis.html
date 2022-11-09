@@ -1,0 +1,101 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Select forecasting target's data. {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != 'No' %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="material-icons">close</i>
+            </button>
+            <span>{{ message }}</span>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="stats">
+                    <a class="nav-link" href="/showdashboard">
+                        <button class="btn btn-primary btn-lg">Start again</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <form action="/creatingthemodel" name="createforecastingmodel" method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">1- Which category you want to study its changes?</h4>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                {% for forecasting_column in forecasting_columns %}
+                                    <div class="col-md-12">
+                                        <input type="radio" class="form-check-input" name="forecastingfactor"
+                                               id="forecastingfactor"
+                                               value="{{ forecasting_column }}" required/>{{ forecasting_column }}<br/>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">2- Which dependent factor you need to see it changes?</h4>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-body">
+                            <div class="form.-group">
+                                {% for depended_column in depended_columns %}
+                                    <div class="col-md-12">
+                                        <input type="radio" class="form-check-input" name="dependedfactor"
+                                               id="dependedfactor" value="{{ depended_column }}" required/>{{ depended_column }}<br/>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">3- In which time frame factor you need to see forecasting
+                                results?</h4>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-body">
+                            <div class="form.-group">
+                                {% for datetime_column in datetime_columns %}
+                                    <div class="col-md-12">
+                                        <input type="radio" class="form-check-input" name="timefactor" id="timefactor"
+                                               value="{{ datetime_column }}" required/>{{ datetime_column }}<br/>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary pull-right">Run The Model</button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </form>
+    {% endif %}
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}
+

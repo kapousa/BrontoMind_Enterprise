@@ -1,0 +1,55 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Creating your model</h4>
+                    <p class="card-category">Relax and wait until we create your model</p>
+                </div>
+                <div class="card-body" align="center">
+                    <img src="{{ url_for('static', filename= loading_icon_path) }}" align="center" style="width: 50%"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="/sendvalues" name="sendpredictionvalues" method="post">
+        <input type="hidden" name="fname" value="{{ fname }}">
+        <input type="hidden" name="ds_source" value="{{ ds_source }}">
+        <input type="hidden" name="ds_goal" value="{{ ds_goal }}">
+         {% for i in range(0, predictionvalues.size) %}
+             <input type="checkbox" class="form-control" name="predcitedvalues"
+                           value="{{ predictionvalues[i] }}" checked style="display: none"/>
+
+         {% endfor %}
+        {% for i in range(0, featuresdvalues.size) %}
+             <input type="checkbox" class="form-control" name="featuresdvalues"
+                           value="{{ featuresdvalues[i] }}" checked style="display: none"/>
+
+         {% endfor %}
+    </form>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+        window.onload = function () {
+            //window.setTimeout(function() { document.sendpredictionvalues.submit(); }, 3000);
+            document.sendpredictionvalues.submit();
+        };
+    </script>
+
+{% endblock javascripts %}

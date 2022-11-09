@@ -1,0 +1,269 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Create Model {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-info">
+                    <h4 class="card-title"><b>Step 1:</b> Select data source</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <li>Select where is your data located</li>
+                                <li>Complete required information in the data source card</li>
+                                <li>Click Submit button</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if (ds_id == '1') %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <img src="https://img.icons8.com/material/48/ffffff/csv.png" style="float:right !important;"/>
+                        <h3>CSV file</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/uploadcsvds" name="uploadcsvds" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div>
+                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                            <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+                                            <div>
+                                                <p class="text-danger">For demo Max file size= 10MB</p>
+                                                <span class="btn btn-raised btn-round btn-success btn-file">
+                                           <span class="fileinput-new">Select csv file </span>
+                                                    <!--span-- class="fileinput-exists"> - Change</span-->
+                                           <input type="file" accept=".csv" enabled required name="filename"
+                                                  id="filename"/>
+
+                                                <a href="javascript:" class="btn btn-danger btn-round fileinput-exists"
+                                                   data-dismiss="fileinput">
+                                                    <i class="fa fa-times"></i> Remove</a>
+                                                <button type="submit" class="btn btn-primary pull-left"><i
+                                                        class="fa fa-upload"></i> Upload
+                                                </button>
+                                                                                            </span>
+                                            </div>
+                                        </div>
+                                        <!--input type="file" style="opacity: 1; position: unset;" accept=".csv" enabled
+                                               required name="filename" id="filename"-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <p/>
+                            <input type="hidden" name="ds_source" id="ds_source" value="1"/>
+                            <input type="hidden" name="ds_goal" id="ds_goal" value="{{ ds_goal }}"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    {% elif (ds_id == '2') %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-warning">
+                        <img src="https://img.icons8.com/material/48/ffffff/mysql-logo.png"
+                             style="float:right !important;"/>
+                        <h3>MySQL Database</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/dffromdb" name="dffromdb" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Host</label>
+                                        <input type="text" value="" class="form-control" name="host_name" required/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Username</label>
+                                        <input type="text" value="" class="form-control" name="username" required/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Password</label>
+                                        <input type="password" value="" class="form-control" name="password" required/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Database Name</label>
+                                        <input type="text" value="" class="form-control" name="database_name" required/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Table name</label>
+                                        <input type="text" value="" class="form-control" name="table_name" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="ds_source" id="ds_source" value="1"/>
+                            <input type="hidden" name="ds_goal" id="ds_goal" value="{{ ds_goal }}"/>
+                            <button type="submit" class="btn btn-warning pull-right">Submit</button>
+                            <div class="clearfix"></div>
+                            <input type="hidden" name="ds_source" id="ds_source" value="2"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    {% elif (ds_id == '3') %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <img src="https://img.icons8.com/material/48/ffffff/google-sheets.png"
+                             style="float:right !important;"/>
+                        <h3>Goolge Sheets</h3>
+                    </div>
+                    <div class="card-body">
+                        <h3>Coming Soon</h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" class="col-md-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <input type="hidden" name="ds_source" id="ds_source" value="3"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    {% elif (ds_id == '4') %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <img src="https://img.icons8.com/material/48/ffffff/salesforce.png"
+                             style="float:right !important;"/>
+                        <h3>Salesforce</h3>
+                    </div>
+                    <div class="card-body">
+                        <h3>Coming Soon</h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" class="col-md-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <input type="hidden" name="ds_source" id="ds_source" value="4"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    {% elif (ds_id == '11') %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <img src="https://img.icons8.com/material/48/ffffff/csv.png" style="float:right !important;"/>
+                        <h3>CSV file</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/uploadcsvds" name="uploadcsvds" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div>
+                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                            <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+                                            <div>
+                                                <p class="text-danger">For demo Max file size= 10MB</p>
+                                                <span class="btn btn-raised btn-round btn-success btn-file">
+                                           <span class="fileinput-new">Select csv file </span>
+                                                    <!--span-- class="fileinput-exists"> - Change</span-->
+                                           <input type="file" accept=".csv" enabled required name="filename"
+                                                  id="filename"/>
+
+                                                <a href="javascript:" class="btn btn-danger btn-round fileinput-exists"
+                                                   data-dismiss="fileinput">
+                                                    <i class="fa fa-times"></i> Remove</a>
+                                                <button type="submit" class="btn btn-primary pull-left"><i
+                                                        class="fa fa-upload"></i> Upload
+                                                </button>
+                                                                                            </span>
+                                            </div>
+                                        </div>
+                                        <!--input type="file" style="opacity: 1; position: unset;" accept=".csv" enabled
+                                               required name="filename" id="filename"-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <p/>
+                            <input type="hidden" name="ds_source" id="ds_source" value="1"/>
+                            <input type="hidden" name="ds_goal" id="ds_goal" value="{{ ds_goal }}"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <img src="https://img.icons8.com/material/48/ffffff/why-us-female.png"
+                             style="float:right !important;"/>
+                        <h3>Opps...</h3>
+                    </div>
+                    <div class="card-body">
+                        <h3>No data source selected</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    {% endif %}
+    <script>
+        var uploadField = document.getElementById("filename");
+        uploadField.onchange = function () {
+            if (this.files[0].size > 10485760) {
+                //$("#uploadlargefileModal").modal();
+            }
+
+        };
+    </script>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,29 @@
+{% extends 'layouts/base-fullscreen.html' %}
+
+{% block title %} Page 413 {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                    <h6 class="card-category text-gray">Error 413</h6>
+                    <h4 class="card-title">
+                        Large File
+                    </h4>
+                    <h3><p style="color: #bf360c">{{ message }}</p></h3>
+                    <a href="/createmodel" class="btn btn-primary btn-round">Upload Another File</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

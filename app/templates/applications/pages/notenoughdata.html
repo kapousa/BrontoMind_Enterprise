@@ -1,0 +1,41 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Not Enough Data {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="material-icons">close</i>
+        </button>
+        <span>{{ message }}</span>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="stats">
+                <a class="nav-link" href="/createmodel">
+                    <button class="btn btn-primary btn-lg">Create New Model</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+
+{% endblock javascripts %}
+

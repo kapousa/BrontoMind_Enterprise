@@ -1,0 +1,167 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Applications {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Company Funding</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                The TechCrunch Continental USA file is a listing of 1,460 company funding records reported by TechCrunch. As part of the import process, we geocoded these records using the city and state information in the file.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="card-footer">
+                        <div class="stats">
+                            <form method="post" action="/installapp" name="company_funding" id="company_funding">
+                                <input type="hidden" name="filename" value="Company_Funding.csv">
+                                <button type="submit" class="btn btn-outline-success pull-left">
+                                    <i class="fa fa-download"></i> Install
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </form>
+                            <form method="post" action="/downloaddsfile" name="download_company_funding" id="download_company_funding">
+                               <input type="hidden" name="filename" value="Company_Funding.csv">
+                                <button type="submit" class="btn btn-outline-info"  style="float: right;">
+                                    <i class="fa fa-eye"></i> Preview Data
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+        <!--div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <h4 class="card-title">Crime Records</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <li>Select where is your data located</li>
+                                <li>Complete info the data socurce card</li>
+                                <li>Click Submit button</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="card-footer">
+                        <div class="stats">
+                            <button type="button" class="btn pull-left">
+                                <i class="fa fa-download"></i> Install
+                                <div class="ripple-container"></div>
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </div-->
+    </div>
+    <!--div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-warning">
+                    <h4 class="card-title">Insurance Portfolio</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <li>Select where is your data located</li>
+                                <li>Complete info the data socurce card</li>
+                                <li>Click Submit button</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="card-footer">
+                        <div class="stats">
+                            <form method="post" action="/installapp" name="company_funding" id="company_funding">
+                                <input type="hidden" name="filename" value="Company Funding.csv">
+                                <button type="submit" class="btn pull-left">
+                                    <i class="fa fa-download"></i> Install
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Sacramento Real Estate Transactions</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <li>Select where is your data located</li>
+                                <li>Complete info the data socurce card</li>
+                                <li>Click Submit button</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="card-footer">
+                        <div class="stats">
+                            <button type="button" class="btn pull-left">
+                                <i class="fa fa-download"></i> Install
+                                <div class="ripple-container"></div>
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div-->
+    <!--div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-info">
+                    <h4 class="card-title">Sales Transactions</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <li>Select where is your data located</li>
+                                <li>Complete info the data socurce card</li>
+                                <li>Click Submit button</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="card-footer">
+                        <div class="stats">
+                            <button type="button" class="btn pull-left">
+                                <i class="fa fa-download"></i> Install
+                                <div class="ripple-container"></div>
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div-->
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

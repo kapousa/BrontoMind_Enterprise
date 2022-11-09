@@ -1,0 +1,56 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Creating your model</h4>
+                    <p class="card-category">Relax and wait until we create your model</p>
+                </div>
+                <div class="card-body" align="center">
+                    <img src="{{ url_for('static', filename= loading_icon_path) }}" align="center" style="width: 50%"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="/sendvalues" name="sendpredictionvalues" method="post">
+        <input type="hidden" name="location" value="{{ location }}">
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="fname" value="{{ fname }}">
+        <input type="hidden" name="session_token" value="{{ session_token }}">
+        <input type="hidden" name="is_local_data" value="{{ is_local_data }}">
+        <input type="hidden" name="ds_source" value="{{ ds_source }}">
+        {% if ds_source != '11' %}
+            {% for i in range(0, clustering_features.size) %}
+                 <input type="checkbox" class="form-control" name="clustering_features"
+                               value="{{ clustering_features[i] }}" checked style="display: none"/>
+
+             {% endfor %}
+        {% endif %}
+        <input type="hidden" name="ds_goal" value="{{ ds_goal }}">
+    </form>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+        window.onload = function () {
+            //window.setTimeout(function() { document.sendpredictionvalues.submit(); }, 3000);
+            document.sendpredictionvalues.submit();
+        };
+    </script>
+
+{% endblock javascripts %}

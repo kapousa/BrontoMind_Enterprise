@@ -1,0 +1,2008 @@
+Smoking,AlcoholDrinking,Stroke,PhysicalHealth,MentalHealth,DiffWalking,AgeCategory,Race,Diabetic,PhysicalActivity,GenHealth,SleepTime,Asthma,KidneyDisease,SkinCancer,Sex
+Yes,No,No,3,30,No,55-59,White,Yes,Yes,Very good,5,Yes,No,Yes,Female
+No,No,Yes,0,0,No,80 or older,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,20,30,No,65-69,White,Yes,Yes,Fair,8,Yes,No,No,Male
+No,No,No,0,0,No,75-79,White,No,No,Good,6,No,No,Yes,Female
+No,No,No,28,0,Yes,40-44,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,6,0,Yes,75-79,Black,No,No,Fair,12,No,No,No,Female
+No,No,No,15,0,No,70-74,White,No,Yes,Fair,4,Yes,No,Yes,Female
+Yes,No,No,5,0,Yes,80 or older,White,Yes,No,Good,9,Yes,No,No,Female
+No,No,No,0,0,No,80 or older,White,"No, borderline diabetes",No,Fair,5,No,Yes,No,Female
+No,No,No,0,0,Yes,65-69,White,No,Yes,Good,10,No,No,No,Male
+Yes,No,No,30,0,Yes,60-64,White,Yes,No,Poor,15,Yes,No,No,Male
+Yes,No,No,0,0,No,55-59,White,No,Yes,Very good,5,No,No,No,Female
+Yes,No,No,0,0,Yes,75-79,White,Yes,Yes,Very good,8,No,No,No,Male
+No,No,No,7,0,Yes,80 or older,White,No,No,Good,7,No,No,No,Female
+Yes,No,No,0,30,Yes,60-64,White,No,No,Good,5,No,No,No,Female
+No,No,No,1,0,No,50-54,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,5,2,No,70-74,White,No,No,Very good,10,No,No,No,Female
+Yes,No,No,0,30,Yes,70-74,White,"No, borderline diabetes",Yes,Good,8,No,No,No,Male
+Yes,No,No,0,0,Yes,75-79,Black,Yes,No,Fair,5,No,Yes,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Excellent,8,No,No,Yes,Male
+No,No,No,0,0,No,80 or older,Black,"No, borderline diabetes",No,Good,8,No,No,No,Female
+No,No,No,2,5,No,70-74,White,Yes,No,Very good,7,No,No,No,Female
+Yes,No,No,0,15,No,45-49,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,30,No,80 or older,White,Yes,Yes,Fair,8,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,6,No,No,Yes,Female
+Yes,No,No,30,30,Yes,60-64,White,No,No,Poor,6,Yes,No,No,Female
+Yes,No,No,21,8,Yes,65-69,White,No,Yes,Fair,9,No,No,No,Female
+Yes,No,No,5,0,No,60-64,White,No,Yes,Very good,5,No,No,No,Male
+No,No,No,1,0,No,55-59,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,60-64,White,Yes,No,Good,5,No,No,Yes,Female
+Yes,No,No,5,0,No,70-74,Black,No,Yes,Good,8,No,No,No,Male
+No,No,No,4,4,Yes,80 or older,White,No,Yes,Fair,8,Yes,No,No,Female
+No,No,No,30,0,Yes,70-74,White,Yes,No,Good,8,No,No,No,Male
+Yes,No,No,0,5,No,60-64,White,No,Yes,Very good,9,No,No,No,Female
+No,No,No,0,0,Yes,70-74,Black,No,No,Good,6,No,No,No,Female
+Yes,No,Yes,10,0,Yes,75-79,White,Yes,Yes,Poor,4,No,No,Yes,Male
+No,No,No,5,0,No,80 or older,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,3,3,No,65-69,White,No,Yes,Fair,5,Yes,No,Yes,Female
+Yes,No,No,0,0,No,80 or older,White,No,No,Very good,8,No,No,No,Female
+No,No,No,3,2,No,70-74,Black,No,Yes,Fair,4,No,Yes,No,Female
+Yes,No,Yes,0,10,No,55-59,White,No,No,Very good,8,No,No,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,0,Yes,80 or older,White,Yes,No,Good,7,No,No,Yes,Female
+Yes,No,No,6,2,Yes,75-79,White,Yes,Yes,Fair,8,No,Yes,No,Female
+Yes,No,No,30,10,Yes,55-59,White,"No, borderline diabetes",No,Fair,6,No,No,No,Male
+Yes,No,No,3,0,No,70-74,White,No,No,Poor,10,No,No,No,Female
+No,No,No,0,0,No,65-69,White,Yes,Yes,Very good,8,No,No,No,Male
+No,No,No,5,5,No,65-69,Black,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,Yes,80 or older,White,No,No,Fair,7,No,No,Yes,Female
+Yes,No,Yes,15,0,No,75-79,White,No,Yes,Poor,8,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Good,12,Yes,No,No,Female
+No,No,No,2,0,No,65-69,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,2,0,No,80 or older,White,Yes,Yes,Fair,7,No,No,Yes,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,14,0,No,65-69,White,Yes,Yes,Very good,9,No,No,No,Male
+No,Yes,No,7,0,No,60-64,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,No,Very good,8,No,No,No,Male
+Yes,No,No,30,0,No,65-69,White,Yes,No,Poor,8,Yes,No,No,Male
+No,No,No,0,0,No,70-74,White,Yes,Yes,Good,7,No,No,No,Male
+Yes,No,Yes,0,0,No,80 or older,White,No,No,Very good,8,No,No,Yes,Male
+Yes,No,No,0,0,No,70-74,White,Yes,Yes,Good,5,Yes,No,No,Female
+No,No,No,1,0,No,80 or older,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,6,No,No,Yes,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,3,0,No,50-54,Black,No,Yes,Good,8,No,No,No,Female
+No,No,No,20,0,No,65-69,White,No,Yes,Fair,6,No,Yes,No,Female
+Yes,No,No,14,0,No,80 or older,White,No,No,Good,7,Yes,Yes,Yes,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,60-64,Asian,Yes,No,Good,6,No,No,No,Male
+No,No,No,0,0,No,65-69,Black,No,No,Very good,10,Yes,No,No,Female
+Yes,No,No,15,0,Yes,80 or older,White,No,No,Good,8,Yes,No,No,Female
+No,No,No,0,5,No,50-54,White,Yes,Yes,Good,10,Yes,No,No,Male
+No,No,No,0,5,No,65-69,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,3,3,No,60-64,White,No,Yes,Good,7,No,No,No,Male
+Yes,No,Yes,0,0,No,80 or older,American Indian/Alaskan Native,No,No,Fair,6,Yes,No,No,Male
+Yes,No,No,30,5,No,75-79,White,Yes,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,30,30,No,70-74,White,Yes,Yes,Poor,9,No,Yes,No,Female
+Yes,No,No,0,0,No,60-64,Black,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,30,0,Yes,65-69,White,No,No,Poor,8,No,No,Yes,Female
+Yes,No,No,18,0,No,50-54,White,No,Yes,Fair,6,Yes,No,No,Male
+Yes,No,No,0,0,No,55-59,White,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,0,3,Yes,75-79,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,7,15,No,75-79,White,No,No,Good,7,No,No,No,Female
+No,No,No,0,5,No,70-74,White,No,Yes,Excellent,8,No,No,No,Female
+Yes,No,No,0,0,No,45-49,White,No,No,Very good,7,No,No,Yes,Female
+No,No,No,0,3,No,80 or older,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,Yes,70-74,White,Yes,Yes,Good,5,No,No,No,Female
+No,No,No,5,5,No,75-79,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,30,10,Yes,70-74,White,No,No,Fair,7,No,No,Yes,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Very good,8,No,No,Yes,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Good,8,No,No,Yes,Female
+Yes,No,No,0,0,No,60-64,Black,No,Yes,Excellent,5,No,No,No,Female
+No,No,No,0,0,No,45-49,White,No,Yes,Excellent,7,Yes,No,No,Female
+No,No,No,0,14,No,70-74,White,No,Yes,Very good,7,No,No,Yes,Female
+Yes,No,No,20,0,No,65-69,White,No,No,Very good,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,7,Yes,No,No,Female
+Yes,No,No,0,10,No,65-69,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,8,0,No,80 or older,White,"No, borderline diabetes",Yes,Excellent,8,No,No,No,Female
+Yes,No,No,30,30,Yes,70-74,White,No,Yes,Fair,8,No,No,Yes,Male
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,No,Excellent,3,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,30,0,Yes,65-69,Other,"No, borderline diabetes",Yes,Poor,3,Yes,No,No,Male
+No,No,No,6,15,No,60-64,White,No,No,Fair,10,Yes,No,No,Female
+No,No,No,0,0,No,45-49,White,No,Yes,Very good,7,Yes,No,No,Female
+No,No,No,0,0,Yes,65-69,White,No,Yes,Very good,8,No,No,Yes,Female
+No,No,No,0,0,No,75-79,White,Yes,Yes,Fair,8,No,No,Yes,Male
+No,No,No,0,0,No,75-79,Black,Yes,Yes,Good,8,No,No,No,Female
+No,No,No,10,4,No,80 or older,Black,No,Yes,Fair,8,Yes,No,Yes,Female
+No,No,No,3,0,No,18-24,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,0,No,65-69,White,Yes,Yes,Good,7,No,No,No,Female
+No,No,No,2,0,No,60-64,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,30,No,55-59,White,No,Yes,Good,9,No,No,No,Female
+No,No,No,0,0,No,35-39,Black,Yes,No,Excellent,10,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,No,Very good,7,No,No,No,Female
+Yes,No,No,0,5,No,65-69,White,No,Yes,Fair,8,No,No,No,Male
+No,No,No,30,0,No,75-79,White,No,No,Poor,6,No,No,Yes,Female
+Yes,No,No,0,0,No,75-79,White,Yes,Yes,Good,6,No,No,Yes,Female
+No,No,No,30,2,Yes,75-79,Black,Yes,No,Poor,8,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,Black,No,Yes,Very good,9,No,No,No,Female
+Yes,No,Yes,0,0,No,75-79,White,No,Yes,Very good,9,No,No,Yes,Male
+No,No,No,0,0,No,80 or older,White,No,Yes,Good,8,No,No,Yes,Female
+No,No,No,3,3,Yes,80 or older,Black,Yes,No,Poor,7,No,Yes,No,Female
+Yes,No,No,5,30,No,55-59,White,Yes,Yes,Fair,6,No,No,No,Male
+No,No,No,2,0,Yes,70-74,White,Yes,No,Fair,4,No,No,No,Female
+No,No,No,0,8,No,60-64,Black,No,Yes,Good,6,No,No,No,Female
+No,No,No,2,0,No,60-64,White,Yes,Yes,Very good,8,No,No,Yes,Female
+No,No,No,25,15,Yes,60-64,White,No,No,Fair,4,Yes,No,No,Female
+Yes,No,No,0,0,No,70-74,White,No,No,Poor,7,No,No,No,Female
+Yes,No,No,1,2,No,60-64,White,No,Yes,Excellent,7,No,No,Yes,Male
+Yes,No,No,0,0,No,70-74,White,No,Yes,Fair,5,No,No,Yes,Male
+No,No,No,0,0,No,80 or older,Black,Yes,Yes,Good,8,No,No,No,Female
+Yes,No,Yes,0,3,Yes,70-74,White,No,Yes,Good,9,No,No,Yes,Female
+No,No,No,15,15,Yes,50-54,Black,Yes,No,Good,4,No,No,No,Male
+Yes,No,No,0,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,4,30,No,65-69,White,Yes,Yes,Good,6,No,No,No,Female
+No,No,No,16,20,Yes,50-54,Black,Yes,No,Good,8,No,Yes,No,Male
+No,No,No,0,0,No,75-79,White,No,Yes,Good,6,No,No,Yes,Male
+Yes,No,No,0,0,Yes,70-74,Other,No,Yes,Very good,5,Yes,No,Yes,Female
+No,Yes,Yes,20,20,Yes,65-69,Black,No,No,Fair,7,Yes,No,No,Male
+Yes,No,No,0,0,No,65-69,Black,No,Yes,Good,8,Yes,No,No,Male
+No,No,No,6,10,Yes,70-74,White,No,No,Poor,7,No,No,Yes,Female
+Yes,No,No,0,0,No,50-54,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Excellent,9,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Good,8,Yes,No,Yes,Male
+No,No,No,0,0,No,70-74,White,Yes,Yes,Good,7,No,Yes,Yes,Female
+No,No,No,0,0,No,40-44,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,Yes,Yes,Female
+No,No,No,10,3,No,45-49,White,No,Yes,Fair,8,No,No,No,Female
+Yes,No,No,0,3,No,45-49,White,No,Yes,Fair,5,No,No,No,Male
+No,No,No,0,1,No,55-59,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,29,10,Yes,60-64,White,Yes,No,Poor,7,No,No,No,Female
+No,No,No,3,20,Yes,65-69,Black,No,No,Fair,6,Yes,No,No,Female
+No,No,No,14,0,No,80 or older,Black,No,Yes,Good,7,Yes,No,No,Male
+No,No,No,0,0,No,65-69,Black,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,75-79,White,No,Yes,Excellent,10,No,No,Yes,Male
+No,No,No,0,10,No,65-69,Asian,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,No,No,Very good,10,No,No,No,Female
+No,No,No,30,30,Yes,80 or older,White,No,No,Poor,10,No,No,Yes,Female
+No,No,Yes,0,0,No,80 or older,Black,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,Yes,75-79,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,3,30,Yes,75-79,White,Yes,No,Fair,8,Yes,No,Yes,Female
+Yes,No,No,30,0,Yes,80 or older,American Indian/Alaskan Native,No,No,Fair,8,No,No,Yes,Male
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,2,0,No,75-79,Black,No,Yes,Good,8,Yes,No,No,Female
+No,No,No,5,0,No,35-39,Black,No,No,Very good,7,No,No,No,Female
+No,No,No,2,2,No,70-74,White,No,Yes,Fair,6,Yes,No,No,Female
+Yes,No,No,6,0,Yes,70-74,White,Yes,No,Fair,8,No,Yes,No,Male
+Yes,No,No,5,3,Yes,70-74,White,Yes,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,10,No,No,No,Female
+No,No,No,0,10,No,50-54,White,No,Yes,Very good,7,No,No,No,Female
+Yes,Yes,No,0,3,No,40-44,Black,No,No,Good,8,No,No,No,Female
+Yes,No,No,2,0,No,65-69,White,No,Yes,Good,6,No,No,Yes,Male
+No,No,No,0,0,No,80 or older,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,0,0,No,70-74,White,No,No,Good,5,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,5,0,Yes,70-74,White,Yes,Yes,Fair,8,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,No,Excellent,8,No,No,Yes,Male
+Yes,No,No,0,0,No,70-74,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,7,0,Yes,80 or older,White,No,No,Fair,8,Yes,Yes,Yes,Male
+Yes,No,No,5,0,No,80 or older,White,No,No,Good,7,No,No,No,Female
+No,Yes,No,0,0,No,65-69,White,Yes,No,Very good,6,No,No,No,Male
+No,No,No,5,7,No,80 or older,White,"No, borderline diabetes",No,Fair,6,No,No,No,Female
+Yes,No,No,30,30,Yes,65-69,White,No,No,Good,8,No,No,No,Female
+Yes,No,No,0,2,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,No,Very good,9,Yes,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Very good,6,Yes,No,No,Male
+No,No,No,10,0,No,65-69,White,No,Yes,Very good,6,Yes,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,No,Fair,7,No,No,No,Female
+Yes,No,No,15,15,Yes,80 or older,White,Yes,No,Good,10,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Excellent,8,Yes,No,No,Female
+No,No,No,0,0,Yes,70-74,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,10,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Good,8,No,No,Yes,Female
+No,No,No,1,30,No,45-49,White,No,Yes,Very good,8,No,No,Yes,Female
+Yes,Yes,No,0,0,No,45-49,White,No,Yes,Very good,4,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,Yes,65-69,Black,Yes,Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,75-79,Black,Yes,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,Black,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,20,0,No,75-79,Black,No,Yes,Fair,12,No,No,No,Female
+Yes,Yes,No,7,0,No,80 or older,White,No,Yes,Very good,8,No,No,Yes,Female
+Yes,No,No,1,0,No,65-69,Black,No,Yes,Very good,6,No,No,No,Female
+No,No,No,10,0,Yes,80 or older,White,No,No,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,"No, borderline diabetes",Yes,Fair,8,No,No,Yes,Male
+No,No,No,0,0,No,60-64,Black,No,Yes,Good,7,No,Yes,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,6,No,No,Yes,Female
+Yes,No,No,0,15,No,50-54,White,Yes,No,Good,8,No,No,No,Female
+Yes,No,No,2,3,No,45-49,White,No,No,Good,10,Yes,No,No,Male
+No,No,No,2,0,Yes,65-69,White,Yes,Yes,Good,9,No,No,No,Female
+No,No,No,27,24,Yes,65-69,White,No,Yes,Poor,5,No,Yes,No,Male
+Yes,No,No,10,3,Yes,65-69,White,No,Yes,Fair,7,No,Yes,No,Male
+Yes,No,No,14,0,Yes,70-74,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,20,3,Yes,55-59,White,No,No,Fair,5,Yes,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,Yes,Excellent,6,No,No,Yes,Female
+Yes,No,Yes,0,5,No,75-79,White,No,No,Good,9,No,No,No,Female
+No,No,No,7,0,Yes,80 or older,Black,No,No,Fair,6,No,No,No,Female
+No,No,No,0,0,No,45-49,Hispanic,"No, borderline diabetes",Yes,Good,7,No,No,Yes,Male
+No,No,No,2,0,No,60-64,White,No,Yes,Good,7,No,No,Yes,Female
+No,No,No,0,3,No,55-59,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,No,No,Good,7,No,No,No,Male
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,2,9,Yes,50-54,Black,Yes,No,Good,8,No,Yes,No,Female
+No,No,No,20,20,Yes,60-64,Black,No,No,Poor,7,No,No,No,Female
+Yes,No,No,1,1,No,70-74,White,No,Yes,Good,10,No,No,No,Male
+No,No,No,10,15,No,50-54,Black,Yes,No,Good,5,No,No,No,Male
+No,No,Yes,0,0,No,70-74,Black,No,Yes,Good,5,Yes,No,No,Female
+No,No,No,7,0,No,65-69,Black,No,No,Good,8,No,No,No,Female
+No,No,No,0,0,Yes,80 or older,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,0,Yes,45-49,Black,Yes,Yes,Fair,2,No,No,No,Male
+Yes,No,No,0,0,No,65-69,Black,Yes,Yes,Good,6,No,No,No,Female
+No,No,No,0,2,No,55-59,Black,Yes (during pregnancy),Yes,Good,9,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,10,No,Yes,No,Female
+Yes,No,No,25,0,Yes,75-79,White,No,No,Poor,6,No,No,Yes,Female
+No,No,No,30,15,Yes,60-64,Black,Yes,No,Fair,7,No,No,No,Female
+No,No,No,0,0,No,65-69,Black,Yes,Yes,Excellent,7,No,No,No,Male
+No,No,No,8,15,No,60-64,White,Yes,Yes,Good,7,No,No,Yes,Female
+No,No,No,1,1,Yes,65-69,White,Yes,No,Good,6,Yes,No,No,Female
+No,No,No,0,10,No,65-69,White,Yes,No,Good,7,No,No,Yes,Male
+No,No,No,0,0,No,65-69,Black,Yes,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,15,0,Yes,75-79,White,No,No,Poor,4,No,Yes,No,Male
+Yes,No,No,0,0,No,80 or older,Black,No,Yes,Fair,8,No,No,No,Female
+No,No,No,2,0,Yes,80 or older,White,No,No,Fair,6,No,No,Yes,Female
+Yes,No,Yes,0,30,No,35-39,Black,No,No,Good,2,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Good,8,Yes,No,No,Female
+Yes,No,No,1,0,No,70-74,White,Yes,Yes,Very good,6,No,No,No,Male
+Yes,No,No,10,0,No,60-64,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,30,30,Yes,55-59,White,Yes,No,Poor,7,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,No,Good,8,No,No,Yes,Male
+No,No,No,0,0,No,55-59,Black,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,7,Yes,No,No,Male
+Yes,No,No,10,0,Yes,75-79,Black,No,Yes,Very good,6,Yes,Yes,No,Female
+Yes,Yes,No,0,0,No,60-64,White,No,No,Very good,6,No,No,Yes,Male
+Yes,No,No,0,3,No,35-39,Black,No,Yes,Good,9,No,No,No,Male
+No,No,No,2,0,No,60-64,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,No,No,Very good,15,No,No,No,Male
+Yes,No,No,30,3,Yes,40-44,Black,No,No,Good,5,No,No,No,Male
+No,No,No,0,0,No,45-49,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,2,0,No,80 or older,White,No,No,Very good,7,No,No,No,Female
+Yes,No,No,1,28,No,60-64,Black,No,No,Good,6,No,No,No,Female
+Yes,No,No,30,0,Yes,80 or older,Black,"No, borderline diabetes",No,Fair,5,No,No,No,Female
+No,No,No,4,0,Yes,75-79,American Indian/Alaskan Native,Yes,Yes,Very good,9,No,No,Yes,Male
+No,No,No,0,0,No,65-69,White,No,No,Very good,8,No,No,No,Female
+Yes,No,Yes,10,30,Yes,60-64,White,Yes,No,Fair,3,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,Yes,0,30,No,65-69,White,No,No,Fair,5,No,No,No,Female
+No,No,No,0,30,No,55-59,White,No,No,Good,5,No,No,No,Female
+No,No,No,5,0,No,70-74,White,"No, borderline diabetes",Yes,Good,5,No,No,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,6,No,No,No,Male
+No,No,No,0,0,No,55-59,Black,Yes,No,Good,5,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,No,Good,8,No,No,Yes,Female
+No,No,No,30,0,Yes,70-74,Black,No,No,Poor,9,No,Yes,No,Male
+Yes,No,Yes,30,15,Yes,65-69,White,Yes,No,Poor,4,Yes,Yes,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,30,0,Yes,80 or older,Black,Yes,No,Poor,7,Yes,Yes,No,Female
+Yes,No,No,0,3,No,80 or older,Black,No,Yes,Good,9,No,No,No,Female
+No,No,No,0,0,Yes,65-69,White,No,Yes,Good,7,No,No,No,Female
+Yes,Yes,Yes,30,0,No,70-74,White,No,No,Good,4,No,No,Yes,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,10,0,Yes,65-69,White,Yes,Yes,Fair,8,No,No,No,Male
+No,No,No,2,0,No,75-79,White,No,No,Good,8,No,No,No,Female
+Yes,No,No,30,0,No,45-49,White,No,Yes,Fair,2,No,No,No,Male
+No,No,No,10,2,Yes,65-69,White,No,Yes,Fair,7,No,No,No,Female
+Yes,No,No,10,20,No,30-34,Black,No,Yes,Fair,6,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Fair,8,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Excellent,9,Yes,No,No,Male
+No,No,No,21,15,Yes,75-79,White,Yes,No,Poor,7,No,No,No,Female
+Yes,No,No,2,0,No,35-39,White,No,Yes,Excellent,8,Yes,No,No,Male
+Yes,No,No,0,0,No,70-74,White,No,No,Good,8,No,No,No,Male
+Yes,No,No,30,30,Yes,80 or older,Black,No,Yes,Fair,8,No,No,No,Male
+Yes,No,Yes,30,16,Yes,50-54,Other,No,No,Poor,6,No,Yes,No,Female
+Yes,No,No,0,0,No,50-54,White,No,No,Good,8,No,No,No,Male
+Yes,No,Yes,0,0,Yes,75-79,White,Yes,No,Good,8,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,Yes,Yes,Good,7,Yes,No,No,Female
+Yes,No,Yes,0,0,No,65-69,White,No,Yes,Good,7,No,No,Yes,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,No,Very good,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,No,Very good,9,No,No,No,Female
+Yes,No,No,0,1,No,50-54,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,Yes,30,12,Yes,70-74,White,Yes,No,Poor,7,No,No,No,Male
+No,No,No,0,0,No,80 or older,Black,Yes,Yes,Good,7,Yes,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,6,No,No,Yes,Male
+Yes,No,No,0,0,No,70-74,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,Yes,75-79,White,No,Yes,Fair,8,Yes,No,No,Female
+Yes,No,No,2,0,No,65-69,White,No,No,Good,10,No,No,Yes,Male
+Yes,No,No,0,0,No,65-69,White,No,No,Good,10,No,No,No,Female
+No,No,No,0,0,No,75-79,White,Yes,Yes,Fair,6,No,No,Yes,Female
+No,No,No,0,0,No,70-74,White,Yes,Yes,Very good,8,No,No,Yes,Male
+Yes,No,No,30,0,No,75-79,White,No,No,Good,7,No,No,No,Female
+No,No,No,0,2,No,60-64,White,No,Yes,Excellent,10,No,No,No,Female
+No,No,Yes,30,3,Yes,80 or older,White,No,No,Poor,4,No,No,Yes,Female
+Yes,No,No,5,0,No,65-69,American Indian/Alaskan Native,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,65-69,White,Yes,No,Very good,6,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,4,No,No,Yes,Female
+No,No,No,0,0,No,80 or older,White,No,No,Very good,8,No,No,Yes,Female
+No,No,No,1,0,Yes,60-64,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,30,7,Yes,60-64,White,No,Yes,Poor,6,No,No,No,Male
+Yes,No,No,0,0,No,60-64,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,1,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,30,15,No,50-54,White,Yes,Yes,Fair,4,Yes,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,No,5,0,No,80 or older,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,8,No,No,Yes,Male
+Yes,No,Yes,0,0,Yes,60-64,White,Yes,No,Fair,9,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,7,Yes,No,Yes,Male
+No,No,No,0,5,Yes,75-79,Other,Yes,Yes,Fair,10,No,No,Yes,Female
+Yes,No,No,25,15,No,55-59,White,Yes,Yes,Poor,8,Yes,No,No,Female
+No,No,No,0,0,Yes,80 or older,White,No,No,Poor,7,Yes,No,No,Female
+Yes,No,No,30,0,No,55-59,White,Yes,Yes,Good,8,No,No,No,Female
+Yes,No,No,15,30,Yes,25-29,White,No,No,Good,6,Yes,No,No,Female
+Yes,No,No,2,0,No,65-69,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,Yes,0,0,Yes,75-79,White,No,Yes,Fair,7,No,Yes,Yes,Female
+No,No,No,0,0,Yes,80 or older,White,No,Yes,Good,7,Yes,No,No,Female
+No,No,No,0,0,No,75-79,White,Yes,Yes,Good,8,No,No,No,Female
+No,Yes,No,0,15,No,75-79,White,No,Yes,Good,7,Yes,No,No,Female
+Yes,No,No,0,0,No,65-69,White,Yes,Yes,Very good,7,No,No,No,Female
+No,No,No,30,0,Yes,75-79,White,Yes,No,Poor,9,No,Yes,Yes,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,Yes,50-54,White,No,No,Good,6,No,No,No,Female
+Yes,No,No,30,0,Yes,65-69,White,Yes,Yes,Poor,8,No,Yes,No,Female
+No,No,No,0,0,No,70-74,Black,Yes,Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,8,No,No,Yes,Male
+Yes,No,No,0,0,Yes,70-74,White,Yes,No,Good,6,No,Yes,No,Male
+No,No,No,30,30,No,45-49,Black,No,Yes,Very good,4,No,No,No,Female
+Yes,No,Yes,1,0,Yes,80 or older,White,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,No,Good,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,7,No,No,Yes,Male
+Yes,No,No,0,0,Yes,55-59,White,No,No,Very good,6,No,No,No,Female
+Yes,No,No,25,0,No,40-44,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,40-44,White,No,Yes,Excellent,8,Yes,No,No,Female
+No,No,No,0,0,No,65-69,Hispanic,No,Yes,Very good,9,No,No,No,Male
+No,No,No,5,0,No,65-69,White,No,No,Poor,8,No,No,No,Male
+Yes,No,No,0,0,No,75-79,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,3,No,60-64,Black,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,Yes,Yes,Good,9,No,No,Yes,Male
+No,No,No,0,0,No,70-74,White,Yes,Yes,Excellent,8,Yes,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Fair,5,Yes,No,Yes,Female
+No,No,No,0,0,No,75-79,Black,Yes,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,35-39,White,No,Yes,Very good,7,No,No,No,Female
+No,Yes,No,0,0,No,40-44,Black,No,Yes,Fair,6,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,5,5,No,70-74,White,Yes,No,Very good,6,No,No,Yes,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Excellent,6,No,No,No,Female
+No,No,Yes,0,0,No,75-79,White,"No, borderline diabetes",Yes,Fair,8,Yes,No,Yes,Female
+No,No,Yes,0,0,No,65-69,White,No,Yes,Fair,12,No,No,No,Male
+Yes,No,No,0,0,No,60-64,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,0,2,Yes,65-69,Black,No,No,Fair,6,No,No,No,Female
+Yes,No,No,0,0,No,55-59,Black,No,Yes,Good,8,Yes,No,No,Male
+Yes,No,No,0,0,Yes,80 or older,White,No,Yes,Fair,7,No,Yes,Yes,Male
+No,No,No,0,0,No,75-79,White,No,Yes,Fair,7,No,No,No,Female
+Yes,No,No,0,0,Yes,60-64,Black,No,No,Good,4,No,No,No,Male
+No,No,Yes,30,0,Yes,55-59,Black,Yes,Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,70-74,White,Yes,Yes,Excellent,7,No,No,No,Male
+No,No,Yes,0,0,No,75-79,American Indian/Alaskan Native,No,Yes,Good,12,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Good,10,No,No,No,Female
+Yes,No,No,2,30,No,55-59,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,2,Yes,70-74,Black,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,45-49,White,No,Yes,Excellent,8,Yes,No,No,Female
+No,No,No,0,0,No,75-79,Black,Yes,Yes,Good,8,No,No,No,Female
+No,No,No,0,24,No,50-54,Black,Yes,Yes,Good,6,Yes,No,No,Female
+Yes,No,No,5,0,Yes,70-74,Black,No,No,Fair,9,No,No,No,Female
+No,No,No,0,0,No,30-34,White,No,Yes,Excellent,7,Yes,No,No,Male
+Yes,No,Yes,0,0,No,75-79,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,35-39,White,No,Yes,Very good,6,No,No,No,Male
+No,No,No,0,0,No,70-74,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,0,0,No,60-64,Black,Yes,No,Fair,5,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Good,7,No,No,No,Female
+Yes,Yes,No,0,0,Yes,65-69,White,No,Yes,Poor,8,No,No,No,Male
+Yes,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,30,2,No,45-49,White,Yes,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,0,Yes,80 or older,White,No,No,Good,8,No,No,No,Female
+Yes,Yes,Yes,0,0,No,75-79,White,No,No,Good,8,No,No,Yes,Female
+No,No,No,5,20,No,65-69,Black,Yes,Yes,Fair,4,No,No,No,Female
+No,No,No,17,0,No,65-69,White,"No, borderline diabetes",Yes,Very good,9,No,No,Yes,Male
+Yes,No,No,0,0,Yes,75-79,White,No,Yes,Very good,5,No,No,Yes,Female
+No,No,No,30,30,Yes,75-79,White,Yes,No,Good,7,No,Yes,Yes,Male
+No,No,No,0,0,No,50-54,Asian,No,No,Very good,7,No,No,No,Male
+No,No,Yes,30,20,Yes,70-74,Black,Yes,No,Poor,12,No,No,No,Female
+No,No,Yes,15,0,No,70-74,White,No,Yes,Fair,7,No,No,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,Yes,4,0,Yes,80 or older,White,No,Yes,Good,10,No,No,No,Male
+Yes,No,Yes,15,0,Yes,80 or older,Black,Yes,No,Poor,8,Yes,No,No,Female
+No,No,No,0,0,No,65-69,Black,"No, borderline diabetes",Yes,Fair,7,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,No,Very good,8,No,No,No,Female
+No,No,No,1,0,No,65-69,White,No,No,Good,9,No,No,No,Female
+Yes,No,No,5,7,Yes,75-79,Black,Yes,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,"No, borderline diabetes",No,Good,6,No,Yes,No,Female
+No,No,No,0,0,No,65-69,White,No,No,Good,6,Yes,No,Yes,Female
+No,No,Yes,5,0,Yes,70-74,White,Yes,Yes,Poor,8,No,Yes,Yes,Male
+No,No,No,15,5,Yes,80 or older,White,Yes,No,Poor,6,Yes,No,No,Female
+Yes,No,No,1,0,No,70-74,Black,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,2,No,75-79,American Indian/Alaskan Native,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,No,Very good,8,Yes,No,No,Female
+No,No,No,0,1,No,18-24,Hispanic,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,0,0,No,65-69,White,Yes,Yes,Good,7,No,No,Yes,Male
+Yes,No,No,0,0,Yes,60-64,White,Yes,No,Fair,6,No,No,No,Male
+No,No,No,0,8,Yes,80 or older,White,No,Yes,Fair,9,Yes,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,45-49,White,No,Yes,Excellent,9,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,5,No,No,No,Male
+Yes,No,No,0,2,Yes,55-59,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,2,30,No,50-54,White,No,Yes,Good,5,No,No,No,Female
+Yes,No,No,15,0,Yes,70-74,White,Yes,Yes,Fair,8,Yes,Yes,No,Male
+No,No,No,0,0,No,40-44,Black,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,0,No,65-69,Black,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,2,0,No,80 or older,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,0,0,No,70-74,Black,Yes,Yes,Very good,8,No,No,No,Male
+Yes,Yes,No,0,0,No,25-29,Black,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,4,10,No,55-59,Hispanic,Yes,Yes,Fair,8,No,Yes,No,Female
+Yes,No,No,0,0,No,65-69,White,No,No,Good,8,No,No,Yes,Male
+No,Yes,No,0,10,No,50-54,White,No,No,Good,8,Yes,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Good,8,No,No,No,Female
+No,No,No,20,0,No,80 or older,White,No,Yes,Very good,8,No,No,Yes,Female
+No,Yes,No,0,0,No,65-69,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,0,0,No,50-54,White,Yes,Yes,Very good,8,No,No,No,Male
+No,No,No,0,5,No,50-54,White,No,Yes,Very good,9,No,No,No,Male
+No,No,No,20,0,No,60-64,White,No,No,Very good,7,No,No,No,Female
+No,No,No,0,0,No,80 or older,Other,No,No,Very good,7,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,Yes,80 or older,White,No,No,Good,9,Yes,No,No,Female
+No,No,No,30,28,Yes,65-69,White,No,No,Poor,4,Yes,Yes,Yes,Female
+Yes,No,No,0,0,No,65-69,White,No,No,Very good,8,No,No,No,Female
+No,No,No,30,0,No,65-69,White,No,Yes,Poor,7,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,No,No,Good,8,No,No,No,Female
+Yes,No,No,14,0,Yes,75-79,White,Yes,Yes,Good,9,No,No,No,Male
+Yes,No,Yes,4,0,No,75-79,Black,No,Yes,Fair,8,No,No,No,Male
+Yes,No,Yes,2,0,No,75-79,White,Yes,No,Fair,10,No,No,Yes,Female
+No,No,No,0,0,No,70-74,Black,Yes,No,Good,8,No,No,No,Female
+Yes,Yes,No,0,30,Yes,60-64,White,No,No,Fair,9,No,No,No,Male
+Yes,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,2,0,No,75-79,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,Black,No,No,Very good,5,No,No,No,Female
+Yes,No,No,0,0,Yes,80 or older,White,"No, borderline diabetes",Yes,Fair,9,No,No,Yes,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,Yes,Female
+Yes,No,No,0,0,No,75-79,White,Yes,No,Good,7,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,2,3,No,70-74,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,4,0,No,55-59,White,No,Yes,Very good,7,No,No,No,Female
+No,No,Yes,30,0,No,65-69,White,Yes,No,Fair,7,No,No,No,Female
+Yes,No,No,5,0,No,80 or older,White,No,No,Good,8,No,No,Yes,Female
+Yes,No,Yes,2,0,No,80 or older,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,Yes,Female
+No,No,No,0,5,No,80 or older,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,10,0,No,65-69,White,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,No,Excellent,7,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,6,No,No,Yes,Female
+Yes,No,No,0,0,Yes,75-79,White,No,Yes,Very good,7,No,No,Yes,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,Yes,1,0,Yes,80 or older,White,No,No,Poor,7,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,Yes,Good,10,No,Yes,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,No,3,3,Yes,60-64,White,No,No,Good,7,No,No,No,Female
+Yes,No,Yes,0,0,No,75-79,White,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,0,5,No,50-54,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,0,No,55-59,Other,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,1,No,50-54,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,60-64,Black,No,Yes,Very good,6,No,No,No,Male
+No,No,No,2,5,Yes,65-69,Black,Yes,Yes,Fair,12,No,No,No,Male
+No,No,No,14,14,Yes,70-74,White,Yes,No,Fair,8,Yes,No,Yes,Female
+No,No,No,3,2,Yes,65-69,White,No,No,Good,5,No,No,No,Female
+Yes,No,No,0,1,Yes,75-79,White,No,No,Good,10,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,No,No,Fair,5,No,No,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Good,9,No,No,No,Female
+No,No,No,0,10,No,55-59,Black,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,2,0,No,45-49,White,No,Yes,Excellent,7,No,No,Yes,Male
+Yes,No,No,0,0,No,70-74,White,No,Yes,Good,7,No,No,Yes,Male
+No,No,No,5,2,Yes,70-74,Other,No,No,Fair,7,Yes,No,Yes,Female
+Yes,No,No,15,0,Yes,75-79,Black,No,No,Fair,6,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,No,Very good,7,No,No,No,Male
+No,No,No,5,6,No,18-24,White,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,0,0,No,50-54,White,Yes,Yes,Good,8,No,No,No,Male
+Yes,No,No,0,20,No,55-59,White,No,Yes,Good,3,No,No,No,Female
+No,No,No,15,15,Yes,70-74,White,No,No,Poor,4,No,No,Yes,Female
+Yes,Yes,No,0,0,No,75-79,Black,Yes,Yes,Very good,8,Yes,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,6,Yes,No,Yes,Female
+No,No,No,0,5,No,75-79,White,No,Yes,Very good,6,Yes,No,Yes,Female
+No,No,No,0,0,Yes,65-69,Black,Yes,Yes,Very good,12,No,No,No,Female
+No,No,No,0,1,No,80 or older,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,8,0,No,75-79,Black,No,Yes,Very good,7,No,No,No,Female
+Yes,No,Yes,1,20,Yes,75-79,White,No,No,Good,7,No,No,Yes,Female
+No,No,No,0,0,No,75-79,Black,No,No,Good,7,Yes,Yes,No,Female
+Yes,No,No,0,0,Yes,80 or older,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,7,No,70-74,Black,Yes,No,Good,8,No,No,No,Male
+Yes,No,No,0,0,Yes,80 or older,White,No,No,Very good,8,No,No,No,Male
+Yes,No,No,15,5,No,65-69,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,10,0,No,80 or older,White,No,No,Very good,8,Yes,No,Yes,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Excellent,7,No,No,No,Male
+Yes,No,No,0,0,No,80 or older,White,Yes,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,4,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,Yes,75-79,Black,No,No,Good,12,No,No,No,Female
+No,No,No,1,3,No,40-44,Black,No,Yes,Good,5,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,Yes,Yes,Good,8,No,No,No,Female
+Yes,No,Yes,0,0,No,75-79,White,No,Yes,Very good,7,No,No,Yes,Female
+Yes,Yes,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,Yes,Male
+No,No,No,0,3,No,55-59,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,No,0,0,Yes,80 or older,White,No,Yes,Fair,7,No,No,Yes,Female
+Yes,No,No,0,0,Yes,70-74,Black,No,No,Fair,9,No,No,No,Female
+Yes,No,No,1,1,Yes,75-79,White,No,No,Fair,7,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,Other,No,Yes,Very good,6,Yes,No,Yes,Male
+Yes,No,No,0,0,No,65-69,Black,Yes,Yes,Very good,8,No,No,No,Female
+No,No,No,10,0,No,70-74,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,0,No,75-79,White,No,Yes,Good,9,No,No,Yes,Male
+Yes,No,No,0,3,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,5,No,70-74,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Good,6,No,No,No,Male
+No,No,Yes,30,30,Yes,70-74,White,No,Yes,Fair,5,Yes,No,No,Female
+Yes,Yes,No,30,5,Yes,60-64,White,No,No,Fair,8,Yes,No,No,Female
+No,No,No,10,2,Yes,80 or older,Black,Yes,Yes,Fair,5,No,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Good,6,No,No,Yes,Male
+Yes,No,No,30,0,Yes,50-54,White,No,No,Fair,8,No,No,No,Male
+No,No,No,30,0,Yes,70-74,Black,Yes,No,Fair,7,Yes,No,No,Female
+Yes,No,No,30,10,Yes,70-74,White,No,Yes,Poor,5,Yes,No,No,Female
+No,No,No,2,0,No,75-79,White,Yes,Yes,Good,6,No,No,No,Male
+No,No,No,0,3,No,65-69,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Very good,8,No,No,Yes,Male
+No,No,No,0,0,No,70-74,White,No,No,Good,6,No,No,No,Male
+Yes,No,No,0,0,Yes,80 or older,White,Yes,No,Fair,10,No,No,No,Male
+No,No,No,15,0,Yes,80 or older,White,Yes,No,Fair,7,Yes,No,Yes,Female
+Yes,No,No,0,0,No,40-44,White,No,Yes,Fair,7,Yes,No,No,Female
+No,No,No,30,30,Yes,70-74,White,Yes,No,Poor,12,No,No,No,Female
+Yes,Yes,No,0,0,Yes,75-79,White,No,No,Good,8,No,No,Yes,Male
+Yes,No,No,0,0,No,70-74,White,Yes,No,Good,8,No,No,No,Male
+No,No,No,5,0,No,80 or older,White,No,Yes,Good,8,No,Yes,Yes,Female
+Yes,No,No,3,0,No,65-69,Black,Yes,Yes,Good,8,No,No,No,Male
+Yes,No,No,0,0,No,55-59,White,No,Yes,Very good,7,No,No,No,Female
+No,No,Yes,30,0,Yes,70-74,American Indian/Alaskan Native,Yes,No,Fair,7,No,No,No,Female
+No,No,No,0,0,No,75-79,Black,No,Yes,Good,2,No,No,No,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Good,8,Yes,Yes,No,Female
+No,No,No,0,0,No,65-69,Black,No,Yes,Fair,4,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Good,8,No,No,No,Female
+Yes,Yes,No,0,30,No,40-44,White,No,Yes,Excellent,5,Yes,No,No,Female
+Yes,Yes,No,0,0,No,75-79,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,No,3,0,No,65-69,Black,No,Yes,Good,8,No,No,No,Female
+Yes,Yes,No,0,25,No,45-49,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,5,0,No,50-54,White,No,Yes,Excellent,9,No,No,No,Female
+No,No,No,30,0,Yes,80 or older,White,Yes,No,Poor,5,No,No,No,Male
+Yes,No,No,0,0,No,75-79,White,No,No,Good,6,No,No,Yes,Male
+No,No,No,0,30,Yes,80 or older,White,Yes,No,Very good,10,No,No,No,Female
+Yes,No,No,0,5,No,75-79,Black,No,Yes,Good,6,No,No,No,Male
+No,No,No,0,0,No,50-54,Black,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,30,0,Yes,70-74,White,Yes,Yes,Fair,7,Yes,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,No,Very good,8,No,No,No,Male
+Yes,No,No,3,1,Yes,80 or older,Black,Yes,Yes,Poor,7,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,Yes,5,1,Yes,65-69,Black,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,No,Good,12,No,No,No,Female
+No,No,No,30,0,Yes,40-44,Black,No,Yes,Excellent,1,No,No,No,Female
+Yes,No,No,0,2,No,75-79,White,No,Yes,Good,7,No,No,Yes,Male
+No,No,Yes,3,0,Yes,75-79,White,No,Yes,Good,6,Yes,No,No,Female
+No,No,No,3,3,No,40-44,Black,No,Yes,Good,6,No,No,No,Female
+Yes,Yes,No,0,3,No,70-74,White,No,Yes,Very good,6,No,No,Yes,Female
+No,No,No,30,0,Yes,70-74,White,No,Yes,Fair,6,No,No,Yes,Male
+Yes,No,No,0,0,No,80 or older,White,No,No,Good,8,No,No,Yes,Male
+Yes,No,Yes,0,0,No,80 or older,White,Yes,Yes,Fair,10,Yes,No,Yes,Male
+Yes,No,No,3,0,No,50-54,White,No,Yes,Fair,6,No,No,No,Male
+No,No,No,0,0,No,60-64,Black,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,0,No,70-74,White,Yes,Yes,Good,8,No,No,No,Male
+Yes,No,No,0,14,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Very good,7,Yes,No,Yes,Male
+Yes,No,No,2,0,Yes,65-69,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,5,0,No,70-74,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,5,No,40-44,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,24,0,Yes,70-74,White,Yes,No,Poor,6,No,No,No,Female
+Yes,No,No,0,0,No,50-54,White,No,Yes,Excellent,7,No,No,No,Male
+Yes,No,No,0,0,No,75-79,Black,No,No,Very good,7,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,15,0,Yes,75-79,White,Yes,No,Fair,8,No,No,No,Female
+No,No,No,14,0,No,80 or older,White,No,No,Good,6,No,No,No,Female
+Yes,No,No,0,17,Yes,70-74,White,No,No,Fair,5,No,No,No,Female
+No,No,No,0,10,No,50-54,White,No,Yes,Excellent,8,No,No,No,Female
+Yes,No,Yes,30,0,No,80 or older,White,No,Yes,Poor,10,No,Yes,No,Male
+Yes,No,No,30,30,Yes,75-79,White,Yes,No,Fair,5,Yes,No,No,Female
+No,No,No,2,0,Yes,80 or older,White,No,Yes,Good,8,Yes,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,20,4,Yes,70-74,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,10,0,Yes,80 or older,White,No,Yes,Fair,7,No,No,No,Female
+No,No,No,2,4,No,55-59,Black,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Excellent,7,No,No,No,Male
+Yes,No,No,0,0,Yes,80 or older,White,No,Yes,Fair,9,No,No,Yes,Female
+Yes,No,No,2,2,Yes,70-74,White,Yes,No,Good,8,No,No,No,Male
+Yes,No,No,15,4,Yes,45-49,White,No,Yes,Fair,7,Yes,No,No,Female
+Yes,No,No,30,3,No,60-64,White,No,Yes,Fair,8,Yes,No,No,Female
+Yes,No,No,1,2,Yes,45-49,White,Yes,No,Very good,6,No,No,No,Female
+No,No,No,30,15,Yes,55-59,Black,No,Yes,Good,16,No,No,No,Female
+Yes,No,No,15,0,Yes,70-74,White,No,Yes,Fair,5,No,No,No,Female
+No,No,No,0,5,No,65-69,White,No,Yes,Very good,6,No,No,Yes,Female
+No,No,No,0,1,No,65-69,Black,No,Yes,Very good,8,No,Yes,No,Female
+No,No,Yes,30,2,Yes,60-64,White,Yes,No,Poor,7,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,No,Good,7,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,No,Fair,8,No,No,No,Female
+Yes,No,No,0,30,No,65-69,White,No,Yes,Fair,4,No,No,No,Female
+Yes,No,No,0,3,No,45-49,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,Yes,0,0,No,70-74,White,No,No,Very good,8,No,No,No,Male
+No,No,No,0,0,No,50-54,Black,Yes,No,Good,8,No,No,No,Female
+Yes,No,No,30,5,Yes,75-79,White,No,No,Fair,8,No,No,No,Male
+No,No,No,0,0,No,40-44,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,0,Yes,80 or older,White,No,No,Fair,7,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,Yes,Male
+Yes,No,No,0,9,No,25-29,Black,No,Yes,Good,7,Yes,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,2,0,No,65-69,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,30,30,Yes,65-69,Black,No,Yes,Poor,7,No,No,Yes,Female
+No,No,No,2,0,No,65-69,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,No,0,0,No,65-69,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,60-64,Black,No,No,Very good,7,No,No,No,Female
+No,No,No,1,0,No,60-64,Black,No,No,Very good,8,No,No,No,Female
+Yes,No,No,0,7,No,55-59,Black,No,No,Good,7,Yes,No,No,Female
+No,No,No,0,0,No,70-74,Black,No,Yes,Very good,9,No,No,No,Male
+No,No,No,0,0,No,70-74,Black,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,1,0,No,65-69,White,No,Yes,Excellent,7,No,No,Yes,Male
+Yes,No,Yes,20,0,Yes,70-74,Black,Yes,Yes,Fair,6,No,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Good,6,No,Yes,No,Male
+No,No,No,0,5,Yes,40-44,Black,No,Yes,Fair,8,No,No,No,Female
+No,No,No,30,0,Yes,70-74,White,Yes,Yes,Fair,3,Yes,No,Yes,Male
+Yes,No,No,0,0,Yes,70-74,Black,No,No,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,10,No,No,No,Male
+Yes,No,Yes,21,5,Yes,65-69,White,No,Yes,Poor,8,Yes,No,No,Male
+No,No,No,0,0,Yes,70-74,Black,No,Yes,Fair,6,No,No,No,Female
+No,No,No,7,0,No,65-69,White,Yes,Yes,Fair,6,No,No,No,Female
+Yes,No,No,3,5,No,75-79,White,No,Yes,Good,7,No,No,Yes,Male
+Yes,No,No,0,28,No,55-59,Black,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,Yes,75-79,White,No,No,Fair,8,No,No,No,Female
+No,No,No,30,0,No,70-74,White,No,No,Poor,8,No,No,No,Female
+No,No,No,10,0,Yes,60-64,White,Yes,No,Poor,4,No,Yes,No,Female
+No,No,No,1,3,No,60-64,White,Yes,No,Good,8,No,Yes,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,0,0,No,30-34,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,0,20,No,70-74,Black,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,10,5,No,60-64,Black,No,No,Fair,5,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,8,Yes,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Fair,10,No,No,No,Male
+Yes,No,No,29,0,Yes,70-74,White,Yes,No,Fair,10,No,Yes,No,Male
+Yes,No,No,0,7,No,75-79,White,No,Yes,Good,8,No,No,Yes,Male
+No,No,No,0,0,No,70-74,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,2,0,Yes,70-74,Black,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,1,0,Yes,75-79,Black,No,No,Poor,12,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Very good,10,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Excellent,7,No,No,No,Male
+Yes,No,No,0,0,No,60-64,White,Yes,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,Yes,0,0,Yes,70-74,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,6,No,Yes,No,Male
+Yes,No,No,30,0,Yes,80 or older,White,No,Yes,Poor,10,No,Yes,Yes,Male
+Yes,No,No,0,5,No,55-59,White,No,Yes,Good,6,No,No,No,Male
+No,No,No,1,0,No,80 or older,Black,Yes,No,Good,8,No,No,No,Female
+No,No,No,5,0,Yes,80 or older,White,No,No,Good,7,No,No,Yes,Male
+No,No,No,5,0,No,75-79,White,No,No,Good,9,No,No,No,Female
+Yes,No,No,0,0,Yes,75-79,White,No,Yes,Fair,6,No,No,Yes,Male
+No,No,No,30,0,No,60-64,White,Yes,No,Fair,6,No,No,No,Male
+No,No,No,0,0,No,75-79,White,No,Yes,Very good,9,No,No,Yes,Male
+No,No,Yes,0,0,Yes,80 or older,White,Yes,Yes,Good,6,Yes,Yes,No,Female
+Yes,No,No,30,20,Yes,75-79,White,No,No,Poor,6,Yes,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,15,No,40-44,White,No,Yes,Very good,8,Yes,No,No,Female
+No,No,No,10,12,No,50-54,White,No,Yes,Very good,9,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,No,Very good,9,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,2,No,80 or older,White,No,Yes,Good,6,Yes,No,No,Female
+No,No,No,0,0,No,50-54,Black,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Excellent,6,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,7,Yes,No,No,Male
+Yes,No,No,0,0,No,60-64,Black,"No, borderline diabetes",No,Good,10,No,No,No,Male
+Yes,No,No,30,30,Yes,70-74,White,No,No,Fair,8,No,No,No,Male
+No,No,No,0,2,Yes,70-74,Black,No,No,Good,7,No,No,No,Female
+No,No,No,0,15,No,80 or older,White,No,Yes,Fair,7,No,No,No,Male
+No,No,Yes,30,0,Yes,80 or older,White,No,No,Fair,5,No,No,Yes,Female
+Yes,No,No,0,2,No,45-49,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,Yes,10,0,Yes,65-69,Black,Yes,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,35-39,White,No,No,Good,5,No,No,No,Male
+Yes,No,No,0,0,No,75-79,White,No,No,Good,8,No,No,No,Female
+No,No,No,2,4,No,18-24,Black,Yes,No,Fair,7,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,Yes,Yes,Good,7,Yes,No,No,Male
+Yes,No,No,3,0,No,60-64,Black,No,Yes,Fair,6,No,No,No,Male
+No,No,No,3,0,No,70-74,White,No,No,Fair,7,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,0,No,65-69,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,65-69,White,Yes,Yes,Very good,8,No,No,No,Male
+No,No,No,0,0,Yes,80 or older,Black,Yes,Yes,Fair,7,No,No,No,Female
+No,No,Yes,0,1,No,60-64,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,2,0,No,75-79,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,Yes,30,10,Yes,60-64,Black,No,No,Poor,18,Yes,No,No,Female
+No,No,No,2,4,No,35-39,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,2,2,Yes,80 or older,White,Yes,No,Fair,10,No,No,No,Male
+Yes,Yes,No,1,0,Yes,60-64,Black,No,No,Good,5,No,No,No,Male
+No,No,No,0,0,Yes,55-59,Black,No,No,Good,8,Yes,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Excellent,8,No,No,Yes,Female
+No,No,No,0,5,No,50-54,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,30,0,Yes,80 or older,White,No,No,Poor,10,No,No,No,Female
+No,No,No,5,8,Yes,75-79,White,No,Yes,Very good,7,Yes,No,No,Female
+Yes,No,No,0,30,No,75-79,White,No,No,Good,8,No,No,No,Male
+Yes,No,Yes,30,2,No,70-74,White,"No, borderline diabetes",No,Very good,6,No,No,Yes,Female
+Yes,No,No,0,0,Yes,70-74,Black,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,65-69,Black,No,Yes,Fair,6,No,No,No,Female
+Yes,No,No,15,5,Yes,75-79,White,No,No,Fair,3,Yes,No,Yes,Female
+Yes,No,No,20,15,No,60-64,White,Yes (during pregnancy),Yes,Good,9,No,No,No,Female
+No,No,No,5,0,No,60-64,Black,Yes,Yes,Good,15,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,Yes,Yes,Good,6,No,No,No,Female
+Yes,No,Yes,0,0,Yes,80 or older,White,No,Yes,Good,5,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,Yes,Yes,Fair,7,No,No,No,Male
+No,No,Yes,3,2,No,80 or older,Black,Yes,No,Fair,8,No,No,No,Female
+No,No,No,0,30,Yes,75-79,White,No,No,Good,3,No,No,Yes,Female
+No,No,No,0,0,No,80 or older,White,No,No,Good,8,No,No,No,Female
+No,No,No,1,0,No,60-64,Black,No,Yes,Fair,8,No,No,No,Female
+No,No,No,0,0,No,50-54,Black,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,0,3,No,40-44,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,20,0,Yes,75-79,Black,Yes,Yes,Fair,7,Yes,Yes,No,Female
+No,No,No,0,0,No,50-54,White,Yes,Yes,Excellent,8,No,No,No,Female
+No,No,No,3,0,No,80 or older,Black,No,No,Good,7,Yes,No,No,Female
+Yes,No,No,5,0,No,55-59,White,No,Yes,Good,6,No,No,No,Male
+No,No,No,0,30,No,65-69,White,No,Yes,Good,7,No,No,Yes,Male
+No,No,No,0,0,No,65-69,Black,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,30,0,No,80 or older,White,No,No,Poor,9,No,No,No,Male
+No,No,No,0,30,No,70-74,White,No,Yes,Good,7,No,No,No,Female
+Yes,Yes,No,0,7,No,75-79,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,65-69,White,Yes,Yes,Good,7,No,No,No,Male
+Yes,No,No,2,5,Yes,65-69,White,No,No,Fair,6,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,6,0,Yes,70-74,White,Yes,Yes,Fair,6,No,No,No,Female
+Yes,No,No,0,0,Yes,55-59,White,Yes,Yes,Very good,8,No,No,Yes,Female
+No,No,No,0,0,Yes,80 or older,White,Yes,Yes,Excellent,5,No,Yes,No,Female
+No,No,No,3,20,Yes,55-59,White,No,Yes,Good,8,No,No,Yes,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Excellent,6,No,No,Yes,Female
+No,No,No,14,1,No,75-79,White,No,Yes,Fair,7,No,No,No,Female
+Yes,No,No,3,3,No,70-74,White,No,No,Fair,7,No,No,No,Male
+No,No,No,0,0,No,75-79,Black,No,Yes,Very good,12,No,No,No,Female
+No,No,No,0,2,No,55-59,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,0,0,No,40-44,American Indian/Alaskan Native,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,No,Very good,8,Yes,No,No,Female
+No,No,No,0,0,No,65-69,White,No,No,Very good,7,No,No,No,Female
+No,No,No,0,0,Yes,80 or older,White,No,No,Fair,9,No,No,No,Female
+No,No,No,0,0,No,60-64,White,Yes,No,Good,7,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,No,Very good,8,No,No,Yes,Male
+No,No,No,0,0,No,80 or older,Black,No,No,Very good,7,No,No,No,Female
+Yes,Yes,No,0,0,No,30-34,White,No,No,Excellent,5,No,No,No,Male
+Yes,No,No,0,30,No,60-64,White,Yes,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,Yes,Yes,Very good,7,No,No,No,Male
+No,No,No,12,0,No,75-79,White,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Very good,8,No,No,No,Male
+No,No,Yes,0,0,No,80 or older,Black,No,No,Good,8,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Excellent,8,No,No,Yes,Male
+No,No,No,0,0,No,65-69,Other,No,Yes,Very good,8,Yes,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,10,0,No,80 or older,White,No,Yes,Good,9,No,No,No,Male
+Yes,No,Yes,2,30,Yes,55-59,Black,Yes,No,Poor,5,Yes,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,65-69,Black,No,Yes,Excellent,7,Yes,No,No,Female
+Yes,No,No,0,0,Yes,75-79,White,Yes,Yes,Very good,8,No,Yes,No,Female
+No,No,No,2,0,No,65-69,Black,Yes,No,Good,6,No,No,No,Female
+No,No,No,0,0,No,65-69,White,Yes,No,Good,8,No,No,No,Male
+No,No,No,30,0,Yes,55-59,Black,No,Yes,Fair,9,No,Yes,No,Female
+Yes,No,No,0,0,No,75-79,Black,No,Yes,Poor,8,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,No,Good,7,Yes,No,No,Male
+Yes,No,Yes,0,3,Yes,75-79,White,Yes,Yes,Good,8,Yes,Yes,No,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,"No, borderline diabetes",No,Good,7,No,No,No,Female
+No,No,No,0,0,No,80 or older,Black,Yes,No,Poor,8,No,Yes,No,Female
+Yes,No,No,2,1,No,40-44,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,10,3,No,55-59,Black,No,Yes,Good,5,No,No,No,Male
+No,No,No,0,0,No,50-54,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,0,0,No,50-54,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,30,No,80 or older,White,No,Yes,Fair,8,Yes,No,No,Female
+No,No,No,0,0,No,60-64,White,"No, borderline diabetes",Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,75-79,Other,Yes,Yes,Excellent,7,No,No,Yes,Male
+No,No,No,0,1,No,60-64,Black,Yes,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,No,Good,8,No,No,No,Female
+No,No,Yes,0,3,No,70-74,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,Yes,No,0,0,No,75-79,White,No,No,Very good,6,No,No,Yes,Male
+Yes,No,No,0,0,No,65-69,White,Yes,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,0,0,No,65-69,Other,No,No,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,50-54,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,0,No,75-79,White,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,0,15,No,70-74,White,Yes,Yes,Fair,7,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,Yes,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,70-74,White,No,Yes,Very good,5,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,2,No,40-44,White,No,Yes,Excellent,6,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,18,3,Yes,65-69,White,Yes,No,Fair,6,No,No,No,Female
+Yes,No,No,7,0,No,65-69,White,Yes,Yes,Fair,7,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,Yes,70-74,White,Yes,No,Good,7,No,Yes,No,Male
+Yes,No,No,0,0,Yes,70-74,Black,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,No,Good,9,No,No,Yes,Female
+No,No,No,0,0,No,65-69,Black,No,Yes,Good,8,No,No,No,Female
+No,No,No,3,0,No,70-74,Black,Yes,Yes,Good,6,No,No,No,Male
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Very good,7,No,No,Yes,Male
+No,No,No,0,0,No,60-64,White,Yes,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,18-24,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Good,7,No,No,Yes,Female
+Yes,Yes,No,0,0,No,80 or older,White,No,Yes,Good,8,No,No,Yes,Female
+Yes,No,No,0,0,No,80 or older,White,No,No,Very good,6,No,No,No,Female
+Yes,No,Yes,30,0,Yes,55-59,White,No,Yes,Poor,4,Yes,Yes,No,Male
+Yes,No,No,0,0,No,45-49,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Excellent,8,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,10,0,Yes,70-74,White,No,No,Fair,10,No,No,Yes,Male
+No,No,No,15,15,No,55-59,Black,Yes,No,Poor,5,No,Yes,No,Male
+No,No,No,0,0,No,65-69,Black,No,Yes,Good,9,No,No,No,Female
+No,No,No,30,10,Yes,45-49,Black,Yes,No,Poor,6,Yes,No,No,Female
+No,No,No,0,5,No,65-69,Black,No,Yes,Very good,6,Yes,No,No,Female
+No,No,No,0,0,No,18-24,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,1,0,No,65-69,White,Yes,Yes,Good,8,No,No,Yes,Male
+No,No,No,0,2,No,65-69,White,Yes,Yes,Very good,7,No,No,Yes,Female
+No,No,No,0,7,No,80 or older,White,Yes,Yes,Good,6,No,No,Yes,Female
+No,No,No,2,3,No,80 or older,Black,No,Yes,Fair,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,Yes,Good,10,No,No,Yes,Male
+No,No,No,0,0,Yes,80 or older,White,No,No,Very good,9,No,No,Yes,Female
+No,No,Yes,0,0,No,65-69,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,2,10,Yes,40-44,White,Yes,Yes,Fair,5,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Poor,6,No,Yes,Yes,Female
+No,No,No,0,14,No,70-74,White,No,Yes,Very good,9,No,No,No,Female
+Yes,No,No,2,0,No,50-54,Black,No,Yes,Poor,6,No,Yes,No,Male
+Yes,No,No,0,0,No,55-59,White,Yes,No,Excellent,10,No,No,No,Female
+Yes,No,No,0,0,No,65-69,Black,Yes,Yes,Good,6,No,No,No,Male
+No,No,No,0,0,No,60-64,Asian,Yes,Yes,Good,7,No,No,No,Female
+No,No,No,30,0,Yes,60-64,White,Yes,No,Good,7,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,No,Good,8,Yes,No,Yes,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,70-74,Black,Yes,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,65-69,Black,No,No,Good,6,No,No,No,Female
+No,No,No,4,0,No,65-69,White,No,Yes,Excellent,7,No,No,Yes,Female
+No,No,No,0,0,Yes,65-69,White,No,No,Good,5,No,No,No,Female
+No,No,No,0,0,Yes,70-74,White,No,Yes,Good,5,No,No,No,Male
+Yes,No,No,25,0,Yes,80 or older,White,No,Yes,Poor,8,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,30,Yes,60-64,White,Yes,Yes,Fair,6,No,Yes,No,Female
+No,No,No,0,0,Yes,65-69,White,Yes,Yes,Fair,9,No,Yes,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Good,8,No,No,Yes,Female
+Yes,Yes,No,7,0,No,65-69,White,No,Yes,Fair,8,No,No,Yes,Female
+Yes,No,No,0,0,Yes,80 or older,White,No,No,Very good,6,No,No,No,Female
+Yes,No,No,10,0,No,80 or older,Black,Yes,No,Good,6,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,No,Good,10,No,No,No,Female
+No,No,No,0,25,No,65-69,Black,No,Yes,Good,5,No,No,No,Female
+No,No,No,0,0,Yes,60-64,Black,No,No,Good,5,No,No,No,Female
+Yes,No,No,0,0,No,70-74,Black,No,No,Good,7,No,No,No,Female
+No,No,No,0,0,Yes,75-79,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,75-79,White,Yes,Yes,Excellent,7,No,No,No,Male
+No,No,No,7,0,Yes,30-34,Black,Yes,Yes,Fair,5,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,"No, borderline diabetes",Yes,Good,12,No,No,No,Male
+No,No,No,0,0,No,65-69,White,Yes,Yes,Fair,6,No,No,No,Male
+No,No,No,0,0,No,65-69,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,40-44,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,Yes,75-79,White,No,No,Good,8,Yes,No,Yes,Male
+No,No,Yes,0,0,No,75-79,White,No,Yes,Good,8,No,No,No,Male
+No,No,Yes,14,4,Yes,55-59,Black,No,No,Fair,6,No,No,No,Female
+No,No,No,0,10,No,35-39,White,"No, borderline diabetes",Yes,Good,8,No,No,No,Male
+No,No,No,0,0,Yes,75-79,White,Yes,No,Fair,8,Yes,No,No,Female
+No,No,Yes,2,30,No,70-74,Black,Yes,Yes,Good,4,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,Yes,Yes,Good,8,No,No,No,Male
+Yes,No,No,6,0,Yes,75-79,Black,Yes,No,Good,5,No,No,No,Female
+Yes,No,No,0,0,No,70-74,White,No,Yes,Very good,10,No,No,Yes,Male
+No,No,No,0,0,No,75-79,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,30,30,Yes,55-59,Black,No,Yes,Fair,1,Yes,No,No,Female
+No,No,No,25,30,Yes,55-59,Black,Yes,Yes,Poor,6,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Good,10,No,No,No,Male
+No,No,No,0,0,No,55-59,Black,No,No,Good,7,No,No,No,Male
+No,No,No,0,0,No,45-49,Black,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,Yes,Yes,Good,5,No,No,Yes,Female
+No,No,No,0,0,No,70-74,Black,Yes,No,Good,6,No,No,No,Female
+No,No,Yes,0,0,Yes,80 or older,Black,Yes,No,Fair,8,No,No,No,Female
+No,No,Yes,0,7,No,65-69,Black,Yes,Yes,Good,14,No,No,No,Female
+No,No,No,14,0,Yes,65-69,White,No,No,Poor,10,No,No,No,Male
+No,No,No,0,0,No,65-69,Black,No,Yes,Good,5,No,No,No,Female
+No,No,No,5,30,Yes,60-64,Black,Yes,No,Poor,7,No,No,No,Female
+Yes,No,No,1,0,No,80 or older,White,No,Yes,Good,6,No,No,No,Male
+No,No,No,0,0,Yes,80 or older,White,No,Yes,Fair,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,Black,Yes,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,Yes,65-69,White,No,No,Good,7,No,No,Yes,Female
+Yes,No,No,0,14,No,75-79,White,Yes,No,Good,8,No,Yes,No,Female
+Yes,No,Yes,15,0,Yes,60-64,White,No,Yes,Fair,6,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Excellent,7,Yes,No,No,Female
+No,No,No,0,0,No,60-64,White,No,No,Good,7,Yes,No,No,Female
+No,No,No,0,0,No,80 or older,Black,No,No,Good,7,Yes,No,No,Female
+No,No,No,0,0,No,50-54,White,Yes,No,Good,7,No,No,No,Male
+Yes,No,No,0,0,No,70-74,White,Yes,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Excellent,8,Yes,No,Yes,Female
+No,No,Yes,0,0,No,80 or older,White,Yes,Yes,Good,9,No,Yes,Yes,Female
+No,No,No,2,0,No,18-24,White,No,No,Good,9,Yes,No,No,Male
+No,No,No,8,10,Yes,55-59,Black,No,No,Fair,6,No,No,No,Female
+No,No,No,0,0,No,40-44,White,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,No,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,9,No,No,No,Female
+No,No,No,4,2,No,45-49,Black,No,No,Very good,5,No,No,No,Female
+No,No,No,2,0,No,60-64,White,No,Yes,Very good,8,No,Yes,No,Male
+Yes,No,No,15,0,No,75-79,White,No,Yes,Poor,10,No,No,Yes,Female
+No,No,Yes,0,0,Yes,80 or older,White,No,No,Fair,10,No,Yes,Yes,Female
+No,No,No,20,20,No,30-34,White,Yes,Yes,Fair,9,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,0,0,No,60-64,Black,No,Yes,Excellent,9,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Excellent,5,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,Yes,Yes,Very good,6,No,No,Yes,Male
+Yes,No,No,0,16,No,55-59,White,No,No,Very good,6,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,Yes,Yes,Fair,6,No,Yes,No,Female
+Yes,No,No,23,10,No,55-59,White,No,No,Very good,9,No,No,No,Female
+Yes,No,Yes,5,10,No,60-64,White,Yes,Yes,Fair,6,Yes,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,0,4,No,70-74,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,2,No,65-69,White,No,No,Very good,9,No,No,No,Female
+No,No,No,7,0,Yes,50-54,Black,Yes,Yes,Fair,8,No,No,No,Female
+Yes,No,Yes,30,0,Yes,75-79,White,Yes,Yes,Poor,7,Yes,No,No,Male
+No,No,No,0,0,Yes,55-59,White,No,Yes,Good,3,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Excellent,7,No,No,Yes,Female
+Yes,No,No,15,5,No,65-69,White,Yes,No,Good,7,No,No,No,Male
+Yes,No,No,0,0,No,70-74,Black,No,Yes,Excellent,9,No,No,No,Female
+Yes,No,Yes,2,10,Yes,65-69,Black,No,Yes,Fair,5,No,No,No,Female
+Yes,No,No,0,0,No,70-74,Hispanic,No,Yes,Good,7,No,No,Yes,Male
+Yes,No,No,0,0,No,70-74,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,0,No,55-59,Black,No,No,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,Yes,Yes,Very good,8,No,No,No,Female
+No,No,No,2,0,No,65-69,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,0,No,40-44,Black,Yes,No,Fair,7,No,No,No,Male
+No,No,No,0,18,Yes,75-79,White,"No, borderline diabetes",No,Good,6,Yes,No,Yes,Female
+Yes,No,No,0,30,Yes,80 or older,White,No,No,Poor,8,No,No,No,Female
+No,No,Yes,7,5,No,70-74,Black,No,Yes,Good,10,No,No,Yes,Female
+No,No,No,2,25,No,80 or older,White,No,Yes,Good,6,Yes,No,Yes,Female
+No,No,No,0,3,No,65-69,Black,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,0,0,Yes,80 or older,White,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,70-74,White,No,Yes,Good,7,No,No,Yes,Female
+Yes,No,No,30,0,Yes,80 or older,White,Yes,No,Poor,8,No,No,No,Male
+No,No,Yes,0,0,Yes,75-79,White,No,No,Fair,6,No,Yes,No,Male
+No,No,Yes,30,30,Yes,80 or older,Black,Yes,No,Poor,6,No,Yes,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Excellent,6,No,No,Yes,Male
+Yes,No,Yes,26,30,Yes,75-79,Black,Yes,No,Poor,5,No,No,No,Female
+No,No,Yes,25,0,Yes,80 or older,White,Yes,Yes,Fair,7,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,0,2,No,60-64,Other,Yes,Yes,Good,6,Yes,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,Yes,80 or older,White,No,Yes,Good,6,No,No,No,Male
+No,No,No,0,0,No,65-69,Black,No,Yes,Good,6,No,Yes,No,Female
+No,No,No,0,0,No,80 or older,White,No,No,Good,8,No,No,No,Female
+No,No,Yes,14,0,No,70-74,Black,"No, borderline diabetes",Yes,Fair,8,No,No,No,Female
+Yes,No,No,0,30,Yes,70-74,White,No,No,Fair,6,No,No,Yes,Male
+No,No,No,0,0,No,80 or older,White,No,No,Very good,8,No,No,No,Male
+No,No,No,1,0,Yes,80 or older,White,No,No,Good,8,No,No,No,Female
+Yes,No,No,10,5,Yes,80 or older,Black,Yes,Yes,Fair,6,No,No,No,Female
+No,No,No,7,0,No,65-69,Black,No,Yes,Good,5,No,No,No,Female
+No,No,No,0,7,No,18-24,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,70-74,White,No,Yes,Excellent,7,No,No,Yes,Male
+No,No,No,0,2,No,65-69,Black,Yes,Yes,Good,6,Yes,No,No,Female
+No,No,Yes,0,0,No,70-74,White,Yes,No,Very good,10,No,No,No,Male
+No,No,No,0,0,No,55-59,Black,No,Yes,Excellent,7,No,No,No,Female
+Yes,Yes,No,0,30,No,60-64,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,Yes,4,2,Yes,60-64,Black,Yes,Yes,Fair,5,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,No,Good,8,No,No,No,Male
+Yes,No,No,20,0,Yes,80 or older,White,Yes,No,Good,10,No,No,Yes,Female
+Yes,No,No,0,0,No,60-64,White,No,No,Fair,9,No,No,No,Female
+No,No,No,0,5,No,40-44,Black,No,No,Good,7,No,No,No,Female
+No,No,No,0,4,No,55-59,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,1,0,No,50-54,White,No,Yes,Fair,8,Yes,No,No,Female
+Yes,No,No,10,20,No,65-69,Black,Yes,Yes,Fair,8,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,1,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,30,0,Yes,70-74,White,Yes,No,Good,6,Yes,No,No,Female
+No,No,No,0,0,No,70-74,Black,Yes,No,Excellent,7,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,No,Very good,8,No,No,No,Female
+Yes,No,No,3,3,Yes,80 or older,White,No,No,Good,10,Yes,No,No,Male
+Yes,No,No,30,0,Yes,75-79,Black,No,No,Fair,6,No,No,No,Female
+No,No,No,7,0,No,80 or older,White,No,No,Good,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,9,No,No,No,Male
+Yes,No,No,30,15,Yes,75-79,White,No,No,Fair,8,No,No,Yes,Male
+No,No,No,30,0,Yes,55-59,White,No,Yes,Good,10,No,No,No,Male
+No,No,No,0,0,Yes,70-74,White,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,30,15,Yes,65-69,White,No,No,Fair,8,No,No,No,Female
+Yes,No,No,0,0,No,50-54,White,No,No,Very good,7,No,No,No,Female
+Yes,No,No,0,20,No,50-54,Black,No,No,Good,4,No,No,No,Female
+No,No,No,20,0,Yes,55-59,Black,No,Yes,Fair,7,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Excellent,8,No,No,Yes,Male
+Yes,No,No,2,0,No,80 or older,White,No,Yes,Good,7,No,No,Yes,Male
+No,No,No,0,30,No,75-79,White,No,No,Very good,8,No,No,Yes,Female
+No,No,No,0,25,No,40-44,Other,Yes (during pregnancy),Yes,Good,8,Yes,No,No,Female
+Yes,No,No,0,4,No,80 or older,Black,No,Yes,Good,9,No,No,No,Female
+Yes,No,No,30,0,Yes,70-74,White,No,No,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Excellent,8,No,Yes,Yes,Male
+Yes,No,No,0,30,No,75-79,White,No,No,Very good,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,8,No,No,Yes,Female
+No,No,No,20,30,No,40-44,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,5,4,Yes,80 or older,White,No,No,Good,8,Yes,No,Yes,Female
+Yes,No,No,5,0,No,80 or older,Black,No,Yes,Very good,7,No,No,No,Female
+Yes,No,Yes,15,30,Yes,50-54,White,Yes,Yes,Fair,7,No,Yes,Yes,Female
+Yes,No,Yes,0,0,No,75-79,White,No,Yes,Poor,8,No,Yes,Yes,Female
+No,No,No,30,0,Yes,80 or older,White,Yes,No,Good,8,No,No,No,Female
+No,No,Yes,2,0,Yes,80 or older,White,No,No,Good,7,No,No,Yes,Female
+Yes,No,No,30,0,No,80 or older,White,No,No,Poor,6,No,No,No,Male
+Yes,No,No,0,0,Yes,80 or older,Black,No,No,Very good,8,No,No,No,Female
+Yes,No,No,5,5,No,65-69,Black,Yes,No,Fair,7,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,No,Fair,6,No,No,Yes,Male
+Yes,No,No,10,1,Yes,65-69,White,Yes,Yes,Fair,5,No,No,No,Female
+No,No,No,7,0,Yes,65-69,Black,Yes,No,Fair,6,No,Yes,No,Female
+No,No,No,1,4,No,80 or older,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,20,No,45-49,White,No,No,Very good,6,No,No,No,Female
+Yes,No,No,5,4,No,75-79,White,Yes,Yes,Good,8,Yes,No,No,Male
+No,No,Yes,0,0,No,75-79,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,Yes,Yes,Very good,8,Yes,No,No,Male
+Yes,No,No,14,3,Yes,60-64,White,Yes,Yes,Fair,6,No,No,Yes,Female
+Yes,No,No,20,4,Yes,65-69,Black,No,No,Fair,6,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,Black,"No, borderline diabetes",No,Very good,8,No,No,No,Male
+No,No,No,0,2,No,50-54,Black,No,No,Good,7,No,No,No,Female
+Yes,No,No,0,0,No,65-69,Black,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,6,0,Yes,50-54,White,Yes,No,Fair,8,No,No,No,Female
+Yes,Yes,No,0,4,No,75-79,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,3,No,65-69,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,1,0,Yes,60-64,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,18-24,Black,No,No,Very good,6,Yes,No,No,Male
+No,No,Yes,3,3,No,65-69,Black,No,Yes,Fair,8,No,No,No,Female
+No,No,No,0,0,No,80 or older,Black,No,Yes,Fair,7,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,15,Yes,65-69,Black,No,Yes,Fair,4,No,No,No,Female
+No,No,No,6,0,No,35-39,Black,No,Yes,Fair,7,Yes,Yes,No,Female
+Yes,No,No,0,0,Yes,65-69,Black,Yes,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,5,No,70-74,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,10,2,No,75-79,White,No,Yes,Fair,7,No,No,No,Male
+No,No,No,10,0,Yes,75-79,Black,No,No,Fair,10,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Fair,8,No,No,No,Male
+Yes,No,No,15,20,Yes,75-79,White,Yes,Yes,Fair,6,No,Yes,Yes,Female
+No,No,Yes,7,0,No,35-39,Black,No,Yes,Very good,7,Yes,No,No,Female
+No,No,No,0,0,Yes,80 or older,White,No,Yes,Good,9,No,No,No,Female
+No,No,No,0,10,Yes,80 or older,American Indian/Alaskan Native,No,Yes,Good,5,No,No,No,Female
+No,No,No,30,0,No,55-59,White,No,Yes,Good,4,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,No,Good,8,Yes,No,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,Yes,20,20,Yes,75-79,White,Yes,No,Fair,10,Yes,No,No,Male
+Yes,No,No,0,0,No,70-74,White,Yes,Yes,Very good,7,No,Yes,Yes,Male
+No,No,No,0,0,No,18-24,Black,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,4,2,No,60-64,Black,Yes,Yes,Good,10,No,No,No,Female
+Yes,No,No,0,0,No,80 or older,White,Yes,Yes,Very good,8,No,No,Yes,Female
+Yes,No,No,0,0,No,70-74,Black,No,Yes,Very good,6,No,No,No,Female
+No,No,No,15,0,No,75-79,White,Yes,No,Poor,9,No,Yes,No,Female
+No,No,No,1,0,Yes,60-64,Black,No,No,Fair,8,No,No,No,Female
+No,No,No,0,1,Yes,80 or older,White,Yes,Yes,Fair,8,No,No,Yes,Male
+Yes,No,No,0,0,No,30-34,White,No,No,Excellent,8,Yes,No,No,Male
+No,No,No,7,0,No,70-74,Black,Yes,Yes,Fair,6,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,Yes,70-74,Black,No,Yes,Good,9,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,14,No,80 or older,Other,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,0,0,No,60-64,Black,Yes,Yes,Fair,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,3,No,65-69,Black,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,20,No,70-74,White,No,No,Good,7,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,No,Yes,Good,6,No,No,No,Male
+No,No,No,10,0,Yes,70-74,Asian,No,No,Fair,5,Yes,No,No,Male
+Yes,No,No,0,1,No,65-69,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,30,No,75-79,White,No,Yes,Good,8,No,No,Yes,Female
+Yes,No,No,0,3,No,45-49,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,9,No,No,No,Female
+Yes,No,Yes,0,15,No,65-69,American Indian/Alaskan Native,No,Yes,Very good,4,No,No,No,Female
+Yes,Yes,No,2,15,No,70-74,White,No,Yes,Very good,8,No,No,Yes,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,No,2,0,No,65-69,Black,Yes,Yes,Good,4,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,Yes,Yes,Good,8,No,No,No,Male
+Yes,No,No,0,0,No,50-54,White,No,No,Fair,8,No,No,No,Male
+No,No,No,0,0,No,75-79,White,No,No,Excellent,8,No,No,Yes,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Good,8,No,No,No,Female
+No,No,No,30,0,Yes,55-59,Black,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,75-79,White,Yes,No,Excellent,12,No,No,No,Female
+No,No,No,20,15,No,50-54,White,No,No,Fair,8,No,No,No,Female
+No,No,No,0,30,No,50-54,White,Yes (during pregnancy),No,Good,6,No,No,No,Female
+No,No,No,3,5,No,25-29,White,No,Yes,Good,4,No,No,No,Male
+No,No,No,30,0,Yes,70-74,White,No,Yes,Fair,8,Yes,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Excellent,10,No,No,No,Female
+Yes,No,No,0,0,No,25-29,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,45-49,Black,Yes,No,Good,7,Yes,No,No,Female
+Yes,No,No,0,2,No,75-79,White,Yes,Yes,Very good,6,No,No,No,Female
+Yes,No,No,7,0,No,35-39,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,55-59,White,Yes,Yes,Very good,6,No,No,No,Male
+Yes,No,No,30,7,Yes,50-54,White,No,No,Fair,5,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,Yes,Male
+Yes,No,No,0,0,No,35-39,Other,No,No,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,50-54,Asian,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,2,0,No,50-54,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,No,Excellent,8,No,No,No,Female
+Yes,No,No,0,20,No,30-34,White,No,Yes,Very good,5,No,No,No,Female
+No,No,No,0,0,No,80 or older,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,21,5,Yes,55-59,White,Yes,No,Poor,7,No,No,No,Female
+No,No,No,0,0,No,18-24,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,55-59,American Indian/Alaskan Native,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,5,No,18-24,Black,No,Yes,Fair,5,No,No,No,Male
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,28,30,Yes,60-64,White,No,No,Poor,8,No,No,No,Female
+No,No,No,0,0,No,35-39,White,No,Yes,Good,5,No,No,No,Male
+No,No,No,0,0,No,18-24,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,40-44,Black,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,30-34,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,No,Very good,8,No,No,No,Female
+No,No,No,10,0,No,40-44,White,No,Yes,Good,6,No,No,No,Male
+No,No,No,0,0,No,55-59,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,No,Very good,6,No,No,No,Female
+No,No,No,0,0,Yes,70-74,White,No,No,Fair,6,No,No,No,Male
+No,No,No,5,5,No,40-44,White,No,Yes,Good,6,No,No,No,Female
+Yes,Yes,No,0,5,No,50-54,White,Yes,Yes,Good,8,Yes,No,No,Female
+No,No,No,30,0,No,65-69,White,No,Yes,Poor,6,No,No,Yes,Male
+Yes,No,No,0,0,No,30-34,White,No,Yes,Very good,10,No,Yes,No,Female
+No,No,No,0,1,No,18-24,White,No,Yes,Very good,5,No,No,No,Female
+No,No,No,0,1,No,45-49,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,5,No,25-29,Black,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,No,Good,7,No,No,Yes,Male
+Yes,No,No,3,0,No,25-29,White,No,Yes,Very good,6,Yes,No,No,Female
+No,No,No,2,5,No,40-44,White,No,No,Fair,7,No,No,No,Female
+No,No,No,0,7,No,18-24,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,0,No,55-59,Black,Yes,No,Fair,6,No,No,No,Female
+No,No,No,0,5,Yes,40-44,Black,No,No,Fair,7,No,No,No,Male
+No,No,Yes,20,0,Yes,55-59,White,Yes,No,Fair,6,Yes,Yes,Yes,Male
+No,No,No,0,20,No,45-49,White,No,Yes,Good,10,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Very good,9,No,No,No,Female
+Yes,No,Yes,5,5,No,65-69,Black,No,No,Fair,6,No,No,No,Male
+No,No,No,0,0,No,70-74,Black,No,No,Good,6,No,No,No,Female
+No,No,No,5,10,No,35-39,White,No,Yes,Fair,5,No,No,No,Female
+Yes,No,No,0,30,No,45-49,White,No,Yes,Good,5,No,No,No,Female
+No,No,No,3,0,No,55-59,Black,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,0,0,No,70-74,White,Yes,Yes,Good,8,No,No,No,Male
+Yes,No,No,3,15,No,45-49,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,75-79,White,No,No,Good,14,No,No,No,Male
+Yes,No,No,0,0,No,30-34,White,No,Yes,Excellent,6,No,No,No,Female
+No,No,Yes,3,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Good,7,Yes,No,No,Female
+Yes,No,No,7,1,Yes,55-59,White,Yes,No,Fair,8,Yes,Yes,No,Female
+Yes,No,No,5,7,Yes,70-74,White,No,No,Poor,9,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,3,No,65-69,White,Yes,No,Good,6,No,Yes,No,Female
+Yes,No,No,30,15,Yes,40-44,Hispanic,Yes,No,Fair,7,Yes,No,No,Male
+Yes,No,No,30,30,Yes,50-54,White,No,No,Fair,16,No,No,No,Female
+Yes,No,No,1,2,No,30-34,White,No,Yes,Very good,6,No,No,No,Male
+No,No,No,4,3,No,18-24,Black,No,Yes,Good,6,Yes,No,No,Male
+No,No,Yes,30,0,No,60-64,White,No,Yes,Poor,8,No,Yes,Yes,Female
+Yes,No,No,0,0,Yes,45-49,White,No,No,Poor,8,No,No,No,Female
+No,No,No,0,0,No,30-34,Hispanic,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,0,0,No,18-24,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,0,0,No,35-39,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,2,0,No,65-69,White,Yes,Yes,Good,6,No,No,No,Male
+No,No,No,4,14,Yes,75-79,White,No,No,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,30-34,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,Yes,Yes,Good,7,No,No,No,Male
+No,No,No,0,2,No,55-59,White,No,No,Very good,6,No,No,No,Male
+Yes,No,No,3,0,Yes,60-64,White,No,Yes,Fair,8,No,No,No,Male
+Yes,No,No,0,0,No,50-54,White,No,Yes,Good,7,No,No,No,Male
+Yes,No,No,2,0,No,35-39,Black,No,No,Excellent,8,No,No,No,Male
+No,No,No,5,0,Yes,50-54,White,No,No,Good,8,Yes,No,No,Female
+Yes,No,No,3,14,Yes,40-44,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,7,No,18-24,White,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,0,10,No,65-69,White,No,No,Excellent,6,No,No,No,Male
+No,No,No,2,0,No,70-74,Black,Yes,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,30,30,Yes,50-54,White,No,Yes,Poor,7,Yes,No,No,Female
+No,No,No,30,0,Yes,75-79,White,No,Yes,Poor,8,No,No,No,Male
+No,No,No,0,0,No,45-49,Black,No,No,Good,7,No,No,No,Female
+Yes,No,Yes,10,0,Yes,65-69,White,Yes,No,Fair,7,Yes,No,No,Female
+No,Yes,No,15,0,Yes,65-69,Black,No,No,Poor,7,No,No,No,Male
+No,No,No,21,21,No,18-24,Other,No,Yes,Good,8,Yes,No,No,Male
+No,No,Yes,14,10,Yes,65-69,Black,No,No,Poor,12,Yes,No,No,Female
+Yes,No,No,0,5,No,18-24,Black,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,30,3,No,65-69,Black,No,No,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,70-74,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,4,No,55-59,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Good,6,No,No,No,Male
+No,No,No,14,30,Yes,60-64,Black,No,No,Poor,8,No,No,No,Female
+No,No,No,2,0,Yes,65-69,Black,Yes,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,70-74,Hispanic,No,No,Very good,12,No,No,Yes,Female
+No,No,No,0,0,No,70-74,Black,No,Yes,Good,7,No,No,No,Male
+Yes,No,No,0,0,No,75-79,White,No,No,Good,7,No,No,No,Male
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,3,2,No,65-69,Black,Yes,Yes,Fair,6,No,No,No,Female
+No,No,No,0,10,No,70-74,White,Yes,Yes,Good,7,No,No,Yes,Female
+Yes,No,No,3,0,No,70-74,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,10,10,Yes,65-69,Black,"No, borderline diabetes",No,Fair,6,Yes,No,No,Female
+Yes,No,No,30,0,Yes,60-64,White,"No, borderline diabetes",No,Poor,3,Yes,No,No,Female
+Yes,No,No,15,25,Yes,55-59,White,No,No,Fair,6,No,No,No,Female
+Yes,No,No,0,0,No,50-54,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,15,20,No,50-54,Black,No,No,Very good,15,No,No,No,Female
+Yes,No,No,0,0,Yes,75-79,Black,Yes,No,Very good,8,No,No,No,Male
+No,No,No,0,0,No,40-44,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,50-54,Black,No,No,Fair,6,No,No,No,Male
+Yes,No,No,0,0,No,50-54,White,No,Yes,Very good,8,No,Yes,No,Female
+No,No,No,2,0,No,70-74,White,No,No,Very good,8,No,No,Yes,Female
+No,No,No,0,2,No,50-54,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,2,No,25-29,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,0,3,No,30-34,White,No,Yes,Excellent,8,Yes,No,No,Female
+No,No,No,3,0,No,65-69,Black,Yes,No,Fair,7,No,No,No,Female
+No,No,No,0,5,No,45-49,White,Yes (during pregnancy),Yes,Excellent,7,No,No,No,Female
+Yes,No,No,15,30,No,50-54,White,Yes,No,Good,5,No,No,No,Female
+No,No,No,2,0,No,75-79,White,No,Yes,Fair,7,No,No,Yes,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,8,No,Yes,No,Male
+No,No,No,0,30,No,18-24,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Good,7,Yes,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,0,0,No,18-24,Black,No,No,Excellent,8,No,No,No,Female
+Yes,No,No,0,25,No,40-44,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,15,Yes,45-49,White,No,Yes,Fair,6,Yes,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,65-69,White,Yes,Yes,Very good,6,No,No,No,Female
+No,No,No,0,1,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,2,0,No,55-59,Black,No,No,Excellent,8,No,No,No,Female
+No,No,No,0,5,No,18-24,White,No,Yes,Very good,7,Yes,No,No,Female
+Yes,No,No,0,0,No,45-49,Other,No,Yes,Very good,5,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Very good,8,No,No,No,Male
+No,Yes,No,0,0,No,30-34,Black,No,Yes,Fair,6,No,No,No,Female
+Yes,No,No,7,10,Yes,40-44,White,No,Yes,Very good,4,No,No,No,Female
+No,No,No,7,0,No,25-29,Black,No,Yes,Fair,9,No,No,No,Female
+Yes,No,No,0,0,No,50-54,White,No,Yes,Fair,7,No,No,No,Male
+No,No,No,0,4,No,45-49,Black,No,Yes,Very good,6,No,No,No,Male
+Yes,Yes,No,1,1,No,45-49,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,5,No,25-29,White,No,Yes,Very good,7,Yes,No,No,Male
+Yes,No,Yes,1,0,Yes,50-54,White,Yes,No,Fair,5,No,No,No,Male
+Yes,No,No,0,2,No,45-49,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,2,5,No,45-49,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,25-29,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,0,No,70-74,White,Yes,Yes,Excellent,9,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,No,Excellent,8,No,No,No,Male
+No,No,No,2,0,No,50-54,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,0,0,No,60-64,Black,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,0,No,40-44,Black,No,Yes,Fair,8,No,No,No,Male
+Yes,No,No,0,3,Yes,75-79,White,No,Yes,Good,9,No,No,No,Female
+Yes,No,No,0,0,No,35-39,Black,Yes (during pregnancy),Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,35-39,White,No,No,Excellent,8,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,Yes,Yes,Fair,7,No,Yes,No,Male
+Yes,No,No,0,0,No,65-69,White,Yes,Yes,Very good,8,No,No,No,Male
+Yes,No,Yes,30,1,Yes,45-49,Black,Yes,No,Poor,6,No,No,No,Female
+Yes,Yes,No,5,15,No,18-24,Black,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,1,1,No,45-49,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,30,30,Yes,45-49,Black,No,No,Excellent,3,No,No,No,Female
+No,No,No,7,15,Yes,65-69,Black,Yes,Yes,Fair,8,No,No,No,Male
+No,No,No,30,30,No,70-74,White,No,No,Fair,6,No,No,Yes,Female
+Yes,Yes,No,7,0,No,35-39,White,No,Yes,Good,6,Yes,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Very good,6,No,No,No,Male
+Yes,Yes,No,0,0,No,40-44,White,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,30,0,Yes,70-74,Black,Yes,Yes,Fair,8,No,No,No,Female
+No,No,No,0,0,No,60-64,White,No,No,Good,4,No,No,No,Female
+No,No,No,0,0,No,35-39,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,0,No,60-64,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,35-39,Black,Yes,Yes,Poor,7,No,No,No,Male
+Yes,No,No,0,0,Yes,75-79,White,No,No,Good,8,No,Yes,No,Female
+No,No,No,0,0,No,75-79,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,No,Very good,5,No,No,No,Male
+No,No,No,0,5,No,30-34,Black,No,Yes,Very good,7,No,No,No,Female
+No,No,No,2,0,No,50-54,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,No,Very good,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,14,No,No,No,Female
+Yes,No,No,2,0,No,75-79,White,No,Yes,Excellent,7,No,No,Yes,Male
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Excellent,8,No,No,Yes,Male
+Yes,Yes,No,5,0,No,60-64,Black,No,No,Fair,7,Yes,No,No,Male
+Yes,No,No,0,5,No,25-29,White,No,No,Very good,7,No,No,No,Female
+No,No,No,0,14,Yes,25-29,Black,No,No,Fair,9,No,No,No,Female
+Yes,No,No,1,2,No,18-24,White,No,No,Very good,7,No,No,No,Male
+Yes,Yes,No,10,30,No,65-69,White,Yes,No,Fair,6,No,No,No,Male
+No,No,No,0,0,No,18-24,Black,No,Yes,Excellent,9,Yes,No,No,Male
+No,No,No,0,5,No,50-54,White,"No, borderline diabetes",No,Very good,6,No,No,No,Female
+No,No,No,30,0,No,70-74,White,No,Yes,Very good,8,No,No,Yes,Female
+No,No,No,1,0,No,55-59,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,2,No,55-59,Black,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,0,No,35-39,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,45-49,Black,No,No,Good,8,No,No,No,Female
+No,No,No,7,20,Yes,40-44,White,No,No,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,35-39,Black,No,No,Very good,6,No,No,No,Male
+Yes,No,No,0,5,No,35-39,White,No,Yes,Excellent,7,No,No,No,Male
+Yes,No,No,0,0,No,60-64,White,No,Yes,Very good,6,No,No,No,Male
+No,No,No,0,0,No,40-44,Black,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,3,0,No,65-69,White,"No, borderline diabetes",Yes,Good,7,No,No,Yes,Male
+No,No,No,30,0,Yes,25-29,Black,No,Yes,Poor,4,No,No,No,Male
+Yes,No,No,0,15,No,30-34,White,Yes,No,Good,5,Yes,No,No,Female
+No,No,No,0,0,Yes,70-74,White,No,No,Fair,8,No,No,No,Female
+No,No,No,0,0,No,18-24,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,30,0,No,70-74,White,No,Yes,Fair,8,No,No,No,Female
+No,No,No,0,0,No,75-79,White,Yes,Yes,Good,7,No,No,Yes,Female
+Yes,No,No,30,30,Yes,70-74,American Indian/Alaskan Native,Yes,No,Poor,5,No,No,Yes,Male
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,Yes,0,30,No,40-44,Other,No,Yes,Fair,5,No,No,No,Male
+No,No,No,0,0,No,18-24,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,25,2,No,55-59,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,0,0,No,30-34,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,2,No,35-39,White,No,Yes,Good,5,Yes,No,No,Male
+Yes,No,Yes,21,0,No,70-74,White,No,No,Good,6,No,No,Yes,Female
+Yes,No,Yes,4,2,Yes,55-59,Black,Yes,Yes,Fair,8,Yes,No,No,Male
+No,No,No,0,5,No,30-34,White,No,Yes,Very good,6,Yes,No,No,Male
+Yes,No,Yes,12,0,No,70-74,White,Yes,Yes,Fair,9,No,Yes,No,Male
+No,No,No,0,0,No,40-44,Black,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,3,0,No,60-64,White,No,Yes,Good,7,No,No,Yes,Male
+Yes,No,No,0,0,No,35-39,Black,Yes (during pregnancy),Yes,Excellent,6,No,No,No,Female
+Yes,No,Yes,6,10,No,55-59,Black,Yes,Yes,Good,6,No,No,No,Male
+No,No,No,0,1,No,30-34,Black,No,No,Good,7,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,0,30,No,18-24,White,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,0,15,No,30-34,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,7,0,No,40-44,White,No,No,Very good,8,No,No,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,20,No,18-24,Hispanic,No,Yes,Good,6,No,No,No,Female
+No,No,No,20,0,Yes,70-74,Black,No,Yes,Fair,4,Yes,No,No,Female
+Yes,No,No,4,0,No,65-69,White,No,Yes,Good,12,No,No,No,Male
+Yes,No,No,0,0,Yes,55-59,Asian,Yes,Yes,Fair,6,No,No,No,Male
+Yes,No,No,5,0,No,60-64,Black,No,No,Fair,8,No,No,No,Male
+No,No,No,5,29,No,25-29,White,No,Yes,Fair,6,No,No,No,Male
+Yes,No,No,0,0,No,70-74,White,No,Yes,Excellent,8,No,No,Yes,Female
+No,No,No,0,0,No,60-64,Black,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,0,0,No,60-64,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,30-34,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,3,0,No,18-24,White,"No, borderline diabetes",No,Good,5,No,No,No,Female
+Yes,No,No,10,5,No,70-74,Black,No,No,Poor,7,No,No,No,Male
+No,No,No,3,18,No,45-49,Black,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,7,No,No,No,Female
+Yes,Yes,No,1,2,No,45-49,White,No,No,Very good,6,No,No,No,Male
+No,No,No,0,0,No,70-74,Black,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,4,0,No,50-54,White,"No, borderline diabetes",Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,18-24,Black,No,No,Very good,8,No,No,No,Male
+Yes,No,No,0,0,No,55-59,White,No,No,Excellent,8,No,No,No,Male
+No,Yes,No,0,0,No,60-64,White,"No, borderline diabetes",Yes,Good,6,No,No,No,Male
+No,No,No,0,0,Yes,70-74,White,Yes,No,Very good,7,No,No,Yes,Male
+Yes,No,No,0,2,No,55-59,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,15,No,25-29,White,Yes,No,Fair,6,No,No,No,Female
+No,No,No,14,30,Yes,25-29,Black,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,0,0,No,35-39,Black,No,Yes,Excellent,8,No,No,No,Female
+Yes,No,No,4,1,No,50-54,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,5,No,18-24,White,No,No,Good,6,No,No,No,Female
+Yes,No,No,15,8,No,18-24,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,1,5,No,40-44,Black,No,Yes,Very good,6,No,No,No,Female
+No,No,Yes,6,0,Yes,70-74,White,Yes,No,Very good,9,No,No,No,Male
+No,No,No,1,0,No,70-74,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,10,No,18-24,White,No,Yes,Good,5,Yes,No,No,Male
+No,No,No,0,0,Yes,75-79,Black,Yes,No,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Excellent,8,No,No,No,Female
+Yes,Yes,No,0,0,No,70-74,White,No,No,Very good,7,No,No,Yes,Male
+No,No,No,0,0,No,40-44,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,4,No,50-54,White,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,1,5,No,35-39,White,No,No,Good,6,No,No,No,Male
+No,No,Yes,30,28,Yes,60-64,Black,No,No,Poor,5,Yes,No,No,Male
+Yes,No,Yes,30,18,Yes,60-64,White,No,No,Poor,4,Yes,No,No,Male
+Yes,No,No,0,30,No,25-29,White,No,Yes,Poor,6,No,No,No,Male
+No,No,No,3,0,No,75-79,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,45-49,Black,Yes,Yes,Good,7,Yes,No,No,Male
+No,No,No,3,0,No,40-44,White,No,Yes,Very good,7,Yes,No,No,Female
+No,No,No,0,0,No,65-69,Black,Yes,No,Good,18,No,No,No,Female
+No,No,No,3,0,No,70-74,White,No,No,Very good,6,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,20,No,25-29,White,No,No,Excellent,10,No,No,No,Female
+Yes,No,No,0,0,Yes,60-64,White,No,No,Fair,8,No,No,No,Female
+Yes,No,Yes,0,15,No,45-49,White,No,No,Fair,7,No,No,No,Female
+No,Yes,No,1,1,No,30-34,White,No,No,Very good,8,No,No,No,Male
+No,No,No,7,0,Yes,60-64,Hispanic,No,No,Good,6,Yes,No,No,Female
+Yes,No,No,10,0,Yes,75-79,White,Yes,Yes,Fair,6,No,No,No,Male
+No,No,No,0,3,No,45-49,White,No,Yes,Very good,5,No,No,No,Female
+No,No,No,0,0,No,45-49,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,28,2,No,60-64,White,No,No,Fair,6,Yes,Yes,No,Female
+No,Yes,No,0,0,No,18-24,White,No,No,Excellent,6,No,No,No,Male
+Yes,No,No,0,0,No,60-64,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,0,No,40-44,White,No,Yes,Good,6,No,No,No,Female
+Yes,Yes,No,0,0,No,55-59,White,Yes,No,Good,6,No,No,No,Male
+Yes,No,No,0,0,No,75-79,White,No,Yes,Good,7,No,Yes,Yes,Male
+Yes,No,No,0,2,No,60-64,White,No,No,Good,7,No,No,No,Female
+No,No,No,1,0,No,45-49,White,No,Yes,Excellent,8,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Very good,4,No,No,No,Male
+Yes,No,No,3,2,Yes,65-69,White,Yes,Yes,Fair,5,No,No,No,Male
+Yes,No,No,30,30,Yes,70-74,White,Yes,No,Fair,8,No,No,No,Male
+Yes,No,No,10,0,Yes,60-64,White,"No, borderline diabetes",No,Good,8,No,No,No,Female
+Yes,No,No,1,6,No,80 or older,White,Yes,Yes,Very good,6,No,No,Yes,Male
+Yes,No,No,30,25,No,35-39,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,30,No,40-44,White,No,Yes,Very good,8,Yes,No,No,Male
+No,No,No,0,20,No,18-24,Black,No,Yes,Very good,3,No,No,No,Male
+Yes,No,No,0,0,No,70-74,White,Yes,No,Very good,9,No,No,No,Female
+Yes,No,No,30,2,No,55-59,White,No,No,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,30-34,White,No,Yes,Excellent,6,No,No,No,Male
+Yes,No,No,4,10,No,70-74,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,18-24,White,No,Yes,Good,8,Yes,No,No,Male
+No,No,No,0,0,No,35-39,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,0,Yes,45-49,Black,Yes,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,15,No,65-69,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,30,0,Yes,55-59,White,No,No,Good,4,No,No,No,Male
+Yes,No,No,0,0,No,35-39,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,Yes,4,5,Yes,60-64,White,No,No,Poor,6,No,No,No,Male
+No,No,No,5,5,No,60-64,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,50-54,Black,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,25-29,Black,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,2,0,No,25-29,White,No,Yes,Very good,7,No,No,No,Female
+No,Yes,No,0,15,No,30-34,Black,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,7,0,No,18-24,Black,No,Yes,Very good,7,Yes,No,No,Female
+No,No,No,0,0,No,40-44,White,No,Yes,Good,7,No,No,No,Male
+Yes,No,No,3,0,No,55-59,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Very good,7,No,No,Yes,Female
+Yes,No,No,15,0,Yes,80 or older,White,Yes,No,Fair,7,No,No,No,Male
+No,No,No,30,30,No,45-49,White,Yes,Yes,Poor,6,Yes,No,No,Female
+Yes,No,No,0,0,No,35-39,Black,No,No,Good,6,No,Yes,No,Male
+Yes,No,No,20,30,Yes,65-69,White,No,Yes,Fair,5,Yes,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,No,Very good,7,No,No,No,Female
+No,No,No,0,0,No,40-44,White,No,No,Fair,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,Black,No,Yes,Very good,12,No,No,No,Female
+Yes,No,No,5,0,No,35-39,White,No,No,Good,7,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,No,Good,7,No,No,No,Female
+No,No,No,0,0,No,75-79,White,Yes,Yes,Good,5,Yes,No,No,Female
+Yes,No,No,0,0,Yes,65-69,White,Yes,No,Good,5,No,No,No,Male
+No,No,No,0,0,No,40-44,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,7,0,No,30-34,Other,No,No,Fair,6,No,No,No,Male
+No,No,No,0,6,No,65-69,Other,No,No,Very good,7,No,No,No,Female
+Yes,No,No,30,15,No,60-64,White,No,No,Good,7,No,No,No,Male
+Yes,No,No,0,0,No,50-54,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,0,0,No,55-59,White,No,Yes,Excellent,7,No,No,Yes,Female
+No,No,No,3,15,No,30-34,Black,No,Yes,Fair,9,No,No,No,Female
+No,No,No,0,0,No,65-69,Black,No,Yes,Good,4,No,No,No,Female
+No,No,No,30,5,Yes,30-34,White,No,No,Poor,7,No,No,No,Male
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,8,No,No,Yes,Female
+Yes,No,No,0,2,No,50-54,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,14,0,No,55-59,White,No,Yes,Good,9,Yes,Yes,No,Female
+No,No,No,0,0,No,45-49,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,30,10,Yes,50-54,White,Yes,No,Good,7,No,No,No,Female
+Yes,No,No,0,30,No,25-29,White,Yes (during pregnancy),Yes,Very good,7,No,No,No,Female
+No,No,No,0,1,No,25-29,Hispanic,No,No,Very good,8,No,No,No,Female
+No,No,No,0,0,No,30-34,Black,No,No,Good,6,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,30,5,Yes,30-34,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,0,No,40-44,Other,No,No,Good,6,Yes,No,No,Male
+No,No,No,0,20,No,25-29,White,No,Yes,Very good,6,Yes,No,No,Female
+No,No,No,0,5,No,18-24,Black,No,Yes,Fair,6,No,No,No,Male
+Yes,No,No,0,0,No,60-64,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,1,0,No,80 or older,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,45-49,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,Yes,30,0,Yes,65-69,Black,Yes,Yes,Fair,7,No,No,No,Male
+Yes,No,No,30,5,Yes,75-79,White,No,No,Good,6,No,No,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,7,Yes,No,No,Female
+No,No,No,30,0,Yes,25-29,White,No,Yes,Poor,4,No,No,No,Male
+No,No,No,30,30,Yes,35-39,White,No,No,Poor,7,No,No,No,Female
+Yes,No,No,7,0,No,60-64,White,Yes,No,Fair,7,No,No,No,Male
+Yes,No,No,25,2,No,40-44,White,No,No,Very good,5,No,No,No,Female
+No,No,No,0,15,No,18-24,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,30,12,Yes,45-49,Black,No,No,Fair,6,No,Yes,No,Male
+Yes,No,No,0,0,No,45-49,White,No,Yes,Good,9,No,No,No,Male
+Yes,No,No,0,4,No,70-74,White,No,No,Very good,5,No,No,Yes,Female
+Yes,No,No,0,7,No,50-54,Other,Yes (during pregnancy),No,Good,9,Yes,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,30,No,18-24,White,No,Yes,Very good,5,No,No,No,Male
+Yes,No,No,0,0,No,35-39,White,No,Yes,Good,9,No,No,No,Male
+No,No,No,25,25,No,50-54,White,No,No,Good,5,No,No,Yes,Female
+Yes,No,No,10,0,No,50-54,White,No,Yes,Good,7,No,No,Yes,Female
+Yes,No,No,3,1,No,60-64,White,Yes,No,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,No,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,Yes,Yes,Good,6,No,No,No,Male
+No,No,No,0,0,No,45-49,Black,No,No,Good,7,No,No,No,Male
+Yes,No,No,5,30,Yes,35-39,Black,No,No,Good,5,No,No,No,Male
+Yes,No,No,2,0,No,50-54,Black,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,40-44,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,1,3,No,35-39,Black,No,Yes,Good,6,No,No,No,Male
+No,No,No,0,0,No,45-49,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,0,0,No,25-29,Black,No,Yes,Excellent,8,Yes,No,No,Male
+Yes,Yes,No,1,6,No,25-29,White,No,Yes,Very good,5,No,No,No,Female
+Yes,No,No,14,14,No,50-54,White,Yes,Yes,Good,6,No,No,No,Female
+Yes,Yes,No,0,7,No,55-59,Black,Yes,Yes,Good,12,No,No,No,Female
+No,No,No,0,10,No,35-39,White,No,No,Very good,8,No,No,No,Female
+No,No,No,0,10,No,30-34,Black,No,No,Very good,5,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,No,Very good,8,No,No,No,Female
+No,No,No,3,5,No,25-29,Black,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,2,No,25-29,White,No,Yes,Good,6,No,No,No,Female
+No,Yes,No,0,0,No,55-59,White,Yes,Yes,Good,8,No,No,Yes,Male
+Yes,No,No,5,0,Yes,40-44,Black,No,No,Fair,6,No,No,No,Male
+No,No,No,1,30,Yes,75-79,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,50-54,Black,No,Yes,Fair,7,No,No,No,Male
+No,No,No,0,0,No,60-64,Black,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,0,No,25-29,White,No,Yes,Excellent,5,No,No,No,Male
+No,No,No,0,0,No,75-79,White,No,Yes,Very good,5,No,No,Yes,Male
+Yes,No,No,15,5,Yes,50-54,American Indian/Alaskan Native,No,Yes,Good,5,No,No,No,Male
+Yes,No,No,0,0,No,35-39,White,No,Yes,Very good,4,No,No,Yes,Male
+Yes,No,No,30,3,Yes,50-54,White,No,No,Poor,8,No,No,No,Female
+No,No,No,2,0,No,60-64,White,No,Yes,Very good,6,Yes,No,Yes,Female
+No,No,No,0,10,Yes,65-69,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,15,15,Yes,60-64,Black,No,No,Fair,6,No,No,No,Male
+Yes,No,No,0,0,No,25-29,Black,No,No,Excellent,8,No,No,No,Female
+Yes,No,No,1,6,No,50-54,White,Yes (during pregnancy),Yes,Very good,6,No,No,No,Female
+No,No,No,0,0,No,35-39,Black,No,Yes,Excellent,7,No,No,No,Male
+Yes,No,No,8,0,No,45-49,Black,No,Yes,Fair,8,Yes,No,No,Female
+No,No,No,0,0,No,50-54,Other,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,0,No,65-69,Black,No,No,Fair,8,No,No,No,Male
+No,No,No,3,0,No,65-69,Black,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,65-69,Black,No,Yes,Very good,6,No,No,No,Female
+No,No,No,2,7,No,25-29,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,Yes,No,Very good,6,No,No,No,Female
+Yes,No,No,0,7,No,55-59,White,No,Yes,Fair,8,No,No,Yes,Female
+Yes,No,No,0,0,Yes,60-64,American Indian/Alaskan Native,No,Yes,Good,6,Yes,No,No,Male
+No,No,No,0,0,No,40-44,White,No,Yes,Excellent,8,No,No,Yes,Female
+No,No,Yes,0,0,No,65-69,Black,No,Yes,Very good,9,No,No,No,Female
+No,No,No,0,2,No,35-39,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,3,15,No,70-74,White,No,Yes,Very good,10,No,No,No,Female
+No,No,No,15,15,No,18-24,White,No,Yes,Fair,8,Yes,No,No,Female
+No,No,No,12,20,No,40-44,White,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,3,3,No,45-49,Black,No,Yes,Excellent,12,No,No,No,Male
+No,No,No,0,7,No,40-44,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Good,10,No,No,No,Male
+No,No,No,0,0,Yes,75-79,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,70-74,Black,"No, borderline diabetes",Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,18-24,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,15,No,50-54,Black,No,Yes,Very good,10,No,No,No,Female
+Yes,Yes,No,0,0,No,45-49,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,30,30,Yes,50-54,White,No,No,Poor,8,No,No,No,Male
+No,No,No,1,0,No,40-44,Black,"No, borderline diabetes",Yes,Fair,8,Yes,No,No,Female
+Yes,No,No,0,0,No,25-29,Black,No,Yes,Excellent,6,No,No,No,Male
+No,Yes,No,0,0,No,45-49,Hispanic,No,Yes,Very good,5,No,No,No,Male
+Yes,No,No,0,0,No,45-49,White,No,Yes,Fair,8,No,No,No,Male
+No,No,No,0,0,No,55-59,White,Yes,Yes,Very good,5,No,Yes,No,Male
+Yes,No,No,0,0,Yes,65-69,Black,No,Yes,Excellent,5,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Good,6,No,No,Yes,Male
+No,No,No,0,10,No,18-24,White,No,Yes,Very good,7,Yes,No,No,Male
+No,No,No,4,1,No,55-59,Black,No,No,Good,6,No,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,2,0,No,50-54,Black,Yes,No,Fair,6,No,Yes,No,Female
+No,No,No,2,0,No,60-64,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,Yes,35-39,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Good,9,Yes,No,No,Male
+Yes,No,No,3,0,Yes,55-59,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,40-44,Black,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,3,6,Yes,55-59,White,No,No,Very good,5,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,5,No,No,No,Male
+Yes,No,No,2,30,No,18-24,White,No,No,Very good,6,No,No,No,Female
+No,No,No,5,0,No,55-59,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Good,6,Yes,No,Yes,Male
+Yes,No,No,15,0,No,60-64,White,Yes,Yes,Fair,6,No,No,No,Female
+Yes,No,No,0,30,No,35-39,White,No,No,Good,3,No,No,No,Female
+Yes,No,No,0,0,No,75-79,Black,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,4,5,No,65-69,White,Yes,Yes,Good,5,No,Yes,No,Male
+No,No,No,2,0,No,45-49,White,No,Yes,Very good,6,No,No,No,Male
+No,No,No,7,15,No,30-34,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,1,No,45-49,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,0,5,No,30-34,Black,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,No,Good,7,No,No,No,Male
+Yes,No,No,0,0,No,65-69,American Indian/Alaskan Native,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,0,No,65-69,White,Yes,Yes,Good,8,No,No,No,Male
+No,No,No,0,15,No,18-24,Black,Yes (during pregnancy),Yes,Very good,6,Yes,No,No,Female
+No,No,No,30,5,No,25-29,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,2,0,No,35-39,White,No,Yes,Good,5,No,Yes,No,Female
+No,No,No,0,0,No,75-79,White,No,No,Good,8,No,No,No,Female
+No,No,No,4,0,No,50-54,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,25-29,Black,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,15,No,18-24,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Very good,6,No,No,No,Male
+No,No,No,6,10,No,35-39,White,No,Yes,Fair,6,No,No,No,Male
+Yes,No,No,0,0,No,50-54,Black,No,Yes,Fair,6,No,No,No,Female
+Yes,No,No,30,0,Yes,65-69,White,No,Yes,Poor,10,No,No,No,Male
+No,No,No,0,20,Yes,70-74,White,Yes,No,Poor,8,Yes,No,No,Female
+Yes,No,No,14,0,No,50-54,White,No,Yes,Excellent,8,No,No,Yes,Female
+No,No,No,0,0,Yes,70-74,White,"No, borderline diabetes",Yes,Very good,8,Yes,No,No,Female
+Yes,No,No,4,15,Yes,45-49,White,Yes,Yes,Good,6,No,No,No,Male
+No,No,No,0,0,No,45-49,White,No,Yes,Good,6,No,No,No,Male
+No,No,No,3,10,No,18-24,White,No,Yes,Very good,3,Yes,No,No,Male
+No,No,No,0,2,No,55-59,White,No,No,Good,8,No,No,No,Female
+No,No,No,25,0,Yes,65-69,White,Yes,No,Fair,8,No,Yes,Yes,Male
+Yes,No,No,7,0,No,75-79,White,No,Yes,Very good,10,No,No,No,Male
+No,No,No,0,0,No,55-59,Black,Yes,Yes,Good,8,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,1,2,No,35-39,Other,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,5,No,30-34,Black,No,Yes,Good,9,No,No,No,Female
+Yes,No,No,0,0,No,65-69,Black,No,Yes,Good,6,No,No,No,Male
+No,No,No,0,10,No,60-64,Black,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,40-44,White,No,Yes,Very good,9,No,No,No,Male
+No,No,Yes,25,5,Yes,60-64,White,Yes,No,Poor,5,No,Yes,No,Female
+Yes,Yes,No,0,0,No,30-34,White,No,No,Good,5,No,No,No,Male
+No,No,No,3,1,No,40-44,White,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,Black,Yes,Yes,Good,7,No,No,No,Female
+No,No,No,15,3,No,25-29,Black,No,Yes,Fair,7,No,No,No,Male
+Yes,No,No,0,0,No,25-29,Black,No,No,Good,7,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,No,3,5,No,35-39,Black,No,Yes,Very good,4,No,No,No,Male
+No,No,No,2,0,No,80 or older,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,2,2,Yes,55-59,White,No,No,Very good,8,No,No,No,Male
+No,No,No,0,0,No,25-29,Black,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,75-79,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,3,0,Yes,55-59,Black,Yes,No,Very good,6,Yes,No,No,Female
+Yes,No,No,0,0,Yes,50-54,White,Yes,No,Good,8,No,No,No,Male
+No,No,No,0,0,No,75-79,White,Yes,Yes,Very good,9,No,No,No,Female
+No,No,No,0,30,No,55-59,Black,Yes (during pregnancy),Yes,Good,7,Yes,No,No,Female
+Yes,No,No,0,0,No,45-49,White,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,No,Good,6,No,No,No,Male
+Yes,No,No,2,0,No,50-54,Black,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,55-59,White,No,No,Fair,6,No,No,Yes,Male
+Yes,No,No,5,0,No,35-39,Black,No,Yes,Fair,6,Yes,No,No,Male
+Yes,No,No,0,0,No,25-29,White,No,Yes,Good,4,No,No,No,Female
+No,No,No,3,0,Yes,60-64,White,Yes,No,Fair,6,No,No,No,Female
+No,No,No,0,10,No,18-24,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,No,Excellent,9,No,No,Yes,Male
+No,No,No,1,0,No,55-59,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,Yes,0,0,No,75-79,White,No,Yes,Good,4,No,No,Yes,Female
+No,No,No,0,0,No,70-74,White,No,No,Very good,7,No,No,Yes,Male
+Yes,No,No,0,0,No,75-79,White,No,Yes,Very good,7,No,No,Yes,Male
+Yes,No,No,2,0,No,65-69,Black,No,No,Good,6,No,No,No,Female
+No,No,No,0,0,No,30-34,White,No,Yes,Good,4,No,No,No,Female
+No,No,Yes,0,0,No,80 or older,White,No,Yes,Good,7,No,No,No,Female
+No,No,No,30,10,Yes,60-64,White,No,No,Poor,8,No,No,No,Female
+No,No,No,0,0,No,50-54,Hispanic,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,0,2,No,60-64,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,15,15,Yes,60-64,White,Yes,No,Fair,8,No,No,No,Female
+Yes,No,No,15,20,Yes,50-54,White,No,No,Poor,3,Yes,No,No,Female
+No,No,No,30,0,Yes,70-74,Black,Yes,No,Poor,5,No,No,No,Female
+Yes,No,No,0,2,No,35-39,White,No,Yes,Good,8,No,No,No,Male
+No,No,Yes,10,3,Yes,55-59,Black,No,Yes,Poor,12,Yes,No,No,Female
+No,No,No,0,0,Yes,50-54,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,Yes,12,0,Yes,65-69,White,Yes,Yes,Fair,8,No,No,No,Female
+No,No,No,0,0,No,45-49,White,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,5,No,25-29,White,No,Yes,Very good,8,No,No,No,Female
+No,No,Yes,30,1,Yes,75-79,White,Yes,No,Poor,8,No,No,No,Female
+No,No,No,10,5,No,50-54,White,No,No,Fair,7,No,No,No,Female
+Yes,No,Yes,15,0,No,65-69,White,Yes,Yes,Good,6,No,No,Yes,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,No,Fair,8,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,6,No,No,Yes,Female
+Yes,No,No,0,0,No,30-34,White,No,Yes,Good,8,No,No,No,Male
+No,Yes,No,0,0,No,55-59,Black,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,0,30,No,40-44,White,No,No,Good,5,Yes,No,No,Female
+Yes,Yes,No,0,0,No,80 or older,White,No,No,Very good,8,No,No,No,Male
+No,No,No,5,10,No,30-34,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,3,0,Yes,60-64,Black,No,No,Fair,8,No,Yes,No,Female
+Yes,No,No,0,0,No,70-74,White,"No, borderline diabetes",Yes,Very good,7,No,No,Yes,Male
+No,No,No,2,5,No,40-44,Black,No,Yes,Good,7,Yes,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Good,12,No,No,No,Female
+No,No,No,0,0,No,65-69,White,Yes,Yes,Very good,7,No,No,No,Male
+Yes,No,Yes,15,0,Yes,60-64,Black,Yes,No,Poor,8,Yes,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,30-34,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,40-44,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,0,0,No,50-54,White,No,Yes,Good,5,No,No,No,Male
+No,No,No,0,0,No,25-29,Black,No,Yes,Good,8,No,No,No,Female
+No,No,No,10,17,Yes,30-34,Black,No,Yes,Fair,8,No,No,No,Female
+No,No,Yes,0,20,Yes,80 or older,White,No,No,Good,6,No,No,No,Female
+No,No,No,28,25,No,50-54,Black,"No, borderline diabetes",No,Fair,6,Yes,No,No,Female
+No,No,No,0,0,No,18-24,Black,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,30,0,Yes,55-59,Black,No,Yes,Poor,3,No,No,No,Male
+No,No,No,7,15,No,35-39,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,0,30,No,35-39,White,No,No,Excellent,6,No,No,No,Male
+No,No,No,0,15,No,40-44,White,No,No,Very good,8,No,No,No,Male
+No,No,No,0,0,No,40-44,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,2,5,No,60-64,White,Yes,Yes,Good,9,No,No,No,Female
+No,No,No,2,20,No,18-24,Black,No,Yes,Very good,6,Yes,No,No,Female
+No,No,No,2,0,No,80 or older,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,60-64,White,No,Yes,Excellent,7,No,No,Yes,Female
+No,No,No,30,0,Yes,55-59,White,Yes,No,Poor,4,No,No,No,Male
+No,No,No,0,0,No,60-64,White,No,Yes,Very good,5,No,No,Yes,Male
+No,No,No,0,0,No,65-69,Other,Yes,Yes,Excellent,8,No,No,No,Male
+Yes,No,Yes,12,2,No,50-54,Black,No,No,Fair,12,No,Yes,No,Male
+Yes,No,No,16,8,Yes,70-74,White,Yes,No,Poor,9,Yes,Yes,No,Male
+Yes,No,No,5,0,Yes,75-79,White,No,Yes,Fair,8,No,No,Yes,Female
+No,No,No,22,22,Yes,60-64,White,Yes,Yes,Good,4,No,Yes,No,Female
+No,No,No,0,0,No,35-39,Black,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,10,No,18-24,White,No,No,Excellent,6,No,No,No,Female
+No,No,No,0,3,No,75-79,White,No,No,Very good,7,No,No,No,Female
+No,No,Yes,5,0,Yes,80 or older,Black,Yes,No,Good,8,No,Yes,Yes,Male
+No,No,No,8,3,No,55-59,White,No,Yes,Fair,6,No,No,No,Female
+Yes,No,No,0,0,No,50-54,White,Yes,Yes,Excellent,7,No,No,No,Male
+Yes,No,No,30,0,Yes,75-79,White,No,No,Poor,4,No,No,Yes,Male
+Yes,No,No,30,30,No,60-64,White,No,Yes,Poor,3,Yes,No,Yes,Male
+Yes,No,No,0,30,No,30-34,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,2,No,45-49,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,15,3,No,65-69,Black,No,Yes,Fair,1,Yes,Yes,No,Female
+Yes,No,No,0,0,No,75-79,White,No,No,Very good,7,No,No,No,Female
+No,No,No,0,30,No,40-44,White,No,No,Good,6,Yes,No,Yes,Female
+Yes,No,No,2,0,No,65-69,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,65-69,Black,No,Yes,Good,5,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,No,Good,8,No,No,No,Female
+No,No,No,0,0,No,40-44,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,10,No,25-29,White,No,Yes,Fair,8,No,No,No,Male
+Yes,No,Yes,0,5,Yes,60-64,Black,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,Yes,Yes,Good,7,No,No,No,Male
+Yes,No,No,30,0,No,45-49,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,No,75-79,White,No,Yes,Good,8,Yes,No,Yes,Female
+No,No,No,0,3,No,60-64,White,No,Yes,Excellent,5,No,No,No,Female
+No,No,No,0,0,No,35-39,Hispanic,No,No,Very good,7,No,No,No,Male
+Yes,No,No,0,15,No,50-54,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,2,0,No,45-49,White,No,Yes,Good,7,Yes,No,No,Male
+No,No,No,1,5,No,25-29,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,9,No,No,Yes,Female
+No,No,No,0,16,No,25-29,Black,No,No,Good,5,No,No,No,Female
+Yes,Yes,No,30,15,Yes,55-59,White,No,Yes,Fair,5,No,Yes,No,Female
+No,No,No,2,0,Yes,65-69,White,No,No,Good,5,No,No,No,Female
+No,No,No,0,30,No,30-34,White,Yes,Yes,Good,6,Yes,No,No,Female
+Yes,No,No,30,0,Yes,55-59,Other,No,Yes,Fair,4,No,No,No,Male
+Yes,No,No,0,2,No,25-29,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,0,Yes,80 or older,White,No,No,Good,6,No,No,No,Male
+No,No,No,0,7,No,30-34,White,No,No,Excellent,7,Yes,No,No,Female
+No,No,No,0,2,No,45-49,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,0,No,55-59,White,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,4,30,Yes,60-64,White,No,No,Fair,5,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Very good,7,No,No,Yes,Male
+No,No,No,20,0,No,45-49,White,No,No,Fair,4,No,No,No,Female
+Yes,No,No,0,0,No,35-39,White,No,No,Very good,6,No,No,No,Female
+Yes,No,No,3,0,No,60-64,White,No,Yes,Good,7,Yes,No,Yes,Female
+No,No,No,0,0,No,40-44,White,No,Yes,Very good,7,No,No,Yes,Female
+No,No,No,0,0,No,75-79,White,Yes,Yes,Very good,6,No,No,Yes,Male
+No,No,No,10,0,Yes,65-69,White,No,No,Fair,5,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,10,20,Yes,60-64,White,No,No,Good,6,No,No,No,Female
+No,No,No,1,5,No,45-49,White,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,0,0,No,25-29,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,5,0,No,55-59,White,Yes,Yes,Good,16,Yes,Yes,No,Female
+Yes,Yes,No,0,0,No,50-54,White,No,No,Very good,3,No,No,Yes,Female
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,0,No,30-34,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,25-29,Black,No,Yes,Excellent,6,No,No,No,Female
+No,No,No,0,0,No,30-34,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,15,No,55-59,White,No,Yes,Very good,6,No,No,No,Female
+Yes,Yes,No,0,0,No,35-39,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,No,0,10,No,18-24,White,No,Yes,Very good,5,No,No,No,Male
+No,No,No,0,0,No,18-24,Hispanic,No,No,Very good,9,No,No,No,Female
+No,No,No,0,4,No,60-64,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,1,2,No,50-54,White,"No, borderline diabetes",Yes,Good,8,No,No,No,Female
+Yes,No,No,20,5,Yes,60-64,White,No,Yes,Poor,5,No,Yes,No,Female
+Yes,No,No,0,0,Yes,65-69,White,No,No,Fair,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,0,No,18-24,Hispanic,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,2,0,No,75-79,White,No,Yes,Good,8,No,No,No,Male
+No,No,Yes,0,0,No,60-64,White,No,No,Good,9,No,No,No,Female
+No,No,No,0,1,No,65-69,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,4,No,40-44,White,Yes (during pregnancy),No,Good,8,No,No,No,Female
+No,No,No,7,0,No,45-49,Black,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,0,0,No,40-44,Black,No,Yes,Very good,8,No,No,No,Male
+No,No,Yes,20,6,Yes,60-64,White,No,No,Fair,3,Yes,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,0,No,18-24,Black,No,No,Very good,6,No,No,No,Male
+No,No,No,0,0,No,50-54,Black,No,Yes,Very good,8,No,No,No,Male
+No,Yes,No,0,0,No,60-64,White,No,Yes,Very good,9,No,No,Yes,Female
+Yes,No,No,0,2,Yes,30-34,White,No,Yes,Good,6,No,No,No,Male
+No,No,No,0,0,No,25-29,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,5,20,No,18-24,White,No,No,Very good,4,Yes,No,No,Female
+Yes,No,No,5,15,Yes,75-79,White,No,No,Fair,7,No,No,No,Female
+Yes,No,No,20,0,No,35-39,Black,No,No,Very good,15,Yes,No,No,Male
+No,No,No,0,0,No,35-39,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,25-29,White,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,2,1,No,45-49,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,35-39,White,No,No,Very good,7,No,No,No,Male
+No,No,No,0,0,No,50-54,White,Yes,No,Very good,7,No,No,No,Male
+No,No,No,0,0,No,55-59,White,Yes,No,Good,7,No,No,No,Female
+No,No,No,0,3,No,65-69,White,No,Yes,Excellent,7,No,No,Yes,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Excellent,8,No,No,Yes,Female
+Yes,No,No,0,0,No,75-79,White,No,No,Very good,7,No,No,No,Female
+No,No,No,0,0,No,30-34,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,30,No,30-34,Black,No,Yes,Very good,6,Yes,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,0,No,45-49,Black,No,Yes,Very good,8,No,No,No,Female
+Yes,No,Yes,10,3,Yes,55-59,White,Yes,Yes,Poor,8,No,Yes,Yes,Female
+No,No,No,0,0,Yes,60-64,White,No,No,Good,9,No,No,No,Male
+No,No,No,0,0,No,65-69,White,Yes,Yes,Good,9,No,No,No,Female
+No,No,No,0,30,No,25-29,Black,No,No,Very good,8,No,No,No,Female
+No,No,No,0,0,No,45-49,White,No,No,Good,6,No,No,No,Female
+No,No,No,0,3,No,60-64,White,Yes,Yes,Good,7,No,No,No,Male
+No,No,No,0,7,No,25-29,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,2,0,No,70-74,Other,No,No,Good,9,Yes,Yes,No,Female
+Yes,No,No,0,0,No,50-54,White,No,Yes,Excellent,8,No,No,No,Female
+Yes,No,No,0,0,Yes,80 or older,White,No,No,Fair,9,No,No,Yes,Female
+Yes,No,No,0,30,Yes,60-64,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,1,10,No,40-44,White,No,Yes,Good,7,No,No,No,Male
+Yes,No,No,3,1,No,60-64,White,No,Yes,Good,4,No,No,Yes,Male
+No,No,No,0,0,No,18-24,Hispanic,No,Yes,Good,7,No,No,No,Female
+No,No,No,0,0,No,60-64,White,Yes,Yes,Very good,8,No,No,Yes,Male
+No,No,No,30,20,Yes,55-59,White,No,No,Poor,10,No,No,No,Female
+No,No,No,3,0,No,60-64,White,No,Yes,Very good,8,Yes,No,Yes,Male
+Yes,No,Yes,30,0,Yes,65-69,White,Yes,No,Good,8,No,No,No,Female
+Yes,No,No,16,0,Yes,75-79,White,No,No,Poor,8,Yes,No,No,Female
+No,No,No,29,5,Yes,65-69,White,Yes,Yes,Good,6,Yes,No,Yes,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,0,0,No,45-49,White,No,No,Good,7,No,No,No,Male
+Yes,No,No,0,0,No,40-44,White,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,0,0,No,45-49,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,2,No,25-29,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,35-39,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,0,Yes,80 or older,White,No,Yes,Good,6,No,No,Yes,Female
+No,No,No,0,2,No,30-34,White,No,No,Very good,8,No,No,No,Female
+Yes,No,No,0,30,No,18-24,White,No,Yes,Excellent,8,No,No,No,Male
+Yes,No,No,0,0,No,40-44,White,No,Yes,Very good,7,No,No,No,Male
+Yes,No,Yes,0,0,No,70-74,White,No,No,Very good,4,No,No,Yes,Male
+Yes,No,No,0,20,No,40-44,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,Yes,20,30,Yes,55-59,White,"No, borderline diabetes",No,Fair,5,Yes,Yes,No,Female
+No,No,No,30,30,Yes,50-54,White,No,No,Fair,4,No,No,Yes,Female
+Yes,No,No,0,0,No,30-34,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,7,0,No,30-34,White,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,5,No,35-39,White,No,No,Fair,6,No,No,No,Female
+No,Yes,Yes,0,0,No,50-54,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,0,No,55-59,Black,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,0,0,No,65-69,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,0,No,50-54,White,No,Yes,Very good,8,No,No,Yes,Female
+Yes,No,No,19,30,Yes,35-39,American Indian/Alaskan Native,"No, borderline diabetes",No,Fair,8,No,No,No,Female
+Yes,No,No,0,0,No,30-34,White,Yes (during pregnancy),Yes,Good,8,Yes,No,No,Female
+No,No,No,3,0,No,30-34,White,No,Yes,Very good,6,No,No,No,Male
+No,No,No,5,1,No,55-59,White,No,Yes,Good,6,No,Yes,Yes,Female
+No,No,Yes,10,10,Yes,60-64,White,Yes,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,18-24,White,No,Yes,Excellent,8,No,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,No,Fair,7,No,No,No,Female
+No,No,No,0,2,Yes,75-79,White,Yes,Yes,Fair,8,Yes,No,No,Female
+Yes,No,No,0,30,No,45-49,White,No,Yes,Fair,12,No,No,No,Female
+Yes,No,Yes,1,0,No,30-34,White,No,Yes,Good,6,No,No,No,Male
+No,No,No,0,30,Yes,35-39,Black,No,Yes,Very good,6,Yes,No,No,Female
+Yes,No,No,0,0,No,30-34,White,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,0,0,No,60-64,Black,Yes,No,Good,8,No,No,No,Male
+Yes,No,No,20,0,Yes,65-69,Black,No,No,Good,6,No,No,No,Female
+No,No,No,0,0,Yes,40-44,Other,No,No,Good,8,Yes,No,No,Female
+Yes,No,No,2,15,No,55-59,White,"No, borderline diabetes",Yes,Good,8,No,No,No,Female
+No,No,No,0,0,No,35-39,White,No,Yes,Excellent,7,No,No,No,Female
+No,No,No,5,5,No,45-49,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,5,No,18-24,White,No,Yes,Excellent,8,Yes,No,No,Female
+No,No,No,0,0,Yes,65-69,White,No,Yes,Good,6,No,No,No,Female
+Yes,No,No,30,0,No,65-69,White,No,No,Good,7,No,No,No,Female
+Yes,No,No,0,0,No,45-49,White,Yes,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,0,No,35-39,White,No,No,Good,7,No,No,No,Male
+No,No,No,0,0,No,60-64,Black,Yes,Yes,Good,8,No,No,No,Male
+No,No,No,2,5,Yes,35-39,White,No,Yes,Very good,8,No,No,No,Female
+Yes,No,No,2,0,No,50-54,White,No,Yes,Very good,6,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,8,15,No,45-49,White,No,Yes,Very good,5,No,No,No,Female
+No,No,No,0,2,No,18-24,White,No,Yes,Very good,9,No,No,No,Male
+No,No,No,1,0,No,65-69,White,No,Yes,Good,7,No,No,No,Female
+Yes,Yes,No,30,0,No,18-24,Other,No,No,Very good,8,No,No,No,Male
+No,No,No,5,0,Yes,60-64,White,No,No,Good,8,Yes,No,No,Male
+No,No,No,0,0,No,30-34,White,No,Yes,Excellent,8,No,No,No,Female
+Yes,No,No,0,0,No,25-29,White,Yes,Yes,Good,8,No,No,No,Male
+Yes,No,No,15,30,Yes,50-54,White,Yes,No,Fair,5,No,No,No,Male
+Yes,Yes,No,21,0,No,40-44,White,No,Yes,Very good,9,No,No,No,Female
+No,No,No,0,0,No,30-34,White,No,Yes,Very good,5,No,No,No,Male
+No,No,No,0,7,No,40-44,Black,No,Yes,Good,7,Yes,No,No,Female
+No,No,No,0,30,No,18-24,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,30,30,Yes,35-39,White,Yes,No,Fair,7,No,No,No,Male
+No,No,No,2,0,No,35-39,Black,No,Yes,Very good,6,Yes,No,No,Female
+No,No,No,0,0,No,50-54,White,Yes,No,Very good,7,No,No,Yes,Male
+Yes,No,No,0,2,No,45-49,White,Yes,No,Good,6,Yes,No,No,Female
+Yes,No,No,0,0,No,60-64,White,No,Yes,Excellent,7,No,No,No,Male
+Yes,Yes,No,0,0,No,35-39,White,No,No,Very good,7,No,No,No,Female
+Yes,No,Yes,0,0,No,70-74,White,Yes,No,Good,7,No,No,No,Female
+No,No,No,0,5,No,45-49,White,No,Yes,Very good,5,No,No,Yes,Female
+No,No,No,0,0,No,30-34,American Indian/Alaskan Native,No,Yes,Good,8,No,No,No,Female
+Yes,No,No,30,30,Yes,45-49,White,No,No,Poor,5,No,No,No,Female
+No,No,No,0,0,No,30-34,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,14,0,Yes,45-49,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,30,0,No,75-79,White,No,No,Poor,7,No,Yes,Yes,Male
+Yes,No,No,0,1,No,35-39,Black,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,2,No,35-39,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,5,10,No,25-29,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,5,10,Yes,80 or older,White,Yes,Yes,Fair,6,No,Yes,Yes,Male
+No,No,No,0,0,No,40-44,Black,No,No,Very good,12,No,No,No,Female
+Yes,No,No,30,2,Yes,70-74,White,No,No,Poor,6,No,No,Yes,Male
+Yes,No,No,1,5,No,25-29,White,No,No,Very good,8,No,No,No,Male
+Yes,No,No,0,0,No,35-39,White,No,Yes,Good,7,No,Yes,No,Male
+No,No,No,0,5,No,45-49,White,No,Yes,Excellent,10,Yes,No,No,Female
+No,No,No,0,0,No,45-49,Black,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,20,15,Yes,50-54,Hispanic,No,Yes,Good,4,Yes,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,6,No,No,Yes,Female
+Yes,No,No,0,0,No,50-54,Black,No,Yes,Very good,5,No,No,No,Female
+No,No,No,0,0,No,65-69,White,Yes,Yes,Excellent,7,No,No,No,Male
+Yes,No,No,0,3,No,60-64,White,No,Yes,Very good,6,Yes,No,No,Female
+Yes,No,No,0,0,No,45-49,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,0,3,No,18-24,White,No,No,Very good,6,No,No,No,Male
+No,No,No,0,0,No,50-54,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,2,No,65-69,White,No,No,Good,7,No,No,No,Female
+Yes,No,No,5,0,No,55-59,White,No,No,Very good,6,Yes,No,No,Female
+No,No,No,0,0,No,60-64,Black,Yes,Yes,Good,8,No,No,No,Female
+No,No,No,30,0,No,25-29,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,0,0,No,30-34,White,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,No,Good,7,No,No,No,Female
+No,No,No,5,5,Yes,40-44,Black,No,Yes,Fair,6,No,No,No,Female
+Yes,No,No,20,0,No,50-54,White,No,No,Fair,4,No,No,No,Male
+No,No,No,0,2,No,18-24,Black,No,No,Excellent,8,No,No,No,Male
+Yes,No,No,5,10,No,50-54,White,No,No,Good,6,Yes,No,Yes,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Good,8,Yes,No,Yes,Female
+Yes,Yes,No,2,5,No,60-64,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,40-44,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,0,No,80 or older,White,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,0,0,No,45-49,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,0,No,80 or older,White,No,Yes,Good,8,No,No,No,Female
+No,No,No,2,20,Yes,55-59,Black,No,No,Good,6,No,No,No,Female
+No,No,No,2,3,No,25-29,American Indian/Alaskan Native,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,0,0,No,35-39,White,No,Yes,Very good,6,No,No,No,Female
+No,No,No,0,0,No,18-24,White,No,Yes,Very good,8,No,No,No,Male
+Yes,No,No,0,0,No,30-34,Black,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,65-69,White,No,Yes,Very good,7,No,No,Yes,Male
+No,No,No,0,0,No,30-34,Black,No,Yes,Very good,7,Yes,No,No,Female
+No,No,No,0,0,No,30-34,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,0,Yes,60-64,White,Yes,Yes,Good,10,Yes,No,No,Male
+No,No,No,0,10,Yes,60-64,Black,No,No,Very good,6,No,No,No,Female
+Yes,No,No,30,2,Yes,55-59,White,No,Yes,Fair,9,No,No,No,Male
+Yes,No,No,0,0,No,60-64,White,No,Yes,Fair,7,No,Yes,No,Female
+No,No,No,7,7,No,40-44,Black,No,No,Good,7,No,No,No,Female
+No,No,No,0,4,No,30-34,Black,No,No,Very good,8,No,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,7,No,No,No,Male
+No,No,Yes,0,30,Yes,70-74,White,No,No,Good,14,No,No,No,Female
+No,No,No,0,0,No,55-59,Black,No,Yes,Very good,6,No,No,No,Female
+Yes,No,No,0,7,No,25-29,Black,No,Yes,Very good,7,No,No,No,Female
+No,Yes,No,5,2,No,40-44,White,No,Yes,Excellent,8,Yes,No,No,Female
+No,No,No,0,0,No,55-59,White,No,Yes,Very good,8,Yes,No,No,Female
+No,No,No,20,0,Yes,75-79,White,Yes,No,Good,8,No,No,No,Male
+No,No,No,0,0,No,70-74,White,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,0,No,50-54,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,80 or older,Black,No,Yes,Very good,10,No,No,Yes,Male
+No,No,No,0,5,No,55-59,White,No,Yes,Very good,7,Yes,No,No,Male
+No,No,No,2,15,No,18-24,Black,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Very good,6,No,No,Yes,Female
+Yes,No,No,0,30,Yes,75-79,White,No,Yes,Good,7,Yes,No,No,Female
+No,No,No,0,8,No,50-54,White,Yes,Yes,Very good,6,Yes,No,No,Male
+No,No,No,0,7,No,18-24,Black,No,Yes,Very good,7,No,No,No,Male
+No,No,No,0,0,No,45-49,White,No,Yes,Good,7,No,No,No,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Very good,8,No,No,Yes,Male
+No,No,No,0,10,No,40-44,Black,No,No,Good,6,No,No,No,Female
+Yes,No,No,30,0,No,65-69,White,Yes,No,Poor,5,Yes,No,No,Male
+No,No,No,0,0,No,55-59,White,No,Yes,Excellent,6,No,No,No,Male
+No,No,No,15,30,No,40-44,Black,Yes,No,Fair,4,No,No,No,Male
+No,No,No,0,0,No,45-49,Black,No,Yes,Very good,8,No,No,No,Female
+No,No,No,15,2,No,45-49,White,No,No,Good,6,Yes,No,No,Female
+No,No,No,0,0,No,25-29,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,0,No,65-69,White,No,Yes,Excellent,7,No,No,No,Male
+No,No,No,0,1,No,55-59,Black,No,Yes,Excellent,9,No,No,No,Female
+Yes,No,No,0,0,No,30-34,Black,No,Yes,Excellent,7,No,No,No,Female
+Yes,No,No,30,10,Yes,65-69,White,Yes,No,Poor,3,No,No,No,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Excellent,6,No,No,No,Female
+Yes,No,No,2,20,No,50-54,Black,Yes,Yes,Fair,7,Yes,No,No,Male
+No,No,No,0,0,No,60-64,Black,Yes,Yes,Very good,8,No,No,No,Female
+No,Yes,No,3,0,No,30-34,Other,No,Yes,Excellent,7,Yes,No,No,Female
+Yes,No,No,0,30,No,45-49,Black,No,No,Good,6,No,No,No,Male
+Yes,No,No,0,30,No,50-54,White,No,No,Excellent,8,No,No,No,Male
+Yes,No,No,0,0,No,65-69,Black,No,Yes,Good,7,No,No,No,Female
+Yes,Yes,No,3,0,No,65-69,Black,No,Yes,Very good,6,No,No,No,Female
+No,No,No,15,2,Yes,30-34,Black,No,No,Poor,5,Yes,No,No,Female
+No,No,No,0,4,No,45-49,White,No,Yes,Good,7,No,No,No,Male
+No,No,No,0,0,Yes,60-64,Black,No,Yes,Good,7,No,No,No,Female
+Yes,No,No,30,2,Yes,45-49,White,No,No,Fair,6,Yes,No,No,Male
+No,No,Yes,0,0,No,60-64,Other,Yes,No,Good,5,Yes,No,No,Male
+Yes,No,No,0,0,No,75-79,Black,Yes,Yes,Excellent,8,No,No,No,Male
+No,No,No,5,7,No,70-74,White,No,Yes,Good,8,No,No,Yes,Female
+Yes,No,No,0,0,No,35-39,Black,No,Yes,Fair,8,Yes,No,No,Male
+No,No,No,0,0,No,18-24,White,No,Yes,Very good,6,Yes,No,No,Female
+Yes,No,No,7,0,No,70-74,Black,No,Yes,Good,8,No,No,No,Male
+No,No,No,0,0,No,45-49,White,No,Yes,Very good,7,No,No,No,Female
+No,No,No,0,0,No,60-64,Other,No,Yes,Excellent,9,No,No,No,Female
+Yes,No,No,0,1,No,60-64,Other,Yes,Yes,Excellent,10,Yes,No,No,Male
+No,No,No,0,0,No,65-69,White,No,No,Very good,8,No,No,No,Female
+Yes,No,No,0,5,No,60-64,Black,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,0,0,No,25-29,Black,No,Yes,Excellent,8,Yes,No,No,Male
+No,No,No,0,15,No,18-24,White,No,Yes,Very good,6,Yes,No,No,Female
+No,No,No,0,5,No,40-44,Black,Yes,No,Fair,5,No,No,No,Female
+No,No,No,0,0,No,70-74,White,No,Yes,Very good,7,No,No,No,Female
+Yes,No,No,0,0,No,75-79,White,Yes,Yes,Very good,8,No,No,No,Female
+Yes,No,No,3,15,No,18-24,White,No,Yes,Good,9,No,No,No,Female
+Yes,No,No,0,0,No,55-59,White,No,Yes,Excellent,8,No,No,No,Female
+No,No,No,0,2,No,45-49,Black,No,Yes,Fair,8,No,No,No,Female
+No,No,No,0,0,No,18-24,Black,No,No,Excellent,8,No,No,No,Female
+No,No,No,0,0,No,70-74,White,Yes,Yes,Very good,7,No,No,Yes,Male
+Yes,No,No,0,0,No,65-69,White,No,Yes,Excellent,8,No,No,No,Male
+No,No,No,0,0,No,50-54,White,No,Yes,Very good,8,No,No,No,Male
+No,No,No,0,1,No,30-34,White,No,Yes,Very good,7,No,No,Yes,Male
+No,No,No,0,0,Yes,80 or older,Black,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,2,7,No,60-64,White,No,Yes,Good,7,No,No,Yes,Female
+No,No,No,0,0,No,50-54,White,No,Yes,Excellent,8,No,No,No,Female
+Yes,No,No,5,0,Yes,70-74,White,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,0,No,60-64,Black,Yes,Yes,Very good,12,No,No,No,Female
+No,No,No,0,0,No,30-34,Hispanic,No,No,Good,8,No,No,No,Male
+Yes,No,No,0,0,No,60-64,Black,No,Yes,Good,6,No,No,No,Male
+Yes,No,No,0,0,No,55-59,Black,No,No,Fair,6,No,No,No,Female
+No,No,No,0,6,No,30-34,Black,No,Yes,Good,6,No,No,No,Female
+No,No,No,0,5,No,25-29,White,No,Yes,Very good,8,No,No,No,Female
+No,No,No,0,0,No,18-24,White,No,Yes,Good,8,No,No,No,Male
+Yes,No,No,0,0,No,30-34,White,No,Yes,Very good,8,No,No,No,Male

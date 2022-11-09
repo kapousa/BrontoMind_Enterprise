@@ -1,0 +1,204 @@
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+  <div class="scrollbar-inner">
+    <!-- Brand -->
+    <div class="sidenav-header  align-items-center">
+      <a class="navbar-brand" href="/">
+        <img src="/static/assets/img/brand/blue.png" class="navbar-brand-img" alt="Argon Design - Jinja Template Logo.">
+      </a>
+    </div>
+    <div class="navbar-inner">
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Nav items -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link {% if 'index' in segment %} active {% endif %}" href="{{ url_for('base_blueprint.showdashboard') }}">
+              <i class="ni ni-tv-2 text-primary"></i>
+              <span class="nav-link-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('authentication_blueprint.logout') }}">
+              <i class="ni ni-user-run text-red"></i>
+              <span class="nav-link-text">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <!-- Divider -->
+        <hr class="my-3">
+      </div>
+    </div>
+  </div>
+<!-- Modals -->
+<!-- Delete Model Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Model</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure?!! :)
+            </div>
+            <div class="modal-footer">
+                <form action="/deletemodel" method="post">
+                    <button type="submit" class="btn btn-secondary">YES</button>
+                </form>
+                <form>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">NO</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Export to web page Modal -->
+<div class="modal fade" id="webpageModal" tabindex="-1" role="dialog" aria-labelledby="webpageModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="material-icons ">WEBPAGE</i>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <label class="bmd-label">
+                        <h4><b><u>
+                            <li>Page Address:</li>
+                        </u></b></h4>
+                    </label>
+                    <br/>Open this web page address in your browser to predict values.
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="{{ page_url }}" target="_blank"> {{ page_url }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label class="bmd-label">
+                        <h4><b><u>
+                            <li>Embed in your page:</li>
+                        </u></b></h4>
+                    </label>
+                    <br/>Copy below code to your web page to predict values from you system.
+                    <div class="card">
+                        <div class="card-body">
+                            {{ page_embed }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Export to APIs Modal -->
+<div class="modal fade" id="apisModal" tabindex="-1" role="dialog" aria-labelledby="apisModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="material-icons ">APIs</i>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Use below details to access your APIs from your system.
+                <div class="card">
+                    <div class="card-body table-responsive">
+                        <table border=1, classes='table table-hover' , header="false" , justify="center"
+                               style="width: 100%;">
+                            <tr>
+                                <td style="width: 35%; text-align: right; font-weight: bold">URL:</td>
+                                <td><a href="{{ api_url }}" target="_blank"> {{ api_url }}</a></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 35%; text-align: right; font-weight: bold">Public Key:</td>
+                                <td>{{ public_key }}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 35%; text-align: right; font-weight: bold">Private Key:</td>
+                                <td>{{ private_key }}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 35%; text-align: right; font-weight: bold">Request Sample:</td>
+                                <td>{{ request_sample }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Upload Large File Modal -->
+<div class="modal fade" id="uploadlargefileModal" tabindex="-1" role="dialog" aria-labelledby="uploadlargefileModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Large file uploaded</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Uploaded data file exceeds maximum allowed file size.
+            </div>
+            <div class="modal-footer">
+                <form>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Export to timeforecasting web page Modal -->
+<div class="modal fade" id="forecastingwebpageModal" tabindex="-1" role="dialog" aria-labelledby="forecastingwebpageModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="material-icons ">WEBPAGE</i>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <label class="bmd-label">
+                        <h4><b><u>
+                            <li>Page Address:</li>
+                        </u></b></h4>
+                    </label>
+                    <br/>Open this web page address in your browser to predict values.
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="{{ page_url }}" target="_blank"> {{ page_url }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label class="bmd-label">
+                        <h4><b><u>
+                            <li>Embed in your page:</li>
+                        </u></b></h4>
+                    </label>
+                    <br/>Copy below code to your web page to forecsting graph from you system.
+                    <div class="card">
+                        <div class="card-body">
+                            {{ page_embed }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</nav>

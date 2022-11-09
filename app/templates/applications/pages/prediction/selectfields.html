@@ -1,0 +1,111 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Select Fields {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != 'No' %}
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="material-icons">close</i>
+            </button>
+            <span>{{ message }}</span>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="stats">
+                    <a class="nav-link" href="/showdashboard">
+                        <button class="btn btn-primary btn-lg">Start again</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title"><b>Step 2:</b> Select predictions values</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <li>Select one or more value form the columns list</li>
+                                    <li>Your Model will predict those values based on your machine learning model
+                                    </li>
+                                    <li>Click run model button</li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Configure the model</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <form action="/creatingthemodel" name="creatingthemodel" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Select columns that you want your machine to
+                                            predict its values and which columns should affect the results
+                                            (features).</label><br/>
+                                        <label class="alert alert-danger">Note: All empty columns removed from the
+                                            dataset.</label><br/>
+                                        <center>
+                                            <!--select name="predictionvalues" id="predictionvalues" multiple-->
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <td>Data features</td>
+                                                    <td>Dat column</td>
+                                                    <td>Predicted data</td>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for i in range(0, headersArray.size) %}
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"
+                                                                   name="featuresdvalues"
+                                                                   value="{{ headersArray[i] }}"/>
+                                                        </td>
+                                                        <td>
+                                                            {{ headersArray[i] }}
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"
+                                                                   name="predcitedvalues"
+                                                                   value="{{ headersArray[i] }}"/>
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                            <!--/select-->
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Run Model</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

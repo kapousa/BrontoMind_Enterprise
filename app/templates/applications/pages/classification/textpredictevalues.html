@@ -1,0 +1,105 @@
+{% extends 'layouts/blank.html' %}
+
+{% block title %} BRONTOMIND {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+{% endblock stylesheets %}
+
+</head>
+<body>
+{% block content %}
+
+    {% if message == 'No' %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <h2>Get the category</h2>
+                        <lead>Enter your text to let BrontoMind classify it under the sutiable category.
+                        </lead>
+                    </div>
+                    <div class="card-body">
+                        <form action="/predictevalues?t={{ ds_goal }}&s={{ ds_source }}" method="post"
+                              name="predictevalues">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Inout Text</label>
+                                <textarea rows="10"
+                                        value="{{ testing_values }}"
+                                        class="form-control" name="text_value"
+                                        id="text_value"
+                                        required>
+                                </textarea>
+                            </div>
+                        <br/>
+                        <button type="submit" class="btn btn-primary pull-right">Predict Values</button>
+                        <div class="clearfix"></div>
+                        <input type="hidden" name="ds_source" value="{{ ds_source }}">
+                        <input type="hidden" name="ds_goal" value="{{ ds_goal }}">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if predicted == 'Yes' %}
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header card-header-warning">
+                            <h2 style="text-align: center">Text Calss</h2>
+                        </div>
+                        <div style="text-align: center">
+                            <center>
+                                <table class="table">
+                                    <tbody>
+                                    {% for predicted_value_row in predicted_value %}
+                                        <tr>
+                                            {% for j in range(predicted_value_row|length) %}
+                                                <td class="text-center">{{ predicted_value_row[j] }}</td>
+                                            {% endfor %}
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <h2>Category</h2>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Sorry!</strong> {{ message }}
+                    </div>
+                    <a href="/predictevalues?t={{ ds_goal }}">
+                        <button type="button" class="btn btn-primary pull-right">Try again</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+
+{% include "includes/scripts.html" %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+{% endblock javascripts %}
+
+<script src="/static/assets/js/argon.js?v=1.2.0"></script>
+
+</body>
+
+</html>
