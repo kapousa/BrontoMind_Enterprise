@@ -17,7 +17,7 @@ from werkzeug.utils import secure_filename
 from app import config_parser
 from app.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, data_files_folder, \
     physical_allowed_extensions
-from base.db_models.ModelEncodedColumns import ModelEncodedColumns
+from app.base.db_models.ModelEncodedColumns import ModelEncodedColumns
 
 
 class Helper:

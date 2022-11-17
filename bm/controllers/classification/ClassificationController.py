@@ -114,7 +114,7 @@ class ClassificationController:
         training_x = s_c.fit_transform(training_x)
         test_x = s_c.transform(testing_x)
         file_name = get_only_file_name(csv_file_location)
-        scalar_file_name = scalars_location + file_name + '_scalear.sav'
+        scalar_file_name = scalars_location + str(model_id) + '_scalear.sav'
         pickle.dump(s_c, open(scalar_file_name, 'wb'))
 
         # Select proper model
@@ -123,7 +123,7 @@ class ClassificationController:
         # cls = # LinearRegression() #MultiOutputClassifier(KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2), n_jobs=-1)  # KNeighborsRegressor)
         cls.fit(training_x, training_y)
 
-        model_file_name = pkls_location + file_name + '_model.pkl'
+        model_file_name = pkls_location + str(model_id) + '_model.pkl'
         pickle.dump(cls, open(model_file_name, 'wb'))
         y_pred = cls.predict(test_x)
 
@@ -148,7 +148,7 @@ class ClassificationController:
             os.remove(os.path.join(plot_zip_locations, f))
 
         # Show prediction
-        heatmap_image_path = os.path.join(plot_locations, get_only_file_name(csv_file_location) + 'heatmap_plot.png')
+        heatmap_image_path = os.path.join(plot_locations, str(model_id) + 'heatmap_plot.png')
         ax = sns.heatmap(conf_matrix / sum(conf_matrix), annot=True, fmt='.2%', cmap='Blues')
         ax.set_title('Seaborn Confusion Matrix with labels\n\n');
         ax.set_xlabel('\nPredicted Values')
@@ -159,7 +159,7 @@ class ClassificationController:
         category_values_arr = testing_y[model_labels[0]].to_numpy()
         category_values_arr = category_values_arr.flatten()
 
-        image_db_path = image_short_path + get_only_file_name(csv_file_location) + 'heatmap_plot.png'
+        image_db_path = image_short_path + str(model_id)+ 'heatmap_plot.png'
         t_columns = real_x.columns
         importances = numpy.array(cls.coef_).flatten()
         classificationreport = classification_report(testing_y, y_pred,
@@ -173,15 +173,15 @@ class ClassificationController:
             for j in range(len(model_labels)):
                 img_prefix = '_' + model_features[i] + '_' + model_labels[j]
                 plot_image_path = os.path.join(plot_locations,
-                                               get_only_file_name(csv_file_location) + img_prefix + '_plot.png')
+                                               str(model_id) + img_prefix + '_plot.png')
                 image_path = os.path.join(plot_locations,
-                                          get_only_file_name(csv_file_location) + img_prefix + '_plot.png')
+                                          str(model_id) + img_prefix + '_plot.png')
                 # if(i ==0 and j ==0):
                 #    image_db_path = image_short_path + get_only_file_name(csv_file_location) + img_prefix +  '_plot.png'
                 sns.pairplot(data, x_vars=model_features[i], y_vars=model_labels[j], size=4, aspect=1, kind='scatter')
                 plot_image = plot_image_path  # os.path.join(root_path, 'static/images/plots/', get_only_file_name(csv_file_location) + '_plot.png')
                 plt.savefig(plot_image, dpi=300, bbox_inches='tight')
-        shutil.make_archive(plot_zip_locations + file_name, 'zip', plot_locations)
+        shutil.make_archive(plot_zip_locations + str(model_id), 'zip', plot_locations)
         # plt.show()
 
         # ------------------Predict values from the model-------------------------#
@@ -251,18 +251,18 @@ class ClassificationController:
                 classification_label = ['category']
                 data_set = classificationcontrollerHelper.create_classification_data_set(files_path, folders_list)
             elif (is_local_data == 'csv'):
-                initiate_model = BaseController.initiate_model(file_name)
+                initiate_model = BaseController.initiate_model(model_id)
                 data_set = classificationcontrollerHelper.create_classification_csv_data_set(csv_file_path,file_name)
             else:
                 folders_list = helper.list_ftp_dirs(
                     location_details)  # classificationcontrollerHelper.get_folder_structure(files_path, req_extensions=('.txt'))
                 data_set = classificationcontrollerHelper.create_FTP_data_set(location_details, folders_list)
 
-            full_file_path = '%s%s%s%s%s' % (app_root_path, data_files_folder, file_name, '/', 'data.txt')
+            full_file_path = '%s%s%s%s%s' % (app_root_path, data_files_folder, model_id, '/', 'data.txt')
             docs = classificationcontrollerHelper.setup_docs(full_file_path)
             categories, most_common = classificationcontrollerHelper.print_frequency_dist(docs)
             # X_train, X_test, y_train, y_test = classificationcontrollerHelper.get_splits(docs)
-            t_model = classificationcontrollerHelper.train_classifier(file_name, docs, categories)
+            t_model = classificationcontrollerHelper.train_classifier(model_id, docs, categories)
 
             # Save model metadata
             # Add model profile to the database

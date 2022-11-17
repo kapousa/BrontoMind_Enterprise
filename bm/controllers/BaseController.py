@@ -3,7 +3,7 @@ import shutil
 
 from app import db
 from app.base.constants.BM_CONSTANTS import scalars_location, pkls_location, output_docs_location, df_location, \
-    plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder, html_plots_location
+    plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder, html_plots_location, output_document_sfx
 from app.base.db_models.ModelAPIDetails import ModelAPIDetails
 from app.base.db_models.ModelAPIModelMethods import ModelAPIModelMethods
 from app.base.db_models.ModelEncodedColumns import ModelEncodedColumns
@@ -25,6 +25,8 @@ class BaseController:
 
     def deletemodels(self):
         try:
+            all_models = self.get_all_models()
+
             ModelEncodedColumns.query.filter().delete()
             ModelFeatures.query.filter().delete()
             ModelLabels.query.filter().delete()
@@ -35,7 +37,8 @@ class BaseController:
             db.session.commit()
 
             # Delete old model files
-            delete_model_files = deletemodelsfiles(scalars_location, pkls_location, output_docs_location, df_location, plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder)
+            for model_profile in all_models:
+                delete_model_files = self.delete_model(model_profile.model_id)
 
             return 1
         except Exception as e:
@@ -45,7 +48,6 @@ class BaseController:
 
     def delete_model(self, model_id=0):
         try:
-            model_name = get_model_name(model_id)
             ModelEncodedColumns.query.filter_by(model_id = model_id).delete()
             ModelFeatures.query.filter_by(model_id = model_id).delete()
             ModelLabels.query.filter_by(model_id = model_id).delete()
@@ -56,7 +58,22 @@ class BaseController:
             db.session.commit()
 
             # Delete old model files
-            delete_model_files = deletemodelsfiles(scalars_location, pkls_location, output_docs_location, df_location, plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder)
+            ploting_path = html_plots_location + str(model_id)  # all geenrated html files
+            zip_path = plot_zip_locations + str(model_id)  # all generated iamge files
+            endodedcategories_path = DataCoderProcessor.category_location + str(model_id)  # all encoded data columns pkl files
+            endodedcategoriespkls_path = DataCoderProcessor.pkls_location + str(model_id)  # pkl of the model location file
+            output_document = output_docs_location + str(model_id) + output_document_sfx  # Output documents
+            data_location = df_location + str(model_id)  # data location
+
+            # Delet old folders
+            shutil.rmtree(ploting_path) if (os.path.isdir(ploting_path)) else print(0)
+            shutil.rmtree(zip_path) if (os.path.isdir(zip_path)) else print(0)
+            shutil.rmtree(endodedcategories_path) if (os.path.isdir(endodedcategories_path)) else print(0)
+            shutil.rmtree(endodedcategoriespkls_path) if (os.path.isdir(endodedcategoriespkls_path)) else print(0)
+            os.remove(output_document)
+            shutil.rmtree(data_location) if (os.path.isdir(data_location)) else print(0)
+
+            #delete_model_files = deletemodelsfiles(scalars_location, pkls_location, output_docs_location, df_location, plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder)
 
             return 1
         except Exception as e:
@@ -145,19 +162,23 @@ class BaseController:
             return 0
 
     @staticmethod
-    def initiate_model(model_name):
+    def initiate_model(model_id):
 
-        ploting_path = html_plots_location + model_name
-        zip_path = plot_zip_locations + model_name
-        endodedcategories_path = DataCoderProcessor.category_location + model_name
-        endodedcategoriespkls_path = DataCoderProcessor.pkls_location + model_name
+        ploting_path = html_plots_location + str(model_id)  # all geenrated html files
+        zip_path = plot_zip_locations + str(model_id)   # all generated iamge files
+        endodedcategories_path = DataCoderProcessor.category_location + str(model_id)   # all encoded data columns pkl files
+        endodedcategoriespkls_path = DataCoderProcessor.pkls_location + str(model_id)   # pkl of the model location file
+        output_document = output_docs_location + str(model_id) + output_document_sfx    # Output documents
+        data_location = df_location + str(model_id)     # data location
 
 
-        # Delet old folder
+        # Delet old folders
         shutil.rmtree(ploting_path) if (os.path.isdir(ploting_path)) else print(0)
         shutil.rmtree(zip_path) if (os.path.isdir(zip_path)) else print(0)
         shutil.rmtree(endodedcategories_path) if (os.path.isdir(endodedcategories_path)) else print(0)
         shutil.rmtree(endodedcategoriespkls_path) if (os.path.isdir(endodedcategoriespkls_path)) else print(0)
+        os.remove(output_document)
+        shutil.rmtree(data_location) if (os.path.isdir(data_location)) else print(0)
 
         # Create new folder
         os.mkdir(ploting_path)

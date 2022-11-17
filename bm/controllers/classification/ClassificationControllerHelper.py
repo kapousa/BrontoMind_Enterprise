@@ -326,7 +326,7 @@ class ClassificationControllerHelper:
 
         return X_train, X_test, y_train, y_test
 
-    def train_classifier(self, file_name, docs, categories):
+    def train_classifier(self, model_id, docs, categories):
         try:
             X_train, X_test, y_train, y_test = self.get_classification_splits(docs)
 
@@ -345,11 +345,11 @@ class ClassificationControllerHelper:
                                                                             y_test, categories)
 
             # store the classifier
-            clf_filename = '%s%s%s%s' % (pkls_location, file_name, '/', 'classifier_pkl.pkl')
+            clf_filename = '%s%s%s%s' % (pkls_location, model_id, '/', 'classifier_pkl.pkl')
             pickle.dump(naive_bays_classifier, open(clf_filename, 'wb'))
 
             # Store vectorized
-            vic_filename = '%s%s%s%s' % (pkls_location, file_name, '/', 'vectorized_pkl.pkl')
+            vic_filename = '%s%s%s%s' % (pkls_location, model_id, '/', 'vectorized_pkl.pkl')
             pickle.dump(vectorized, open(vic_filename, 'wb'))
 
             precision = numpy.array([train_precision, test_precision])

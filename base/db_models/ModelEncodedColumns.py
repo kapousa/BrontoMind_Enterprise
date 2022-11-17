@@ -16,6 +16,7 @@ class ModelEncodedColumns(db.Model):
     column_name = db.Column(db.String)
     column_type = db.Column(db.String)
     model_id = db.Column(db.Integer)
+    is_date = db.Column(db.Integer)
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():

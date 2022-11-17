@@ -43,7 +43,7 @@ class APIHelper:
         api_details = []
         return api_details
 
-    def generateapisdocs(self, model_id, model_name, base_url, templates_folder, output_pdf_folder):
+    def generateapisdocs(self, model_id, base_url, templates_folder, output_pdf_folder):
         """
         Generate the API document according to the model type 
         :param model_name: 
@@ -62,13 +62,13 @@ class APIHelper:
 
         try:
             apis_doc_cover_template = templates_folder + "Slonos_Labs_BrontoMind_APIs_document_cover_template.docx"
-            output_cover_file = str(output_pdf_folder + model_name + '_BrontoMind_APIs_cover_document.docx')
+            output_cover_file = str(output_pdf_folder + str(model_id) + '_BrontoMind_APIs_cover_document.docx')
 
             apis_doc_template = templates_folder + "Slonos_Labs_BrontoMind_APIs_document_template.docx"
-            output_methods_file = str(output_pdf_folder + model_name + '_BrontoMind_APIs_methods_document.docx')
+            output_methods_file = str(output_pdf_folder + str(model_id) + '_BrontoMind_APIs_methods_document.docx')
 
-            output_file = str(output_pdf_folder + model_name + '_BrontoMind_APIs_document.docx')
-            output_pdf_file = str(output_pdf_folder + model_name + '_BrontoMind_APIs_document.pdf')
+            output_file = str(output_pdf_folder + str(model_id) + '_BrontoMind_APIs_document.docx')
+            output_pdf_file = str(output_pdf_folder + str(model_id) + '_BrontoMind_APIs_document.pdf')
 
             # 1- Adding the cover
             output_cover_contents = []

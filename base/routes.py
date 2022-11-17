@@ -383,11 +383,11 @@ def sendvalues():  # The main function of creating the model
                 apihelper = APIHelper()
                 model_head = ModelProfile.query.with_entities(ModelProfile.model_id, ModelProfile.model_name).filter_by(
                     model_id=all_return_values['model_id']).first()
-                generate_apis_docs = apihelper.generateapisdocs(0, model_head.model_id, model_head.model_name,
+                generate_apis_docs = apihelper.generateapisdocs(0, model_head.model_id,
                                                                 str(request.host_url + 'api/' + model_api_details.api_version),
                                                                 app.config['DOCS_TEMPLATES_FOLDER'],
                                                                 app.config['OUTPUT_DOCS'])
-
+                model_name = get_model_name(model_head.model_id)
                 return render_template('applications/pages/forecasting/modelstatus.html',
                                        depended_factor=all_return_values['depended_factor'],
                                        forecasting_category=all_return_values['forecasting_factor'],
@@ -521,7 +521,7 @@ def showdashboard():
                         "<th>", "<th class='text-warning'>")], Mean_Absolute_Error=profile['mean_absolute_error'],
                                    Mean_Squared_Error=profile['mean_squared_error'],
                                    Root_Mean_Squared_Error=profile['root_mean_squared_error'], message='No',
-                                   fname=profile['model_name'], page_url=page_url, page_embed=page_embed,
+                                   fname=profile['model_name'], page_url=page_url, page_embed=page_embed,model_id=profile['model_id'],
                                    segment='showdashboard', created_on=profile['created_on'],
                                    ds_goal=profile['ds_goal'],
                                    updated_on=profile['updated_on'], last_run_time=profile['last_run_time'])

@@ -55,4 +55,6 @@ labeled_data_filename = 'data.csv'
 
 demo_key = 'DEMO'
 
+output_document_sfx = '_BrontoMind_APIs_document.docx'
+
 

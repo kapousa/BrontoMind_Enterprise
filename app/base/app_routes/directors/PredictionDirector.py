@@ -80,7 +80,7 @@ class PredictionDirector:
         apihelper = APIHelper()
         model_head = ModelProfile.query.with_entities(ModelProfile.model_id, ModelProfile.model_name).filter_by(
             model_id=model_controller['model_id']).first()
-        generate_apis_docs = apihelper.generateapisdocs(model_head.model_id, model_head.model_name,
+        generate_apis_docs = apihelper.generateapisdocs(model_head.model_id,
                                                         str(request.host_url + 'api/' + model_api_details.api_version),
                                                         docs_templates_folder, output_docs)
 
@@ -98,7 +98,7 @@ class PredictionDirector:
                                created_on=model_controller['created_on'],
                                updated_on=model_controller['updated_on'],
                                last_run_time=model_controller['last_run_time'],
-                               fname=model_controller['file_name'])
+                               fname=model_controller['file_name'], model_id=model_controller['model_id'])
 
     def predict_labels(self, request):
         try:
@@ -125,8 +125,7 @@ class PredictionDirector:
                         # final_feature_value = float(feature_value) if feature_value.isnumeric() else feature_value
                         final_feature_value = feature_value
                         testing_values.append(final_feature_value)
-                    model_name = get_model_name(model_id)
-                    predicted_value = predict_values_from_model(model_name, testing_values)
+                    predicted_value = predict_values_from_model(model_id, testing_values)
                     # response = make_response()
                     return render_template('applications/pages/prediction/predictevalues.html',
                                            features_list=features_list,

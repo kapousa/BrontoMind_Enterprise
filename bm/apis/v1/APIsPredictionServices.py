@@ -20,7 +20,6 @@ class NpEncoder(json.JSONEncoder):
 
 
 def predictvalues(model_id, content):
-    model_name = get_model_name(model_id)
     features_list = get_features(model_id)
     lables_list = get_labels(model_id)
     testing_values = []
@@ -28,7 +27,7 @@ def predictvalues(model_id, content):
         feature_value = str(content[i])
         final_feature_value = feature_value # float(feature_value) if feature_value.isnumeric() else feature_value
         testing_values.append(final_feature_value)
-    predicted_value = predict_values_from_model(model_name, testing_values)
+    predicted_value = predict_values_from_model(model_id, testing_values)
 
     # Create predicted values json object
     predicted_values_json = {}

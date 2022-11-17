@@ -29,7 +29,7 @@ class DataCoderProcessor:
     def __init__(self):
         self.flag = '_'
 
-    def encode_features(self, model_name, model_id, data: DataFrame, column_type='F'):
+    def encode_features(self, model_id, data: DataFrame, column_type='F'):
         columns_name = data.columns
         encoded_columns = []
         data_types = data.dtypes
@@ -40,7 +40,7 @@ class DataCoderProcessor:
                              'column_type': column_type, 'is_date': is_date}
                 encoded_columns.append(data_item)
                 col_name = columns_name[i]
-                dummies = self.encode_column(col_name, data[[col_name]]) if (
+                dummies = self.encode_column(model_id, col_name, data[[col_name]]) if (
                             is_date == 0) else self.endcode_datetime_column(col_name, data[
                     [col_name]])  # to be added to ent version
                 dummies = pd.DataFrame(dummies)
@@ -53,9 +53,9 @@ class DataCoderProcessor:
 
         return data
 
-    def encode_labels(self, model_name, model_id, data: DataFrame):
+    def encode_labels(self, model_id, data: DataFrame):
         column_type = 'L'
-        return self.encode_features(model_name, model_id, data, 'L')
+        return self.encode_features(model_id, data, 'L')
 
     def vectrise_feature_text(self, model_id, data: DataFrame):
         columns_name = data.columns
@@ -85,12 +85,11 @@ class DataCoderProcessor:
                 and_(ModelEncodedColumns.model_id == str(model_id),
                      ModelEncodedColumns.column_type == 'F')).all())
         model_encoded_columns = model_encoded_columns.flatten()
-        model_name = get_model_name(str(model_id))
         for i in range(len(input_values)):
             input_value = input_values[i].strip()
             if (not input_value.isdigit()) and (features_list[i] in model_encoded_columns):
                 col_name = features_list[i]
-                pkl_file_location = self.pkls_location + model_name + '/' + col_name + '_pkle.pkl'
+                pkl_file_location = self.pkls_location + str(model_id) + '/' + col_name + '_pkle.pkl'
                 encoder_pkl = pickle.load(open(pkl_file_location, 'rb'))
                 column_data_arr = numpy.array(input_value)
                 encoded_values = encoder_pkl.transform(column_data_arr.reshape(-1, 1)) if (
@@ -110,13 +109,12 @@ class DataCoderProcessor:
                 and_(ModelEncodedColumns.model_id == str(model_id),
                      ModelEncodedColumns.column_type == 'L')).all())
         model_encoded_columns = model_encoded_columns.flatten()
-        model_name = get_model_name(str(model_id))
         for i in range(len(input_values)):
             input_values_row = input_values[i]
             for j in range(len(input_values[i])):
                 if labels_list[j] in model_encoded_columns:
                     col_name = labels_list[j]
-                    pkl_file_location = self.pkls_location + model_name + '/' + col_name + '_pkle.pkl'
+                    pkl_file_location = self.pkls_location + str(model_id) + '/' + col_name + '_pkle.pkl'
                     encoder_pkl = pickle.load(open(pkl_file_location, 'rb'))
                     column_data_arr = numpy.array(input_values_row[j])
                     original_value = encoder_pkl.inverse_transform(column_data_arr.reshape(-1, 1)) if (
@@ -130,22 +128,22 @@ class DataCoderProcessor:
 
     def decode_category_name(self, model_id, category_column, input_values):
         pkl_file_location = "%%s%s%s%s" % (
-        self.pkls_location, get_model_name(model_id), '/', category_column, '_pkle.pkl')
+        self.pkls_location, str(model_id), '/', category_column, '_pkle.pkl')
         encoder_pkl = pickle.load(open(pkl_file_location, 'rb'))
         original_value = encoder_pkl.inverse_transform(input_values)
         return original_value
 
-    def encode_column(self, model_name, column_name, column_data):
+    def encode_column(self, model_id, column_name, column_data):
         column_data_arr = column_data.to_numpy()
         column_data_arr = column_data_arr.flatten()
         categories = numpy.unique(column_data_arr)
         labelEnc = preprocessing.LabelEncoder()
         encoded_values = labelEnc.fit_transform(column_data_arr.reshape(-1, 1))
-        pkl_file_location = "%s%s%s%s%s" % (self.pkls_location, model_name, '/', column_name, '_pkle.pkl')
+        pkl_file_location = "%s%s%s%s%s" % (self.pkls_location, str(model_id), '/', column_name, '_pkle.pkl')
         pickle.dump(labelEnc, open(pkl_file_location, 'wb'))
 
         # save categories
-        category_file_location = "%s%s%s%s%s" % (self.category_location, model_name, '/', column_name, '_csv.csv')
+        category_file_location = "%s%s%s%s%s" % (self.category_location, str(model_id), '/', column_name, '_csv.csv')
         with open(category_file_location, 'w') as f:
             # create the csv writer
             writer = csv.writer(f)
@@ -162,12 +160,12 @@ class DataCoderProcessor:
         column_data_arr = column_data_arr.flatten()
         column_data_list = list(column_data_arr)
         vectors = vectorizer.fit_transform(column_data_list)
-        pkl_file_location = "%s%s%s%s%s" % (self.pkls_location, get_model_name(model_id), '/', column_name, '_pkle.pkl')
+        pkl_file_location = "%s%s%s%s%s" % (self.pkls_location, str(model_id), '/', column_name, '_pkle.pkl')
         pickle.dump(vectorizer, open(pkl_file_location, 'wb'))
 
         # save categories
         category_file_location = "%s%s%s%s%s" % (
-        self.category_location, get_model_name(model_id), '/', column_name, '_csv.csv')
+        self.category_location, get_model_name, str(model_id), '/', column_name, '_csv.csv')
         with open(category_file_location, 'w') as f:
             # create the csv writer
             writer = csv.writer(f)
@@ -185,7 +183,7 @@ class DataCoderProcessor:
 
         for i in range(len(encoded_columns)):
             category_file_location = "%s%s%s%s%s" % (
-            DataCoderProcessor.category_location, get_model_name(model_id), '/', encoded_columns[i], '_csv.csv')
+            DataCoderProcessor.category_location, str(model_id), '/', encoded_columns[i], '_csv.csv')
             category_values = getcvsheader(category_file_location)
             all_gategories_values[encoded_columns[i]] = category_values
         return all_gategories_values

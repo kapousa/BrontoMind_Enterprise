@@ -157,13 +157,12 @@ def run_prod_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     return all_return_values
 
 
-def predict_values_from_model(model_file_name, testing_values):
+def predict_values_from_model(model_id, testing_values):
     try:
         # ------------------Predict values from the model-------------------------#
-        model = pickle.load(open(pkls_location + model_file_name + '_model.pkl', 'rb'))
+        model = pickle.load(open(pkls_location + str(model_id) + '_model.pkl', 'rb'))
 
         # Encode the testing values
-        model_id = get_model_id(model_file_name)
         features_list = get_features(model_id)
         lables_list = get_labels(model_id)
         dcp = DataCoderProcessor()
@@ -175,7 +174,7 @@ def predict_values_from_model(model_file_name, testing_values):
         encode_df_testing_values = dcp.encode_input_values(model_id, features_list, testing_values)
 
         # Sclaing testing values
-        scalar_file_name = scalars_location + model_file_name + '_scalear.sav'
+        scalar_file_name = scalars_location + str(model_id) + '_scalear.sav'
         s_c = pickle.load(open(scalar_file_name, 'rb'))
         test_x = s_c.transform(encode_df_testing_values)
 
@@ -228,7 +227,7 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     model_id = Helper.generate_model_id()
     file_name = get_only_file_name(csv_file_location)
 
-    initiate_model = BaseController.initiate_model(file_name)
+    initiate_model = BaseController.initiate_model(model_id)
 
     # Determine features and lables
     features_last_index = len(new_headers_list) - (len(predicted_columns))
@@ -257,8 +256,8 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     real_x = data.loc[:, model_features]
     real_y = data.loc[:, model_labels]
     dcp = DataCoderProcessor()
-    real_x = dcp.encode_features(file_name, model_id, real_x)
-    real_y = dcp.encode_labels(file_name, model_id, real_y)
+    real_x = dcp.encode_features(model_id, real_x)
+    real_y = dcp.encode_labels(model_id, real_y)
     encoded_data = pd.concat((real_x, real_y), axis=1, join='inner')
     # real_x = encode_one_hot(model_id, features_df, 'F')  # 2 param (test vales)
     # real_y = encode_one_hot(model_id, labels_df, 'L')  # (predict values)
@@ -269,7 +268,7 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     s_c = StandardScaler(with_mean=False)  # test
     training_x = s_c.fit_transform(training_x)
     test_x = s_c.transform(testing_x)
-    scalar_file_name = scalars_location + file_name + '_scalear.sav'
+    scalar_file_name = scalars_location + str(model_id) + '_scalear.sav'
     pickle.dump(s_c, open(scalar_file_name, 'wb'))
 
     # Select proper model
@@ -278,7 +277,7 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     # cls = # LinearRegression() #MultiOutputClassifier(KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2), n_jobs=-1)  # KNeighborsRegressor)
     cls.fit(training_x, training_y)
 
-    model_file_name = pkls_location + file_name + '_model.pkl'
+    model_file_name = pkls_location + str(model_id) + '_model.pkl'
     pickle.dump(cls, open(model_file_name, 'wb'))
     y_pred = cls.predict(test_x)
 
@@ -306,17 +305,17 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     fig = px.scatter(training_x, opacity=0.65)
     fig.add_traces(go.Scatter(x=x_range, y=y_range, name='Regression Fit'))
     # Add plotin files folder
-    ploting_path = html_plots_location + file_name + '/'
-    html_file_location = ploting_path + file_name + ".html"
-    html_path = html_short_path + file_name + '/' + file_name + ".html"
+    ploting_path = html_plots_location + str(model_id) + '/'
+    html_file_location = ploting_path + str(model_id) + ".html"
+    html_path = html_short_path + str(model_id) + '/' + str(model_id) + ".html"
     plotly.offline.plot(fig, filename=html_file_location, config={'displayModeBar': False}, auto_open=False)
     image_db_path = html_path
     for i in range(len(model_features)):
         for j in range(len(model_labels)):
             img_prefix = '_' + model_features[i] + '_' + model_labels[j]
             plot_image_path = os.path.join(plot_locations,
-                                           get_only_file_name(csv_file_location) + img_prefix + '_plot.png')
-            image_path = os.path.join(plot_locations, get_only_file_name(csv_file_location) + img_prefix + '_plot.png')
+                                           str(model_id) + img_prefix + '_plot.png')
+            image_path = os.path.join(plot_locations, str(model_id) + img_prefix + '_plot.png')
             # if(i ==0 and j ==0):
             #    image_db_path = image_short_path + get_only_file_name(csv_file_location) + img_prefix +  '_plot.png'
             sns.pairplot(data, x_vars=model_features[i],
@@ -325,8 +324,8 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
             plt.savefig(plot_image, dpi=300, bbox_inches='tight')
 
     # Create Zip folder
-    zip_path = plot_zip_locations + file_name + '/'
-    shutil.make_archive(zip_path + file_name, 'zip', plot_locations)
+    zip_path = plot_zip_locations + str(model_id) + '/'
+    shutil.make_archive(zip_path + str(model_id), 'zip', plot_locations)
     # plt.show()
 
     # ------------------Predict values from the model-------------------------#

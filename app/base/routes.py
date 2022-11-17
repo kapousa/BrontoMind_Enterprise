@@ -424,7 +424,7 @@ def sendvalues():  # The main function of creating the model
                 apihelper = APIHelper()
                 model_head = ModelProfile.query.with_entities(ModelProfile.model_id, ModelProfile.model_name).filter_by(
                     model_id=all_return_values['model_id']).first()
-                generate_apis_docs = apihelper.generateapisdocs(0, model_head.model_id, model_head.model_name,
+                generate_apis_docs = apihelper.generateapisdocs(0, model_head.model_id,
                                                                 str(request.host_url + 'api/' + model_api_details.api_version),
                                                                 app.config['DOCS_TEMPLATES_FOLDER'],
                                                                 app.config['OUTPUT_DOCS'])
@@ -573,7 +573,7 @@ def showdashboard():
             page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
             return render_template('applications/pages/prediction/dashboard.html',
                                    accuracy=profile['prediction_results_accuracy'],
-                                   confusion_matrix='',
+                                   confusion_matrix='',model_id=profile['model_id'],
                                    plot_image_path=profile['plot_image_path'], sample_data=[
                     data_sample.to_html(border=0, classes='table table-hover', header="false",
                                         justify="center").replace(
@@ -686,20 +686,20 @@ def downloaddsfile():
         return send_file(path, as_attachment=True)
 
 
-@blueprint.route('/downloadapisdocument', methods=['GET', 'POST'])
+@blueprint.route('<model_id>/downloadapisdocument', methods=['GET', 'POST'])
 @login_required
-def downloadapisdocument():
-    # For windows you need to use drive name [ex: F:/Example.pdf]
-    fname = ModelProfile.query.with_entities(ModelProfile.model_name).first()[0]
-    path = root_path + app.config['OUTPUT_PDF_DOCS'] + '/' + fname + '_BrontoMind_APIs_document.docx'
+def downloadapisdocument(model_id):
+    # # For windows you need to use drive name [ex: F:/Example.pdf]
+    # fname = ModelProfile.query.with_entities(ModelProfile.model_name).first()[0]
+    path = root_path + app.config['OUTPUT_PDF_DOCS'] + '/' + model_id + '_BrontoMind_APIs_document.docx'
     return send_file(path, as_attachment=True)
 
 
-@blueprint.route('/<model_name>/downloadplots', methods=['GET', 'POST'])
+@blueprint.route('/<model_id>/downloadplots', methods=['GET', 'POST'])
 @login_required
-def downloadplots(model_name):
+def downloadplots(model_id):
     # For windows, you need to use drive name [ex: F:/Example.pdf]
-    path = plot_zip_download_location + model_name + '/' + model_name + '.zip'
+    path = plot_zip_download_location + model_id + '/' + model_id + '.zip'
     return send_file(path, as_attachment=True)
 
 

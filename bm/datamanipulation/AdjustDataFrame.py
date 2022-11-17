@@ -280,6 +280,7 @@ def encode_and_bind(original_dataframe, feature_to_encode):
 
 
 def deletemodelsfiles(*argv):
+    # TODO: modify this function to delete the files based on the directory (model_id)
     try:
         for arg in argv:
             files_in_directory = os.listdir(arg)
