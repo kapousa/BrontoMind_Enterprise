@@ -27,6 +27,14 @@ class PredictionDirector:
                                segment='createmodel', message=message)
 
     def creatingthemodel(self, request, fname, ds_goal, ds_source):
+        """
+        Prepare the features and lablels before start creating the model
+        @param request:
+        @param fname:
+        @param ds_goal:
+        @param ds_source:
+        @return:
+        """
         predictionvalues = numpy.array((request.form.getlist('predcitedvalues')))
         featuresdvalues = numpy.array((request.form.getlist('featuresdvalues')))
 
@@ -39,6 +47,11 @@ class PredictionDirector:
                                segment='createmodel')
 
     def complete_the_model(self, request):
+        """
+        Create the prediction model and show the model status dashboard
+        @param request:
+        @return:
+        """
         fname = request.form.get('fname')
         ds_source = request.form.get('ds_source')
         ds_goal = request.form.get('ds_goal')
@@ -63,7 +76,7 @@ class PredictionDirector:
         page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
 
         # APIs details and create APIs document
-        model_api_details = ModelAPIDetails.query.first()
+        model_api_details = ModelAPIDetails.query.filter_by( model_id = str(model_controller['model_id'])).first()
         apihelper = APIHelper()
         model_head = ModelProfile.query.with_entities(ModelProfile.model_id, ModelProfile.model_name).filter_by(
             model_id=model_controller['model_id']).first()

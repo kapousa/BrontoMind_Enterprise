@@ -30,27 +30,30 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header card-header-info">
-                    <img src="https://img.icons8.com/material/48/ffffff/mysql-logo.png"
-                         style="float:right !important;"/>
-                    <h3>Physical Files</h3>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Show BrontoMind where are saving your data?</h4>
-                        </div>
+        {% if session['ds_goal'] != config['PREDICTION_MODULE']%}
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <img src="https://img.icons8.com/material/48/ffffff/mysql-logo.png"
+                             style="float:right !important;"/>
+                        <h3>Physical Files</h3>
                     </div>
-                    <form action="/selectphysicalfiles" name="selectphysicalfiles" id="selectphysicalfiles" method="post">
-                        <input type="hidden" id="ds_source" name="ds_source" value="11"/>
-                        <button type="submit" class="btn btn-primary pull-right">Upload data files</button>
-                    </form>
-                    <div class="clearfix"></div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Show BrontoMind where are saving your data?</h4>
+                            </div>
+                        </div>
+                        <form action="/selectphysicalfiles" name="selectphysicalfiles" id="selectphysicalfiles"
+                              method="post">
+                            <input type="hidden" id="ds_source" name="ds_source" value="11"/>
+                            <button type="submit" class="btn btn-primary pull-right">Upload data files</button>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endif %}
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header card-header-success">

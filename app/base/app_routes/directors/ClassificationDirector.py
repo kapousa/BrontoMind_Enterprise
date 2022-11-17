@@ -25,21 +25,24 @@ class ClassificationDirector:
     def classify_inputs_from_model(self, route_request):
         ds_goal = request.args.get("t")
         ds_source = request.args.get("s")
+        model_id = request.args.get("m")
+
         try:
             opt_param = len(route_request.form)
 
             if opt_param == 0:
                 # response = make_response()
-                return render_template('applications/pages/classification/textpredictevalues.html', ds_goal = ds_goal, ds_source = ds_source,
+                return render_template('applications/pages/classification/textpredictevalues.html', ds_goal = ds_goal, ds_source = ds_source, mid= model_id,
                                        text_value='', predicted='Nothing', message='No')
 
             if opt_param > 0:
                 input_text = request.form.get('text_value')
                 classification_model = ClassificationController()
-                text_class = [classification_model.classify_text(input_text)]
+                model_name = get_model_name(model_id)
+                text_class = [classification_model.classify_text(input_text, model_name)]
 
                 return render_template('applications/pages/classification/textpredictevalues.html',
-                                       ds_source= ds_source, ds_goal = ds_goal,
+                                       ds_source= ds_source, ds_goal = ds_goal, mid= model_id,
                                        predicted_value=text_class, testing_values=input_text, predicted='Yes', message='No')
 
             return render_template('applications/pages/classification/textpredictevalues.html',
@@ -78,10 +81,10 @@ class ClassificationDirector:
             page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
 
             # APIs details and create APIs document
-            model_api_details = ModelAPIDetails.query.first()
+            model_api_details = ModelAPIDetails.query.filter_by( model_id = str(return_values['model_id'])).first()
             apihelper = APIHelper()
             model_head = ModelProfile.query.with_entities(ModelProfile.model_id, ModelProfile.model_name).filter_by(model_id = return_values['model_id']).first()
-            generate_apis_docs = apihelper.generateapisdocs(0, model_head.model_id, model_head.model_name,
+            generate_apis_docs = apihelper.generateapisdocs(model_head.model_id, model_head.model_name,
                                                             str(request.host_url + 'api/' + model_api_details.api_version),
                                                             docs_templates_folder, output_docs)
 
@@ -129,8 +132,8 @@ class ClassificationDirector:
         except Exception as e:
             return render_template('page-501.html', error=e, segment='message')
 
-    def show_text_model_dashboard(self):
-        profile = BaseController.get_model_status()
+    def show_text_model_dashboard(self, model_id=0):
+        profile = BaseController.get_model_status(model_id)
         page_url = request.host_url + "predictevalues?t=" + str(profile['ds_goal']) + "&s=" + str(profile['ds_source']) + "&m=" + str(profile['model_id'])
         page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
 

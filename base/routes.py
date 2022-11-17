@@ -572,7 +572,7 @@ def showdashboard():
 @login_required
 def deletemodel():
     bc = BaseController()
-    delete_model = bc.delet_model()
+    delete_model = bc.deletemodels()
     return render_template('applications/pages/dashboard.html', message='You do not have any running model yet.',
                            segment='deletemodel')
 
@@ -588,7 +588,7 @@ def applications():
 def installapp():
     if request.method == 'POST':
         bc = BaseController()
-        delete_model = bc.delet_model()
+        delete_model = bc.deletemodels()
         f = request.form.get('filename')
         original = os.path.join(app.config['APPS_DATA_FOLDER'], f)
         target = os.path.join(app.config['UPLOAD_FOLDER'], f)
@@ -653,7 +653,7 @@ def uploaddatafiles():
         ds_source = request.form.get('ds_source')
         ds_goal = request.form.get('ds_goal')
         classification_director = ClassificationDirector()
-        return classification_director.create_text_classification_model(ds_goal, ds_source)
+        return classification_director.create_text_classification_model(ds_goal)
 
 
 ## Errors

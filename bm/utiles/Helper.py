@@ -1,4 +1,5 @@
 #  Copyright (c) 2022. Slonos Labs. All rights Reserved.
+import datetime
 import ftplib
 import itertools
 import os
@@ -16,6 +17,7 @@ from werkzeug.utils import secure_filename
 from app import config_parser
 from app.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, data_files_folder, \
     physical_allowed_extensions
+from base.db_models.ModelEncodedColumns import ModelEncodedColumns
 
 
 class Helper:
@@ -209,6 +211,72 @@ class Helper:
     def generate_model_id():
         model_id = random.randrange(10000000000000, 99999999999999, 14)
         return model_id
+
+    @staticmethod
+    def validate_datestring(date_text):  # to be added to ent version
+        try:
+            datetime.datetime.strptime(date_text, '%d/%m/%Y %I:%M %p')
+            return True
+        except Exception as e:
+            try:
+                datetime.datetime.strptime(date_text, '%Y-%m-%d %H:%M:%S')
+                return True
+            except Exception as e:
+                return False
+            return False
+
+    @staticmethod
+    def validate_datestring_arr(date_arr):  # to be added to ent version
+        try:
+            datetime.datetime.strptime(date_arr[0], '%d/%m/%Y %I:%M:%S %p')
+            return True
+        except Exception as e:
+            try:
+                datetime.datetime.strptime(date_arr[0], '%Y-%m-%d %H:%M:%S')
+                return True
+            except Exception as e:
+                return False
+            return False
+
+    @staticmethod
+    def validate_timestring(time_text):  # to be added to ent version
+        try:
+            datetime.datetime.strptime(time_text, '%H:%M:%S')
+            return 1
+        except Exception as e:
+            try:
+                datetime.datetime.strptime(time_text, '%H:%M:%S')
+                return 1
+            except Exception as e:
+                return 0
+            return 0
+
+    @staticmethod
+    def validate_timestring_arr(time_arr):  # to be added to ent version
+        try:
+            datetime.datetime.strptime(time_arr[0], '%H:%M:%S')
+            return 1
+        except Exception as e:
+            try:
+                datetime.datetime.strptime(time_arr[0], '%H:%M:%S')
+                return 1
+            except Exception as e:
+                return 0
+            return 0
+
+    @staticmethod
+    def is_time(column_name):  # to be added to ent version
+        is_date = numpy.array(
+            ModelEncodedColumns.query.with_entities(ModelEncodedColumns.is_date).filter(
+                ModelEncodedColumns.column_name == column_name).first())
+        is_date = is_date.flatten()
+        return is_date
+
+    @staticmethod
+    def convert_time_to_seconds(interval):
+        interval_periods = interval.split(':')
+
+        return (int(interval_periods[0]) * 3600) + (int(interval_periods[1]) * 60) + int(interval_periods[2])
 
 # h = Helper()
 # # con = {

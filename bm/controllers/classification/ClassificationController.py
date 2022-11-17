@@ -16,7 +16,7 @@ from sklearn.metrics import confusion_matrix, classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-from app import db
+from app import db, config_parser
 from app.base.constants.BM_CONSTANTS import plot_zip_locations, pkls_location, df_location, \
     plot_locations, scalars_location, image_short_path, data_files_folder, \
     app_root_path
@@ -241,6 +241,8 @@ class ClassificationController:
             # Prepare the date and creating the classifier model
             classificationcontrollerHelper = ClassificationControllerHelper()
             files_path = '%s%s' % (app_root_path, data_files_folder)
+            csv_file_path = '%s%s' % (df_location, session['fname'])
+            file_name = get_only_file_name(csv_file_path)
 
             # Create datafile (data.txt)
             if (is_local_data == 'Yes'):
@@ -249,25 +251,25 @@ class ClassificationController:
                 classification_label = ['category']
                 data_set = classificationcontrollerHelper.create_classification_data_set(files_path, folders_list)
             elif (is_local_data == 'csv'):
-                csv_file_path = '%s%s' % (df_location, session['fname'])
-                data_set = classificationcontrollerHelper.create_classification_csv_data_set(csv_file_path)
+                initiate_model = BaseController.initiate_model(file_name)
+                data_set = classificationcontrollerHelper.create_classification_csv_data_set(csv_file_path,file_name)
             else:
                 folders_list = helper.list_ftp_dirs(
                     location_details)  # classificationcontrollerHelper.get_folder_structure(files_path, req_extensions=('.txt'))
                 data_set = classificationcontrollerHelper.create_FTP_data_set(location_details, folders_list)
 
-            full_file_path = '%s%s%s' % (app_root_path, data_files_folder, 'data.txt')
+            full_file_path = '%s%s%s%s%s' % (app_root_path, data_files_folder, file_name, '/', 'data.txt')
             docs = classificationcontrollerHelper.setup_docs(full_file_path)
             categories, most_common = classificationcontrollerHelper.print_frequency_dist(docs)
             # X_train, X_test, y_train, y_test = classificationcontrollerHelper.get_splits(docs)
-            t_model = classificationcontrollerHelper.train_classifier(docs, categories)
+            t_model = classificationcontrollerHelper.train_classifier(file_name, docs, categories)
 
             # Save model metadata
             # Add model profile to the database
 
             now = datetime.now()
             modelmodel = {'model_id': model_id,
-                          'model_name': 'data',
+                          'model_name': file_name,
                           'user_id': 1,
                           'train_precision': t_model['train_precision'],
                           'train_recall': t_model['train_recall'],
@@ -279,10 +281,10 @@ class ClassificationController:
                           'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
                           'last_run_time': now.strftime("%d/%m/%Y %H:%M:%S"),
                           'ds_source': ds_source,
-                          'ds_goal': ds_goal}
+                          'ds_goal': ds_goal,
+                          'status': config_parser.get('ModelStatus', 'ModelStatus.active')}
+
             model_model = ModelProfile(**modelmodel)
-            # Delete current profile
-            model_model.query.filter().delete()
             db.session.commit()
             # Add new profile
             db.session.add(model_model)
@@ -294,15 +296,10 @@ class ClassificationController:
             api_details_id = random.randint(0, 22)
             api_details_list = add_api_details(model_id, api_details_id, 'v1')
             api_details_list = update_api_details_id(api_details_id)
-            # db.session.commit()
-            # db.session.expunge_all()
-            # db.close_all_sessions
-
-            # APIs details and create APIs document
 
             return_values = {
                 'model_id': model_id,
-                'model_name': 'data',
+                'model_name': file_name,
                 'segment': 'createmodel',
                 'created_on': now.strftime("%d/%m/%Y %H:%M:%S"),
                 'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
@@ -326,8 +323,8 @@ class ClassificationController:
 
         return 0
 
-    def classify_text(self, test_text):
+    def classify_text(self, test_text, model_name=''):
         classification_controller_helper = ClassificationControllerHelper()
-        return classification_controller_helper.classify(test_text)
+        return classification_controller_helper.classify(test_text, model_name)
 
 # b = run_demo_model1(root_path, 'diabetes.csv', ['Age'], '1', '2')

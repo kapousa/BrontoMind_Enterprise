@@ -220,9 +220,9 @@ class ClassificationControllerHelper:
             print(e)
             return 0
 
-    def create_classification_csv_data_set(self, csv_file_path):
+    def create_classification_csv_data_set(self, csv_file_path, file_name=''):
         try:
-            output_file = '%s%s' % (df_location, 'data.txt')
+            output_file = '%s%s%s%s' % (df_location, file_name, '/', 'data.txt')
             if os.path.exists(output_file):
                 os.remove(output_file)
             # Open file
@@ -326,7 +326,7 @@ class ClassificationControllerHelper:
 
         return X_train, X_test, y_train, y_test
 
-    def train_classifier(self, docs, categories):
+    def train_classifier(self, file_name, docs, categories):
         try:
             X_train, X_test, y_train, y_test = self.get_classification_splits(docs)
 
@@ -345,11 +345,11 @@ class ClassificationControllerHelper:
                                                                             y_test, categories)
 
             # store the classifier
-            clf_filename = '%s%s%s' % (app_root_path, pkls_location, 'classifier_pkl.pkl')
+            clf_filename = '%s%s%s%s' % (pkls_location, file_name, '/', 'classifier_pkl.pkl')
             pickle.dump(naive_bays_classifier, open(clf_filename, 'wb'))
 
             # Store vectorized
-            vic_filename = '%s%s%s' % (app_root_path, pkls_location, 'vectorized_pkl.pkl')
+            vic_filename = '%s%s%s%s' % (pkls_location, file_name, '/', 'vectorized_pkl.pkl')
             pickle.dump(vectorized, open(vic_filename, 'wb'))
 
             precision = numpy.array([train_precision, test_precision])
@@ -362,13 +362,6 @@ class ClassificationControllerHelper:
                                 'test_precision': str(precision),
                                 'test_recall': str(recall),
                                 'test_f1': str(f1)}
-
-            # all_return_value = {'train_precision': '',
-            #                     'train_recall': '',
-            #                     'train_f1': '',
-            #                     'test_precision': '',
-            #                     'test_recall': '',
-            #                     'test_f1': ''}
 
             return all_return_value
 
@@ -401,13 +394,13 @@ class ClassificationControllerHelper:
 
         return precision, recall, f1
 
-    def classify(self, text):
+    def classify(self, text, file_name=''):
         # Load model
-        clf_filename = '%s%s%s' % (app_root_path, pkls_location, '/classifier_pkl.pkl')
+        clf_filename = '%s%s%s' % (pkls_location, file_name, '/classifier_pkl.pkl')
         np_clf = pickle.load(open(clf_filename, 'rb'))
 
         # load vectorizer
-        vec_filename = '%s%s%s' % (app_root_path, pkls_location, '/vectorized_pkl.pkl')
+        vec_filename = '%s%s%s' % (pkls_location, file_name, '/vectorized_pkl.pkl')
         vectorizer = pickle.load(open(vec_filename, 'rb'))
 
         pred = np_clf.predict(vectorizer.transform([text]))

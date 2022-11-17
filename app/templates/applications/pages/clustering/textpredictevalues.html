@@ -21,22 +21,23 @@
                         </lead>
                     </div>
                     <div class="card-body">
-                        <form action="/predictevalues?t={{ ds_goal }}&s={{ ds_source }}" method="post"
+                        <form action="/predictevalues?t={{ ds_goal }}&s={{ ds_source }}&m={{ mid }}" method="post"
                               name="predictevalues">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Inout Text</label>
                                 <textarea rows="10"
-                                        value="{{ testing_values }}"
-                                        class="form-control" name="text_value"
-                                        id="text_value"
-                                        required>
+                                          value="{{ testing_values }}"
+                                          class="form-control" name="text_value"
+                                          id="text_value"
+                                          required>
                                 </textarea>
                             </div>
-                        <br/>
-                        <button type="submit" class="btn btn-primary pull-right">Predict Values</button>
-                        <div class="clearfix"></div>
-                        <input type="hidden" name="ds_source" value="{{ ds_source }}">
-                        <input type="hidden" name="ds_goal" value="{{ ds_goal }}">
+                            <br/>
+                            <button type="submit" class="btn btn-primary pull-right">Predict Values</button>
+                            <div class="clearfix"></div>
+                            <input type="hidden" name="ds_source" value="{{ ds_source }}">
+                            <input type="hidden" name="ds_goal" value="{{ ds_goal }}">
+                            <input type="hidden" name="mid" value="{{ mid }}">
                         </form>
                     </div>
                 </div>

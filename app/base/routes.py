@@ -550,12 +550,12 @@ def showdashboard():
 
         if (profile['ds_goal'] == current_app.config['CLASSIFICATION_MODULE'] and str(profile['ds_source']) == '11'):
             classification_director = ClassificationDirector()
-            return classification_director.show_text_model_dashboard()
+            return classification_director.show_text_model_dashboard(model_id)
 
         if profile['ds_goal'] == current_app.config['CLASSIFICATION_MODULE']:
             # Webpage details
             classification_director = ClassificationDirector()
-            return classification_director.show_text_model_dashboard()
+            return classification_director.show_text_model_dashboard(model_id)
 
         if profile['ds_goal'] == current_app.config['CLUSTERING_MODULE']:
             clustering_director = ClusteringDirector()
@@ -628,11 +628,11 @@ def showdashboard():
                                segment='showdashboard')
 
 
-@blueprint.route('/deletemodel', methods=['GET', 'POST'])
+@blueprint.route('/deletemodels', methods=['GET', 'POST'])
 @login_required
-def deletemodel():
+def deletemodels():
     bc = BaseController()
-    delete_model = bc.delet_model()
+    delete_model = bc.deletemodels()
     return render_template('applications/pages/dashboard.html', message='You do not have any running model yet.',
                            segment='deletemodel')
 
@@ -648,7 +648,7 @@ def applications():
 def installapp():
     if request.method == 'POST':
         bc = BaseController()
-        delete_model = bc.delet_model()
+        delete_model = bc.deletemodels()
         f = request.form.get('filename')
         original = os.path.join(app.config['APPS_DATA_FOLDER'], f)
         target = os.path.join(app.config['UPLOAD_FOLDER'], f)
@@ -712,7 +712,7 @@ def uploaddatafiles():
         ds_source = request.form.get('ds_source')
         ds_goal = request.form.get('ds_goal')
         classification_director = ClassificationDirector()
-        return classification_director.create_text_classification_model(ds_goal, ds_source)
+        return classification_director.create_text_classification_model(ds_goal)
 
 
 ## Errors

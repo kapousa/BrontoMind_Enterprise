@@ -279,7 +279,7 @@ def encode_and_bind(original_dataframe, feature_to_encode):
     return (res)
 
 
-def deletemodelfiles(*argv):
+def deletemodelsfiles(*argv):
     try:
         for arg in argv:
             files_in_directory = os.listdir(arg)

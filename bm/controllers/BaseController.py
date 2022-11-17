@@ -11,9 +11,10 @@ from app.base.db_models.ModelFeatures import ModelFeatures
 from app.base.db_models.ModelForecastingResults import ModelForecastingResults
 from app.base.db_models.ModelLabels import ModelLabels
 from app.base.db_models.ModelProfile import ModelProfile
-from bm.datamanipulation.AdjustDataFrame import deletemodelfiles
+from bm.datamanipulation.AdjustDataFrame import deletemodelsfiles
 from bm.datamanipulation.DataCoderProcessor import DataCoderProcessor
 from bm.db_helper import AttributesHelper
+from bm.db_helper.AttributesHelper import get_model_name
 
 
 class BaseController:
@@ -22,7 +23,7 @@ class BaseController:
     def __init__(self):
         self.test_value = '_'
 
-    def delet_model(self, model_id=0):
+    def deletemodels(self):
         try:
             ModelEncodedColumns.query.filter().delete()
             ModelFeatures.query.filter().delete()
@@ -34,11 +35,32 @@ class BaseController:
             db.session.commit()
 
             # Delete old model files
-            delete_model_files = deletemodelfiles(scalars_location, pkls_location, output_docs_location, df_location, plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder)
+            delete_model_files = deletemodelsfiles(scalars_location, pkls_location, output_docs_location, df_location, plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder)
 
             return 1
         except Exception as e:
             print('Ohh -delet_models...Something went wrong.')
+            print(e)
+            return 0
+
+    def delete_model(self, model_id=0):
+        try:
+            model_name = get_model_name(model_id)
+            ModelEncodedColumns.query.filter_by(model_id = model_id).delete()
+            ModelFeatures.query.filter_by(model_id = model_id).delete()
+            ModelLabels.query.filter_by(model_id = model_id).delete()
+            ModelAPIModelMethods.query.filter_by(model_id = model_id).delete()
+            ModelAPIDetails.query.filter_by(model_id = model_id).delete()
+            ModelProfile.query.filter_by(model_id = model_id).delete()
+            ModelForecastingResults.query.filter_by(model_id = model_id).delete()
+            db.session.commit()
+
+            # Delete old model files
+            delete_model_files = deletemodelsfiles(scalars_location, pkls_location, output_docs_location, df_location, plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder)
+
+            return 1
+        except Exception as e:
+            print('Ohh -delete_model...Something went wrong.')
             print(e)
             return 0
 
