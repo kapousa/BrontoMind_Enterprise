@@ -278,6 +278,22 @@ class Helper:
 
         return (int(interval_periods[0]) * 3600) + (int(interval_periods[1]) * 60) + int(interval_periods[2])
 
+    @staticmethod
+    def deletefolderfiles(*argv):
+        try:
+            for arg in argv:
+                files_in_directory = os.listdir(arg)
+                filtered_files = [file for file in files_in_directory if not file.endswith(".gitkeep")]
+                for f in filtered_files:
+                    # os.remove(os.path.join(arg, f))
+                    path_to_file = os.path.join(arg, f)
+                    os.remove(path_to_file)
+            return 1
+        except Exception as e:
+            print('Ohh -delete_model_files...Something went wrong.')
+            print(e)
+            return 0
+
 # h = Helper()
 # # con = {
 # #      'host':'ftp.slonos.tech',

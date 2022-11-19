@@ -636,6 +636,13 @@ def deletemodels():
     return render_template('applications/pages/dashboard.html', message='You do not have any running model yet.',
                            segment='deletemodel')
 
+@blueprint.route('<model_id>/deletemodel', methods=['POST'])
+@login_required
+def deletemodel(model_id):
+    bc = BaseController()
+    delete_model = bc.deletemodel(model_id)
+    return render_template('applications/pages/dashboard.html', message='You do not have any running model yet.',
+                           segment='deletemodel')
 
 @blueprint.route('/applications', methods=['GET', 'POST'])
 @login_required

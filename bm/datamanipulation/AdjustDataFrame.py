@@ -296,6 +296,7 @@ def deletemodelsfiles(*argv):
         return 0
 
 
+
 def encode_one_hot(model_id, data_frame, column_types):
     if column_types == 'F':
         encoded_data = encode_one_hot_features(model_id, data_frame)

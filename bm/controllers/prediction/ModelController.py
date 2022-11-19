@@ -1,3 +1,4 @@
+import pathlib
 import random
 import shutil
 
@@ -13,7 +14,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 from app.base.constants.BM_CONSTANTS import plot_zip_locations, pkls_location, scalars_location, plot_locations, \
-    html_plots_location, html_short_path
+    html_plots_location, html_short_path, df_location
 from bm.controllers.BaseController import BaseController
 from bm.core.ModelProcessor import ModelProcessor
 from bm.datamanipulation.AdjustDataFrame import encode_prediction_data_frame, \
@@ -160,7 +161,7 @@ def run_prod_model(root_path, csv_file_location, featuresdvalues, predicted_colu
 def predict_values_from_model(model_id, testing_values):
     try:
         # ------------------Predict values from the model-------------------------#
-        model = pickle.load(open(pkls_location + str(model_id) + '_model.pkl', 'rb'))
+        model = pickle.load(open(pkls_location + str(model_id) + '/' + str(model_id) + '_model.pkl', 'rb'))
 
         # Encode the testing values
         features_list = get_features(model_id)
@@ -225,7 +226,11 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     new_headers_list = np.append(featuresdvalues, predicted_columns.flatten())
     data = data[new_headers_list]
     model_id = Helper.generate_model_id()
-    file_name = get_only_file_name(csv_file_location)
+
+    file_extension = pathlib.Path(csv_file_location).suffix
+    newfilename = os.path.join(df_location, str(model_id) + file_extension)
+    os.rename(csv_file_location, newfilename)
+    file_name = get_only_file_name(newfilename)
 
     initiate_model = BaseController.initiate_model(model_id)
 
@@ -268,7 +273,7 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     s_c = StandardScaler(with_mean=False)  # test
     training_x = s_c.fit_transform(training_x)
     test_x = s_c.transform(testing_x)
-    scalar_file_name = scalars_location + str(model_id) + '_scalear.sav'
+    scalar_file_name = scalars_location + str(model_id) + '/' + str(model_id) + '_scalear.sav'
     pickle.dump(s_c, open(scalar_file_name, 'wb'))
 
     # Select proper model
@@ -277,7 +282,7 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     # cls = # LinearRegression() #MultiOutputClassifier(KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2), n_jobs=-1)  # KNeighborsRegressor)
     cls.fit(training_x, training_y)
 
-    model_file_name = pkls_location + str(model_id) + '_model.pkl'
+    model_file_name = pkls_location + str(model_id) + '/' + str(model_id) + '_model.pkl'
     pickle.dump(cls, open(model_file_name, 'wb'))
     y_pred = cls.predict(test_x)
 
@@ -313,11 +318,8 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     for i in range(len(model_features)):
         for j in range(len(model_labels)):
             img_prefix = '_' + model_features[i] + '_' + model_labels[j]
-            plot_image_path = os.path.join(plot_locations,
+            plot_image_path = os.path.join(plot_locations, str(model_id) + '/' +
                                            str(model_id) + img_prefix + '_plot.png')
-            image_path = os.path.join(plot_locations, str(model_id) + img_prefix + '_plot.png')
-            # if(i ==0 and j ==0):
-            #    image_db_path = image_short_path + get_only_file_name(csv_file_location) + img_prefix +  '_plot.png'
             sns.pairplot(data, x_vars=model_features[i],
                          y_vars=model_labels[j], size=4, aspect=1, kind='scatter')
             plot_image = plot_image_path  # os.path.join(root_path, 'static/images/plots/', get_only_file_name(csv_file_location) + '_plot.png')
@@ -380,99 +382,10 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
 
     # APIs details and create APIs document
 
-    convert_data_to_sample(csv_file_location, 5)
+    convert_data_to_sample(newfilename, 5)
     return all_return_values
 
 
-def run_demo_model1(root_path, csv_file_location, predicted_columns, ds_source, ds_goal):
-    # ------------------Preparing data frame-------------------------#
-    cvs_header = getcvsheader(csv_file_location)
-    new_headers_list = get_new_headers_list(cvs_header, predicted_columns)
-    # reordered_data = reorder_csv_file(csv_file_location, new_headers_list)
-    # data = reordered_data  # pd.read_csv(csv_file_location)
-    data = pd.read_csv(csv_file_location)
-    model_id = randint(0, 10)
 
-    # Determine features and lables
-    features_last_index = len(new_headers_list) - (len(predicted_columns))
-    model_features = new_headers_list[0:features_last_index]
-    model_labels = predicted_columns
-
-    # 1-Clean the data frame
-    data = remove_null_values(data)
-    dd = data.max(numeric_only=True)
-    print(data.describe())
-
-    # 2- Select ML algorithm
-    # cls = modelselector(data, model_features, mo)
-
-    data_column_count = len(data.columns)
-    testing_values_len = data_column_count - len(predicted_columns)
-
-    # take slice from the dataset, all rows, and cloumns from 0:8
-    features_df = data[model_features]
-    labels_df = data[model_labels]
-
-    real_x = data.loc[:, model_features]
-    real_y = data.loc[:, model_labels]
-    dcp = DataCoderProcessor()
-    # real_x = dcp.encode_features1(model_id, real_x)
-    # real_y = dcp.encode_labels(model_id, real_y)
-    # real_x = encode_one_hot(model_id, features_df, 'F')  # 2 param (test vales)
-    # real_y = encode_one_hot(model_id, labels_df, 'L')  # (predict values)
-
-    training_x, testing_x, training_y, testing_y = train_test_split(real_x, real_y, test_size=0.25, random_state=0)
-
-    # Add standard scalar
-    s_c = StandardScaler(with_mean=False)  # test
-    training_x = s_c.fit_transform(training_x)
-    test_x = s_c.transform(testing_x)
-    file_name = get_only_file_name(csv_file_location)
-    scalar_file_name = file_name + '_scalear.sav'
-    pickle.dump(s_c, open(scalar_file_name, 'wb'))
-
-    # Select proper model
-    cls = MultiOutputClassifier(KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2),
-                                n_jobs=-1)  # KNeighborsRegressor)
-    cls.fit(training_x, training_y)
-
-    model_file_name = file_name + '_model.pkl'
-    pickle.dump(cls, open(model_file_name, 'wb'))
-    y_pred = cls.predict(test_x)
-
-    # Evaluating the Algorithm
-    cf_matrix = confusion_matrix(testing_y, y_pred)
-    print(cf_matrix)
-    ax = sns.heatmap(cf_matrix, annot=True, annot_kws={"size": 16})
-    plt.show()
-
-    Mean_Absolute_Error = round(
-        metrics.mean_absolute_error(numpy.array(testing_y, dtype=object), numpy.array(y_pred, dtype=object)),
-        2)  # if not is_classification else 'N/A'
-    Mean_Squared_Error = round(metrics.mean_squared_error(testing_y, y_pred), 2)  # if not is_classification else 'N/A'
-    Root_Mean_Squared_Error = round(np.sqrt(metrics.mean_squared_error(testing_y, y_pred)),
-                                    2)  # if not is_classification else 'N/A'
-    c_m = ''
-    acc = np.array(round(cls.score(training_x, training_y) * 100, 2))
-
-    # Show prediction
-
-    plt.scatter(testing_y, y_pred)
-    # plt.scatter(range(len(y_pred)), y_pred, color='red')
-    plt.title("dfdfdf")
-    # plt.show()//
-
-    # ------------------Predict values from the model-------------------------#
-    now = datetime.now()
-    all_return_values = {'accuracy': acc, 'confusion_matrix': c_m,  # 'plot_image_path': image_path,
-                         'file_name': file_name,
-                         'Mean_Absolute_Error': Mean_Absolute_Error,
-                         'Mean_Squared_Error': Mean_Squared_Error,
-                         'Root_Mean_Squared_Error': Root_Mean_Squared_Error,
-                         'created_on': now.strftime("%d/%m/%Y %H:%M:%S"),
-                         'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
-                         'last_run_time': now.strftime("%d/%m/%Y %H:%M:%S")}
-
-    return all_return_values
 
 # b = run_demo_model1(root_path, 'diabetes.csv', ['Age'], '1', '2')

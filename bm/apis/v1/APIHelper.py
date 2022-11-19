@@ -6,6 +6,7 @@ from flask import session
 from mailmerge import MailMerge
 
 from app import db
+from app.base.constants.BM_CONSTANTS import output_document_sfx
 from app.base.db_models.ModelProfile import ModelProfile
 from base.db_models.ModelAPIMethods import ModelAPIMethods
 from bm.apis.v1.APIsPredictionServices import predictvalues, getmodelfeatures, getmodellabels, nomodelfound
@@ -67,8 +68,8 @@ class APIHelper:
             apis_doc_template = templates_folder + "Slonos_Labs_BrontoMind_APIs_document_template.docx"
             output_methods_file = str(output_pdf_folder + str(model_id) + '_BrontoMind_APIs_methods_document.docx')
 
-            output_file = str(output_pdf_folder + str(model_id) + '_BrontoMind_APIs_document.docx')
-            output_pdf_file = str(output_pdf_folder + str(model_id) + '_BrontoMind_APIs_document.pdf')
+            output_file = str(output_pdf_folder + str(model_id) + '/' + str(model_id) + output_document_sfx)
+            output_pdf_file = str(output_pdf_folder + str(model_id) + '/' +  str(model_id) + output_document_sfx)
 
             # 1- Adding the cover
             output_cover_contents = []
