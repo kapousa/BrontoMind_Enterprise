@@ -57,4 +57,10 @@ demo_key = 'DEMO'
 
 output_document_sfx = '_BrontoMind_APIs_document.docx'
 
+prediction_model_keyword = 'Prediction'
 
+classification_model_keyword = 'Classification'
+
+clustering_model_keyword = 'Clustering'
+
+forecasting_model_keyword = 'Forecasting'

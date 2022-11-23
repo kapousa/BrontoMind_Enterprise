@@ -1,53 +1,37 @@
 # Data manipulation
 # ==============================================================================
-from datetime import datetime
 import os
-import pickle
-import random
+from datetime import datetime
 from random import randint
-
-import matplotlib
-import numpy as np
-import pandas as pd
 
 # Plots
 # ==============================================================================
 import matplotlib.pyplot as plt
+import pandas as pd
 import plotly
 import plotly.express as px
-import json
 
 from app import db
-from app.base.constants.BM_CONSTANTS import pkls_location, html_plots_location, html_short_path
+from app.base.constants.BM_CONSTANTS import html_plots_location, html_short_path
 from app.base.db_models.ModelProfile import ModelProfile
 from bm.datamanipulation.AdjustDataFrame import convert_data_to_sample
-from bm.db_helper.AttributesHelper import add_api_details, update_api_details_id, add_features, add_labels, \
-    add_forecasting_results
+from bm.db_helper.AttributesHelper import add_api_details, update_api_details_id, add_features, add_labels
 from bm.utiles.CVSReader import get_only_file_name
+from bm.utiles.Helper import Helper
 
 plt.style.use('fivethirtyeight')
 plt.rcParams['lines.linewidth'] = 1.5
 
 # Modeling and Forecasting
 # ==============================================================================
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import Lasso
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
 
 from skforecast.ForecasterAutoreg import ForecasterAutoreg
-from skforecast.ForecasterAutoregCustom import ForecasterAutoregCustom
-from skforecast.ForecasterAutoregMultiOutput import ForecasterAutoregMultiOutput
-from skforecast.model_selection import grid_search_forecaster
-from skforecast.model_selection import backtesting_forecaster
 
-from joblib import dump, load
 
 # Warnings configuration
 # ==============================================================================
-import warnings
 
 
 # warnings.filterwarnings('ignore')

@@ -18,11 +18,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Lasso
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
-from skforecast.ForecasterAutoreg import ForecasterAutoreg
-from skforecast.ForecasterAutoregCustom import ForecasterAutoregCustom
-from skforecast.ForecasterAutoregMultiOutput import ForecasterAutoregMultiOutput
-from skforecast.model_selection import grid_search_forecaster
-from skforecast.model_selection import backtesting_forecaster
+
 from datetime import datetime
 from joblib import dump, load
 import matplotlib

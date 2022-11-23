@@ -200,9 +200,9 @@ class ClassificationControllerHelper:
             print(e)
             return 0
 
-    def create_classification_data_set(self, files_path, labels):
+    def create_classification_data_set(self, files_path, labels, model_id=0):
         try:
-            output_file = '%s%s' % (files_path, 'data.txt')
+            output_file = '%s%s%s' % (files_path, str(model_id), '.txt')
             if os.path.exists(output_file):
                 os.remove(output_file)
 
@@ -220,9 +220,9 @@ class ClassificationControllerHelper:
             print(e)
             return 0
 
-    def create_classification_csv_data_set(self, csv_file_path, file_name=''):
+    def create_classification_csv_data_set(self, csv_file_path, model_id):
         try:
-            output_file = '%s%s%s%s' % (df_location, file_name, '/', 'data.txt')
+            output_file = '%s%s%s%s%s' % (df_location, str(model_id), '/', str(model_id), '.txt')
             if os.path.exists(output_file):
                 os.remove(output_file)
             # Open file
@@ -248,9 +248,9 @@ class ClassificationControllerHelper:
             print(e)
             return 0
 
-    def create_FTP_data_set(self, location_details, labels):
+    def create_FTP_data_set(self, location_details, labels, model_id=0):
         try:
-            output_file = '%s%s' % (df_location, 'data.txt')
+            output_file = '%s%s%s' % (df_location, str(model_id), '.txt')
             helper = Helper()
             ftp_conn = helper.create_FTP_conn(location_details)
             with open(output_file, 'w', encoding='utf8') as outfile:

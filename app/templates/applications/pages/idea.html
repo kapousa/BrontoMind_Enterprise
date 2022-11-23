@@ -1,0 +1,46 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h1 class="card-title ">Analysis Results</h1>
+                    <p class="card-category"></p>
+                </div>
+                <div class="card-body lead">
+                    <form action="/analyserequest" method="post">
+                    <div class="modal-body">
+                                    <textarea rows="10"
+                                              value=""
+                                              class="form-control" name="text_value"
+                                              id="text_value"
+                                              required>
+                                </textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+        });
+    </script>
+
+{% endblock javascripts %}
+

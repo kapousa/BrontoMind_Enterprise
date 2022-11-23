@@ -1,11 +1,18 @@
 import os
 import shutil
 
+import nltk
+import numpy
+import numpy as np
+from nltk.corpus import wordnet
+
 from app import db
 from app.base.constants.BM_CONSTANTS import scalars_location, pkls_location, output_docs_location, df_location, \
-    plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder, html_plots_location, output_document_sfx
+    plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder, html_plots_location, output_document_sfx, \
+    prediction_model_keyword, classification_model_keyword, forecasting_model_keyword, clustering_model_keyword
 from app.base.db_models.ModelAPIDetails import ModelAPIDetails
 from app.base.db_models.ModelAPIModelMethods import ModelAPIModelMethods
+from app.base.db_models.ModelBotKeywords import ModelBotKeywords
 from app.base.db_models.ModelEncodedColumns import ModelEncodedColumns
 from app.base.db_models.ModelFeatures import ModelFeatures
 from app.base.db_models.ModelForecastingResults import ModelForecastingResults
@@ -49,26 +56,23 @@ class BaseController:
             ModelForecastingResults.query.filter_by(model_id=model_id).delete()
             db.session.commit()
 
-            # Delete old model files
-            ploting_path = html_plots_location + str(model_id) # all geenrated html files
-            zip_path = plot_zip_locations + str(model_id) # all generated iamge files
-            output_document = output_docs_location + str(model_id) # Output documents
-            data_location = df_location + str(model_id)  # data location
-            plots_image_path = os.path.join(plot_locations, str(model_id))  # plot images location
-            pkl_location = pkls_location + str(model_id)
-            scalar_location = scalars_location + str(model_id)
+            # Delete all added files and folders
+            paths = {
+                'ploting_path': html_plots_location + str(model_id),  # all geenrated html files
+                'zip_path': plot_zip_locations + str(model_id),  # all generated iamge files
+                'pkl_location': pkls_location + str(model_id),  # pkls location
+                'output_document': output_docs_location + str(model_id),  # Output documents
+                'model_data_location': df_location + str(model_id),  # model data location
+                'plots_image_path': os.path.join(plot_locations, str(model_id)),  # plot images location
+                'scalar_location': scalars_location + str(model_id),  # scalrs location
+                'data_location': df_location
+            }
+            deletefolderfiles = Helper.deletefolderfiles(*paths.values())
 
-            deletefolderfiles = Helper.deletefolderfiles(ploting_path, zip_path, output_document, plots_image_path, data_location, pkl_location, scalar_location)
+            return deletefolderfiles
 
-            # Delet old folders
-            shutil.rmtree(ploting_path) if (os.path.isdir(ploting_path)) else print(0)
-            shutil.rmtree(zip_path) if (os.path.isdir(zip_path)) else print(0)
-            shutil.rmtree(output_document) if (os.path.exists(output_document)) else print(0)
-            shutil.rmtree(data_location) if (os.path.isdir(data_location)) else print(0)
-            shutil.rmtree(plots_image_path) if (os.path.isdir(plots_image_path)) else print(0)
-            shutil.rmtree(pkl_location) if (os.path.isdir(pkl_location)) else print(0)
-            shutil.rmtree(scalar_location) if (os.path.isdir(scalar_location)) else print(0)
-            os.remove(df_location + str(model_id) + '.csv')
+            for path in paths.values():  # Delete old folders
+                shutil.rmtree(path) if (os.path.isdir(path)) else print(0)
 
             return 1
         except Exception as e:
@@ -90,7 +94,7 @@ class BaseController:
         for i in range(len(c_m)):
             sum_of_all_values = sum_of_all_values + c_m[i]
 
-        c_m_accurcy = round((correct_pre_sum/sum_of_all_values),3) * 100
+        c_m_accurcy = round((correct_pre_sum / sum_of_all_values), 3) * 100
 
         return c_m_accurcy
 
@@ -120,7 +124,7 @@ class BaseController:
     @staticmethod
     def get_model_status(model_id):
         try:
-            model_profile_row = [ModelProfile.query.filter_by(model_id = model_id).first()]
+            model_profile_row = [ModelProfile.query.filter_by(model_id=model_id).first()]
             model_profile = {}
 
             for profile in model_profile_row:
@@ -159,23 +163,142 @@ class BaseController:
     @staticmethod
     def initiate_model(model_id):
 
-        ploting_path = html_plots_location + str(model_id)  # all geenrated html files
-        zip_path = plot_zip_locations + str(model_id)   # all generated iamge files
-        pkl_location = pkls_location + str(model_id)
-        output_document = output_docs_location + str(model_id)   # Output documents
-        data_location = df_location + str(model_id)     # data location
-        plots_image_path = os.path.join(plot_locations, str(model_id))     # plot images location
-        scalar_location = scalars_location + str(model_id)
-
+        paths = {
+            'ploting_path': html_plots_location + str(model_id),  # all geenrated html files
+            'zip_path': plot_zip_locations + str(model_id),  # all generated iamge files
+            'pkl_location': pkls_location + str(model_id),  # pkls location
+            'output_document': output_docs_location + str(model_id),  # Output documents
+            'data_location': df_location + str(model_id),  # data location
+            'plots_image_path': os.path.join(plot_locations, str(model_id)),  # plot images location
+            'scalar_location': scalars_location + str(model_id)  # scalrs location
+        }
 
         # Delet old folders and create new
-        shutil.rmtree(ploting_path) if (os.path.isdir(ploting_path)) else os.mkdir(ploting_path)
-        shutil.rmtree(zip_path) if (os.path.isdir(zip_path)) else os.mkdir(zip_path)
-        shutil.rmtree(pkl_location) if (os.path.isdir(pkl_location)) else os.mkdir(pkl_location)
-        shutil.rmtree(output_document) if (os.path.exists(output_document)) else os.mkdir(output_document)
-        shutil.rmtree(data_location) if (os.path.isdir(data_location)) else os.mkdir(data_location)
-        shutil.rmtree(plots_image_path) if (os.path.isdir(plots_image_path)) else os.mkdir(plots_image_path)
-        shutil.rmtree(scalar_location) if (os.path.isdir(scalar_location)) else os.mkdir(scalar_location)
-
+        for path in paths.values():
+            shutil.rmtree(path) if (os.path.isdir(path)) else os.mkdir(path)
 
         return 0
+
+    def detectefittedmodels(self, user_desc):
+        try:
+            # Analysing the input
+            text = nltk.word_tokenize(user_desc)
+            pos_tagged = nltk.pos_tag(text)
+            text_verbs = list(filter(lambda x: x[0], pos_tagged))
+            text_verbs = numpy.array(text_verbs)
+            text_verbs = text_verbs[:, 0] if len(text_verbs) > 0 else text_verbs
+
+            if (len(text_verbs) == 0):
+                return ["Sorry but we couldn't recognise what you need, Please rephrase your description and try again"]
+
+            # Extract verbs
+            synonyms_verbs = []
+            for i in range(len(text_verbs)):
+                xx = text_verbs[i]
+                for syn in wordnet.synsets(text_verbs[i]):
+                    for lm in syn.lemmas():
+                        synonyms_verbs.append(lm.name())  # adding into synonyms
+                print(set(synonyms_verbs))
+
+            synonyms = synonyms_verbs
+            synonyms = numpy.unique(synonyms)
+            modelbotkeywords = ModelBotKeywords.query.all()
+            suggested_models = []
+            suggested_models_ids = []
+
+            for i in range(len(synonyms)):
+                for item in modelbotkeywords:
+                    kwords = item.keywords
+                    kwords = kwords.split(',')
+                    #kwords = numpy.array(kwords)
+                    if any(word.startswith(synonyms[i]) for word in kwords):
+                        suggested_models.append(item.model_type)
+                        suggested_models_ids.append(item.model_code)
+
+            suggested_models = np.unique(suggested_models)
+            #suggested_models = ''.join(suggested_models)
+
+            if (len(suggested_models) == 0):
+                return ["Sorry but we couldn't recognise what you need, Please rephrase your description and try again"]
+
+            results = ['Well, Here how we can help you:']
+            results.append("- Create %s model to predict values based on the history of the old data."  % (prediction_model_keyword)) if (prediction_model_keyword in suggested_models) else print('0')
+            results.append("- Group your data under set of %s to help you to reach to the data easily in the future." % (classification_model_keyword)) if (classification_model_keyword in suggested_models) else print('0')
+            results.append("- Create %s model to predict values in specific Date/Time." % (forecasting_model_keyword)) if (forecasting_model_keyword in suggested_models) else print('0')
+            results.append("- %s related information under one umbrella to make it easy for you to find information that have same characteristc." % (clustering_model_keyword)) if (clustering_model_keyword in suggested_models) else print('0')
+
+
+            return results
+
+        except  Exception as e:
+            print('Ohh -get_model_status...Something went wrong.')
+            print(e)
+            return ['Ohh -get_model_status...Something went wrong.']
+
+    def detectefittedmodels_(self, user_desc):
+        try:
+            # Analysing the input
+            text = nltk.word_tokenize(user_desc)
+            pos_tagged = nltk.pos_tag(text)
+            text_verbs = list(filter(lambda x: x[1] == 'VB', pos_tagged))
+            text_words = list(filter(lambda x: x[1] == 'NN', pos_tagged))
+            text_verbs = numpy.array(text_verbs)
+            text_verbs = text_verbs[:, 0] if len(text_verbs) > 0 else text_verbs
+            text_words = numpy.array(text_words)
+            text_words = text_words[:, 0] if len(text_words) > 0 else text_words
+
+            if (len(text_verbs) == 0 and len(text_words) == 0):
+                return ["Sorry but we couldn't recognise what you need, Please rephrase your description and try again"]
+
+            # Extract verbs
+            synonyms_verbs = []
+            for i in range(len(text_verbs)):
+                xx = text_verbs[i]
+                for syn in wordnet.synsets(text_verbs[i]):
+                    for lm in syn.lemmas():
+                        synonyms_verbs.append(lm.name())  # adding into synonyms
+                print(set(synonyms_verbs))
+
+            # Extract words
+            synonyms_text = []
+            for i in range(len(text_words)):
+                xx = text_words[i]
+                for syn in wordnet.synsets(text_words[i]):
+                    for lm in syn.lemmas():
+                        synonyms_text.append(lm.name())  # adding into synonyms
+                print(set(synonyms_text))
+
+            synonyms = numpy.concatenate((synonyms_verbs, synonyms_text), axis=0)
+            synonyms = numpy.unique(synonyms)
+            modelbotkeywords = ModelBotKeywords.query.all()
+            suggested_models = []
+            suggested_models_ids = []
+
+            for i in range(len(synonyms)):
+                for item in modelbotkeywords:
+                    kwords = item.keywords
+                    kwords = kwords.split(',')
+                    #kwords = numpy.array(kwords)
+                    if any(word.startswith(synonyms[i]) for word in kwords):
+                        suggested_models.append(item.model_type)
+                        suggested_models_ids.append(item.model_code)
+
+            suggested_models = np.unique(suggested_models)
+            #suggested_models = ''.join(suggested_models)
+
+            if (len(suggested_models) == 0):
+                return ["Sorry but we couldn't recognise what you need, Please rephrase your description and try again"]
+
+            results = ['Well, Here how we can help you:']
+            results.append("- Create %s model to predict values based on the history of the old data."  % (prediction_model_keyword)) if (prediction_model_keyword in suggested_models) else print('0')
+            results.append("- Group your data under set of %s to help you to reach to the data easily in the future." % (classification_model_keyword)) if (classification_model_keyword in suggested_models) else print('0')
+            results.append("- Create %s model to predict values in specific Date/Time." % (forecasting_model_keyword)) if (forecasting_model_keyword in suggested_models) else print('0')
+            results.append("- %s related information under one umbrella to make it easy for you to find information that have same characteristc." % (clustering_model_keyword)) if (clustering_model_keyword in suggested_models) else print('0')
+
+
+            return results
+
+        except  Exception as e:
+            print('Ohh -get_model_status...Something went wrong.')
+            print(e)
+            return ['Ohh -get_model_status...Something went wrong.']

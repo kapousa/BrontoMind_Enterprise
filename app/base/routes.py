@@ -109,11 +109,16 @@ def selectmodelgoal():
     return render_template('applications/pages/selectmodelgoal.html', segment='selectmodelgoal')
 
 
-@blueprint.route('/analysedata')
+@blueprint.route('/analyserequest', methods=['POST'])
 @login_required
-def analysedata():
-    session['ds_goal'] = None
-    return render_template('applications/pages/selectdssource.html', segment='selectmodelgoal')
+def analyserequest():
+    basedirector = BaseDirector()
+    return basedirector.analyse_request(request)
+
+@blueprint.route('/idea')
+@login_required
+def idea():
+    return render_template('applications/pages/idea.html', segment='idea')
 
 
 @blueprint.route('/createmodel')
@@ -367,6 +372,7 @@ def creatingthemodel():  # The function of showing the gif page
         else:
             return 0
     except Exception as e:
+
         tb = sys.exc_info()[2]
         print(e)
         return render_template('page-501.html', error=e.with_traceback(tb))
@@ -534,10 +540,10 @@ def showmodels():
     profiles = BaseController.get_all_models()
     if len(profiles) > 0:
         return render_template('applications/pages/models.html', message='No', profiles=profiles,
-                               segment='showdashboard')
+                               segment='showmodels')
 
     return render_template('applications/pages/models.html', message='You do not have any active model yet.',
-                               segment='showdashboard')
+                               segment='showmodels')
 
 
 @blueprint.route('/showdashboard')

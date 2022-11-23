@@ -3,7 +3,7 @@ pandas
 numpy
 Flask
 matplotlib
-Werkzeug~=2.0.0
+Werkzeug
 Jinja2
 scikit-learn
 seaborn

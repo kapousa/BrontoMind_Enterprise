@@ -1,4 +1,5 @@
 import os
+import pathlib
 import pickle
 import random
 import shutil
@@ -242,23 +243,29 @@ class ClassificationController:
             classificationcontrollerHelper = ClassificationControllerHelper()
             files_path = '%s%s' % (app_root_path, data_files_folder)
             csv_file_path = '%s%s' % (df_location, session['fname'])
+            file_extension = pathlib.Path(csv_file_path).suffix
+            newfilename = os.path.join(df_location, str(model_id) + file_extension)
+            os.rename(csv_file_path, newfilename)
+            csv_file_path = newfilename
             file_name = get_only_file_name(csv_file_path)
+
+            initiate_model = BaseController.initiate_model(model_id)
 
             # Create datafile (data.txt)
             if (is_local_data == 'Yes'):
                 folders_list = ControllersHelper.get_folder_structure(files_path, req_extensions=('.txt'))
                 featuresdvalues = ['data']
                 classification_label = ['category']
-                data_set = classificationcontrollerHelper.create_classification_data_set(files_path, folders_list)
+                data_set = classificationcontrollerHelper.create_classification_data_set(files_path, folders_list, model_id)
             elif (is_local_data == 'csv'):
                 initiate_model = BaseController.initiate_model(model_id)
-                data_set = classificationcontrollerHelper.create_classification_csv_data_set(csv_file_path,file_name)
+                data_set = classificationcontrollerHelper.create_classification_csv_data_set(csv_file_path,model_id)
             else:
                 folders_list = helper.list_ftp_dirs(
                     location_details)  # classificationcontrollerHelper.get_folder_structure(files_path, req_extensions=('.txt'))
-                data_set = classificationcontrollerHelper.create_FTP_data_set(location_details, folders_list)
+                data_set = classificationcontrollerHelper.create_FTP_data_set(location_details, folders_list, model_id)
 
-            full_file_path = '%s%s%s%s%s' % (app_root_path, data_files_folder, model_id, '/', 'data.txt')
+            full_file_path = '%s%s%s%s%s%s' % (app_root_path, data_files_folder, model_id, '/', str(model_id), '.txt')
             docs = classificationcontrollerHelper.setup_docs(full_file_path)
             categories, most_common = classificationcontrollerHelper.print_frequency_dist(docs)
             # X_train, X_test, y_train, y_test = classificationcontrollerHelper.get_splits(docs)

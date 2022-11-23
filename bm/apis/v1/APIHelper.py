@@ -63,10 +63,10 @@ class APIHelper:
 
         try:
             apis_doc_cover_template = templates_folder + "Slonos_Labs_BrontoMind_APIs_document_cover_template.docx"
-            output_cover_file = str(output_pdf_folder + str(model_id) + '_BrontoMind_APIs_cover_document.docx')
+            output_cover_file = str(output_pdf_folder + str(model_id) + '/' + str(model_id) + '_BrontoMind_APIs_cover_document.docx')
 
             apis_doc_template = templates_folder + "Slonos_Labs_BrontoMind_APIs_document_template.docx"
-            output_methods_file = str(output_pdf_folder + str(model_id) + '_BrontoMind_APIs_methods_document.docx')
+            output_methods_file = str(output_pdf_folder + str(model_id) + '/' + str(model_id) + '_BrontoMind_APIs_methods_document.docx')
 
             output_file = str(output_pdf_folder + str(model_id) + '/' + str(model_id) + output_document_sfx)
             output_pdf_file = str(output_pdf_folder + str(model_id) + '/' +  str(model_id) + output_document_sfx)

@@ -4,6 +4,9 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 import os
+import ssl
+
+import nltk
 from decouple import config
 
 class Config(object):
@@ -28,6 +31,17 @@ class Config(object):
     CLASSIFICATION_MODULE = '10'
     FILES_CLASSIFICATION_MODULE = '11'
     CLUSTERING_MODULE = '13'
+
+    try:        _create_unverified_https_context = ssl._create_unverified_context
+    except AttributeError:
+        pass
+    else:
+        ssl._create_default_https_context = _create_unverified_https_context
+
+    nltk.download('punkt')
+    nltk.download('averaged_perceptron_tagger')
+    nltk.download('wordnet')
+
 
 class ProductionConfig(Config):
     DEBUG = True

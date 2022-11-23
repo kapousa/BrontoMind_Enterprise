@@ -19,7 +19,7 @@ from nltk.corpus import stopwords
 from sklearn.preprocessing import MinMaxScaler
 
 from app.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, app_root_path, \
-    data_files_folder, df_location
+    data_files_folder, df_location, scalars_location
 from bm.utiles.Helper import Helper
 
 plt.style.use('fivethirtyeight')
@@ -187,9 +187,9 @@ class ControllersHelper:
             print(e)
             return 0
 
-    def create_FTP_data_set(self, location_details, labels):
+    def create_FTP_data_set(self, location_details, labels, model_id=0):
         try:
-            output_file = '%s%s' % (df_location, 'data.txt')
+            output_file = '%s%s%s' % (df_location, str(model_id), '.txt')
             helper = Helper()
             ftp_conn = helper.create_FTP_conn(location_details)
             with open(output_file, 'w', encoding='utf8') as outfile:

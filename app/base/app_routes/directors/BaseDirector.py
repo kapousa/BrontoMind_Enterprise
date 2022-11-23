@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename
 
 from app.base.constants.BM_CONSTANTS import df_location
 from base.constants.BM_CONSTANTS import api_data_filename
+from bm.controllers.BaseController import BaseController
 from bm.datamanipulation.AdjustDataFrame import export_mysql_query_to_csv, export_api_respose_to_csv
 from bm.utiles.CVSReader import getcvsheader
 from bm.utiles.Helper import Helper
@@ -88,3 +89,12 @@ class BaseDirector:
         headersArray = getcvsheader(filelocation)
 
         return api_data_filename, file_location, headersArray, count_row, message
+    @staticmethod
+    def analyse_request(request):
+        session['ds_goal'] = None
+        model_desc = request.form.get('text_value')
+        basecontroller = BaseController()
+        results = basecontroller.detectefittedmodels(model_desc.strip())
+        return render_template('applications/pages/suggestions.html',
+                               message= 'analysis_result', results = results,
+                               segment='idea')
