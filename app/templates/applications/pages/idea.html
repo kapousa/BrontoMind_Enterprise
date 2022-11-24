@@ -10,16 +10,16 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h1 class="card-title ">Analysis Results</h1>
+                    <h1 class="card-title ">
+                        <i class="fa fa-lightbulb text-info"></i>
+                        Tell us what's in your mind</h1>
                     <p class="card-category"></p>
                 </div>
-                <div class="card-body lead">
+                <div class="card-body">
                     <form action="/analyserequest" method="post">
                     <div class="modal-body">
-                                    <textarea rows="10"
-                                              value=""
-                                              class="form-control" name="text_value"
-                                              id="text_value"
+                                    <textarea class="form-control text-primary" name="text_value"
+                                              id="text_value" placeholder="Tell us about your idea"
                                               required>
                                 </textarea>
                     </div>

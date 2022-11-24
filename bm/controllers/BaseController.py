@@ -222,11 +222,10 @@ class BaseController:
                 return ["Sorry but we couldn't recognise what you need, Please rephrase your description and try again"]
 
             results = ['Well, Here how we can help you:']
-            results.append("- Create %s model to predict values based on the history of the old data."  % (prediction_model_keyword)) if (prediction_model_keyword in suggested_models) else print('0')
-            results.append("- Group your data under set of %s to help you to reach to the data easily in the future." % (classification_model_keyword)) if (classification_model_keyword in suggested_models) else print('0')
-            results.append("- Create %s model to predict values in specific Date/Time." % (forecasting_model_keyword)) if (forecasting_model_keyword in suggested_models) else print('0')
-            results.append("- %s related information under one umbrella to make it easy for you to find information that have same characteristc." % (clustering_model_keyword)) if (clustering_model_keyword in suggested_models) else print('0')
-
+            results.append("- Create %s model to predict values based on the history of the old data.<br/><a href='/createmodel?t=7' class='btn btn-primary' style='float: right'>Create prediction model</a>"  % (prediction_model_keyword)) if (prediction_model_keyword in suggested_models) else print('0')
+            results.append("- Group data under sets of %s that help reaching to the data easily in the future.<br/><a href='/createmodel?t=10' class='btn btn-danger' style='float: right'>Connect to labeled data</a>" % (classification_model_keyword)) if (classification_model_keyword in suggested_models) else print('0')
+            results.append("- Create %s model to predict values in specific Date/Time.<br/><a href='/createmodel?t=8' class='btn btn-default' style='float: right'>Start forecasting model</a>" % (forecasting_model_keyword)) if (forecasting_model_keyword in suggested_models) else print('0')
+            results.append("- %s related information under one umbrella to make it easy for you to find information that have same characteristc.<br/><a href='/createmodel?t=13' class='btn btn-success' style='float: right'>Connect to row data</a>" % (clustering_model_keyword)) if (clustering_model_keyword in suggested_models) else print('0')
 
             return results
 
@@ -295,8 +294,11 @@ class BaseController:
             results.append("- Create %s model to predict values in specific Date/Time." % (forecasting_model_keyword)) if (forecasting_model_keyword in suggested_models) else print('0')
             results.append("- %s related information under one umbrella to make it easy for you to find information that have same characteristc." % (clustering_model_keyword)) if (clustering_model_keyword in suggested_models) else print('0')
 
-
-            return results
+            sample_data = [
+                              results.to_html(border=0, classes='table table-hover', header="false",
+                                                  justify="center").replace("<th>",
+                                                                            "<th class='text-warning'>")],
+            return sample_data
 
         except  Exception as e:
             print('Ohh -get_model_status...Something went wrong.')

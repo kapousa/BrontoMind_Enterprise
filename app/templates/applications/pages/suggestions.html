@@ -15,7 +15,7 @@
                 </div>
                 <div class="card-body lead">
                     {% for result in results %}
-                        {{ result }}<br/>
+                        {{ result|safe }}<br/>
                     {% endfor %}
                 </div>
             </div>
