@@ -2,6 +2,7 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
+from datetime import datetime
 import io
 import os
 import shutil
@@ -9,15 +10,16 @@ import sys
 
 import numpy
 import pandas as pd
-from flask import Markup, session, g
+from flask import Markup, session, g, url_for
 from flask import redirect, send_file, Response, Flask, \
     current_app
 from flask import render_template, request
 from flask_login import login_required, current_user
 from jinja2 import TemplateNotFound
 from matplotlib.backends.backend_template import FigureCanvas
+from sqlalchemy import update
 
-from app import login_manager
+from app import login_manager, db
 from app.base import blueprint
 from app.base.app_routes.directors.BaseDirector import BaseDirector
 from app.base.app_routes.directors.ClassificationDirector import ClassificationDirector
@@ -567,7 +569,7 @@ def showdashboard():
             clustering_director = ClusteringDirector()
             return clustering_director.show_clustermodel_dashboard(request, profile)
 
-        fname = profile['model_name'] + '.csv'
+        fname = str(profile['model_id']) + '.csv'
         data_file_path = os.path.join(app.config['UPLOAD_FOLDER'], fname)
         df = pd.read_csv(data_file_path, sep=",")
         data_sample = (df.sample(n=5, replace=True))
@@ -649,6 +651,28 @@ def deletemodel(model_id):
     delete_model = bc.deletemodel(model_id)
     return render_template('applications/pages/dashboard.html', message='You do not have any running model yet.',
                            segment='deletemodel')
+
+@blueprint.route('/updateinfo', methods=['GET', 'POST'])
+@login_required
+def updateinfo():
+    model_id = request.args.get('param')
+    n = request.args.get('n')
+    if(n == '1'):
+        profile = BaseController.get_model_status(model_id)
+        return render_template('applications/pages/updateinfo.html', message='You do not have any running model yet.', profile= profile, modid= model_id,
+                               segment='showdashboard')
+
+    modid = request.form.get('modid')
+    now = datetime.now()
+    model_profile = ModelProfile.query.filter_by(model_id=modid).first()
+    model_profile.model_name = request.form.get('mname')
+    model_profile.description = request.form.get('mdesc')
+    model_profile.updated_on = now.strftime("%d/%m/%Y %H:%M:%S")
+    db.session.commit()
+
+    #num_rows_updated = ModelProfile.query.update(dict(description = request.form.get('mdesc'), model_name = request.form.get('mname'))).filter(model_id == modi )
+    return redirect(url_for('base_blueprint.showmodels'))
+
 
 @blueprint.route('/applications', methods=['GET', 'POST'])
 @login_required

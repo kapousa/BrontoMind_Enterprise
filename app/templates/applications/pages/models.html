@@ -61,13 +61,14 @@
                                         <tr>
                                             <th scope="row" class="name">
                                                 <div class="media align-items-center">
-                                                    <a href="/showdashboard?param={{ profile['model_id'] }}" class="avatar rounded-circle mr-3">
+                                                    <a href="/showdashboard?param={{ profile['model_id'] }}"
+                                                       class="avatar rounded-circle mr-3">
                                                         <img alt="Image placeholder"
                                                              src="../static/assets/img/logos/{{ profile['ds_goal'] }}.png">
                                                     </a>
                                                     <div class="media-body">
                                                         <a href="/showdashboard?param={{ profile['model_id'] }}">
-                                                        <span class="mb-0 text-sm">{{ profile['model_name'] }}</span>
+                                                            <span class="mb-0 text-sm">{{ profile['model_name'] }}</span>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -77,7 +78,7 @@
                                             </td>
                                             <td class="status">
                                             <span class="badge badge-dot mr-4">
-                                              <i class="bg-green"></i> {{ profile['status'] }}
+                                              {% if profile.status == 'Active' %} <i class="bg-green"></i> {% else %} <i class="bg-red"></i> {% endif %} {{ profile['status'] }}
                                             </span>
                                             </td>
                                             <td>
@@ -95,9 +96,9 @@
                                                         <i class="fas fa-ellipsis-v"></i>
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                        <a class="dropdown-item" href="#">Dashboard</a>
-                                                        <a class="dropdown-item" href="#">Suspend</a>
-                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                        <a class="dropdown-item" href="/updateinfo?n=1&param={{ profile.model_id }}">Update info</a>
+                                                        <a class="dropdown-item" href="/suspendmodel?param={{ profile.model_id }}">{% if profile.status == 'Active' %} Suspend {% else %} Activate {% endif %}</a>
+                                                        <a class="dropdown-item" data-toggle="modal" href="#">Delete</a>
                                                     </div>
                                                 </div>
                                             </td>
