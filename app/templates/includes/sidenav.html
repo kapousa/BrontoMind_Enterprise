@@ -15,21 +15,21 @@
                     <li class="nav-item">
                         <a class="nav-link {% if 'showmodels' in segment %} active {% endif %}"
                            href="{{ url_for('base_blueprint.showmodels') }}">
-                            <i class="ni ni-bullet-list-67 text-danger"></i>
+                            <i class="ni ni-bullet-list-67 text-primary"></i>
                             <span class="nav-link-text">My Models</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if 'selectmodelgoal' in segment %} active {% endif %}"
                            href="{{ url_for('base_blueprint.selectmodelgoal') }}">
-                            <i class="fa fa-plus-circle text-yellow"></i>
+                            <i class="fa fa-plus-circle text-danger"></i>
                             <span class="nav-link-text">Build new model</span>
                         </a>
                     </li>
                 <li class="nav-item">
                         <a class="nav-link {% if 'idea' in segment %} active {% endif %}"
                            href="{{ url_for('base_blueprint.idea') }}">
-                            <i class="fa fa-lightbulb text-info"></i>
+                            <i class="fa fa-lightbulb text-yellow"></i>
                             <span class="nav-link-text">I have only an idea</span>
                         </a>
                     </li>

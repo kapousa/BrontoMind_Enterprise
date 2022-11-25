@@ -1,9 +1,9 @@
 import os
 
-import pandas as pd
-from flask import request, render_template, session
-from werkzeug.utils import secure_filename
 
+from flask import request, render_template, session, redirect, url_for
+from werkzeug.utils import secure_filename
+from datetime import datetime
 from app.base.constants.BM_CONSTANTS import df_location
 from base.constants.BM_CONSTANTS import api_data_filename
 from bm.controllers.BaseController import BaseController
@@ -98,3 +98,28 @@ class BaseDirector:
         return render_template('applications/pages/suggestions.html',
                                message= 'analysis_result', results = results,
                                segment='idea')
+
+    @staticmethod
+    def update_model_info(request):
+        model_id = request.args.get('param')
+        n = request.args.get('n')
+        if (n == '1'):
+            profile = BaseController.get_model_status(model_id)
+            return render_template('applications/pages/updateinfo.html',
+                                   message='You do not have any running model yet.', profile=profile, modid=model_id,
+                                   segment='showdashboard')
+
+        model_id = request.form.get('modid')
+        model_name = request.form.get('mname')
+        model_description= "{}".format(request.form.get('mdesc'))
+
+        basecontroller =BaseController()
+        updatemodelinfo = basecontroller.updatemodelinfo(model_id, model_name, model_description)
+
+        return redirect(url_for('base_blueprint.showmodels'))
+
+    @staticmethod
+    def change_model_status(model_id):
+        basecontroller = BaseController()
+        suspendmodel = basecontroller.changemodelstatus(model_id)
+        return redirect(url_for('base_blueprint.showmodels'))

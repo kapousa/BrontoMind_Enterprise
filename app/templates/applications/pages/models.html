@@ -43,7 +43,7 @@
                                         <th scope="col">
                                             Model
                                         </th>
-                                        <th scope="col">
+                                        <th scope="col" style="word-break: break-all; !important; width: 35%;">
                                             Description
                                         </th>
                                         <th scope="col">
@@ -59,7 +59,7 @@
                                     <tbody class="list">
                                     {% for profile in profiles %}
                                         <tr>
-                                            <th scope="row" class="name">
+                                            <td class="name">
                                                 <div class="media align-items-center">
                                                     <a href="/showdashboard?param={{ profile['model_id'] }}"
                                                        class="avatar rounded-circle mr-3">
@@ -67,14 +67,19 @@
                                                              src="../static/assets/img/logos/{{ profile['ds_goal'] }}.png">
                                                     </a>
                                                     <div class="media-body">
+                                                        {% if profile.status == 'Active' %}
                                                         <a href="/showdashboard?param={{ profile['model_id'] }}">
                                                             <span class="mb-0 text-sm">{{ profile['model_name'] }}</span>
                                                         </a>
+                                                        {% else %}
+                                                            {{ profile['model_name'] }}
+                                                        {% endif %}
                                                     </div>
                                                 </div>
-                                            </th>
-                                            <td class="budget">
-                                                {{ profile['model_description'] }}
+                                            </td>
+                                            <td class="budget" data-toggle="tooltip" data-placement="right" title="{{ "{}".format(profile['model_description']) }}">
+                                                {{ profile['model_description'][0:18] }}...
+
                                             </td>
                                             <td class="status">
                                             <span class="badge badge-dot mr-4">
@@ -97,7 +102,7 @@
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                         <a class="dropdown-item" href="/updateinfo?n=1&param={{ profile.model_id }}">Update info</a>
-                                                        <a class="dropdown-item" href="/suspendmodel?param={{ profile.model_id }}">{% if profile.status == 'Active' %} Suspend {% else %} Activate {% endif %}</a>
+                                                        <a class="dropdown-item" href="{{ profile.model_id }}/changemodelstatus">{% if profile.status == 'Active' %} Suspend {% else %} Activate {% endif %}</a>
                                                         <a class="dropdown-item" data-toggle="modal" href="#">Delete</a>
                                                     </div>
                                                 </div>

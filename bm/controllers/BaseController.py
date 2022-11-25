@@ -1,5 +1,6 @@
 import os
 import shutil
+from datetime import datetime
 
 import nltk
 import numpy
@@ -304,3 +305,28 @@ class BaseController:
             print('Ohh -get_model_status...Something went wrong.')
             print(e)
             return ['Ohh -get_model_status...Something went wrong.']
+
+    def updatemodelinfo(self, model_id, updated_model_name, updated_model_description):
+        try:
+            now = datetime.now()
+            model_profile = ModelProfile.query.filter_by(model_id = model_id).first()
+            model_profile.model_name = updated_model_name
+            model_profile.description = updated_model_description
+            model_profile.updated_on = now.strftime("%d/%m/%Y %H:%M:%S")
+            db.session.commit()
+
+            return 'Success'
+
+        except  Exception as e:
+            return 'Ohh -updatemodelinfo...Something went wrong.'
+
+    def changemodelstatus(self, model_id):
+        try:
+            model_profile = ModelProfile.query.filter_by(model_id=model_id).first()
+            model_profile.status = 20 if (model_profile.status == 19) else 19
+            db.session.commit()
+
+            return 'Success'
+
+        except  Exception as e:
+            return 'Ohh -suspendmodel...Something went wrong.'

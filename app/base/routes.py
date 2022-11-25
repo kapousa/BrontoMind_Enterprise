@@ -661,17 +661,13 @@ def updateinfo():
         profile = BaseController.get_model_status(model_id)
         return render_template('applications/pages/updateinfo.html', message='You do not have any running model yet.', profile= profile, modid= model_id,
                                segment='showdashboard')
+    return BaseDirector.update_model_info(request)
 
-    modid = request.form.get('modid')
-    now = datetime.now()
-    model_profile = ModelProfile.query.filter_by(model_id=modid).first()
-    model_profile.model_name = request.form.get('mname')
-    model_profile.description = request.form.get('mdesc')
-    model_profile.updated_on = now.strftime("%d/%m/%Y %H:%M:%S")
-    db.session.commit()
 
-    #num_rows_updated = ModelProfile.query.update(dict(description = request.form.get('mdesc'), model_name = request.form.get('mname'))).filter(model_id == modi )
-    return redirect(url_for('base_blueprint.showmodels'))
+@blueprint.route('<model_id>/changemodelstatus', methods=['GET', 'POST'])
+@login_required
+def changemodelstatus(model_id):
+    return BaseDirector.change_model_status(model_id)
 
 
 @blueprint.route('/applications', methods=['GET', 'POST'])
