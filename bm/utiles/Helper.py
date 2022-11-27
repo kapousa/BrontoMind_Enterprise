@@ -293,14 +293,3 @@ class Helper:
             print('Ohh -delete_model_files...Something went wrong.')
             print(e)
             return 0
-
-# h = Helper()
-# # con = {
-# #      'host':'ftp.slonos.tech',
-# #      'username':'bmind',
-# #      'password':'Summer@321'
-# #  }
-# # a = h.create_FTP_conn(con)
-# # aa = h.list_ftp_dirs(con)
-# # print('hi')
-# print(h.generate_model_id())

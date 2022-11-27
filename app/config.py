@@ -32,16 +32,6 @@ class Config(object):
     FILES_CLASSIFICATION_MODULE = '11'
     CLUSTERING_MODULE = '13'
 
-    try:        _create_unverified_https_context = ssl._create_unverified_context
-    except AttributeError:
-        pass
-    else:
-        ssl._create_default_https_context = _create_unverified_https_context
-
-    nltk.download('punkt')
-    nltk.download('averaged_perceptron_tagger')
-    nltk.download('wordnet')
-
 
 class ProductionConfig(Config):
     DEBUG = True

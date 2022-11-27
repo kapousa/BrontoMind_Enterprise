@@ -47,7 +47,6 @@ class BaseController:
 
     def deletemodel(self, model_id=0):
         try:
-            model_name = get_model_name(model_id)
             ModelEncodedColumns.query.filter_by(model_id=model_id).delete()
             ModelFeatures.query.filter_by(model_id=model_id).delete()
             ModelLabels.query.filter_by(model_id=model_id).delete()
@@ -58,6 +57,8 @@ class BaseController:
             db.session.commit()
 
             # Delete all added files and folders
+            datafilepath = "%s%s%s" % (df_location, str(model_id), '.csv')
+            deletedatafile = os.remove(datafilepath)
             paths = {
                 'ploting_path': html_plots_location + str(model_id),  # all geenrated html files
                 'zip_path': plot_zip_locations + str(model_id),  # all generated iamge files
@@ -66,16 +67,14 @@ class BaseController:
                 'model_data_location': df_location + str(model_id),  # model data location
                 'plots_image_path': os.path.join(plot_locations, str(model_id)),  # plot images location
                 'scalar_location': scalars_location + str(model_id),  # scalrs location
-                'data_location': df_location
             }
             deletefolderfiles = Helper.deletefolderfiles(*paths.values())
-
-            return deletefolderfiles
 
             for path in paths.values():  # Delete old folders
                 shutil.rmtree(path) if (os.path.isdir(path)) else print(0)
 
             return 1
+
         except Exception as e:
             print('Ohh -delete_model...Something went wrong.')
             print(e)
@@ -228,7 +227,7 @@ class BaseController:
             results.append("- Create %s model to predict values in specific Date/Time.<br/><a href='/createmodel?t=8' class='btn btn-default' style='float: right'>Start forecasting model</a>" % (forecasting_model_keyword)) if (forecasting_model_keyword in suggested_models) else print('0')
             results.append("- %s related information under one umbrella to make it easy for you to find information that have same characteristc.<br/><a href='/createmodel?t=13' class='btn btn-success' style='float: right'>Connect to row data</a>" % (clustering_model_keyword)) if (clustering_model_keyword in suggested_models) else print('0')
 
-            return results
+            return results if len(results) > 1 else ["Sorry but we couldn't recognise what you need, Please rephrase your description and try again"]
 
         except  Exception as e:
             print('Ohh -get_model_status...Something went wrong.')

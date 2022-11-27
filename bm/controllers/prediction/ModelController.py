@@ -271,7 +271,7 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
 
     # Add standard scalar
     s_c = StandardScaler(with_mean=False)  # test
-    training_x = s_c.fit_transform(training_x)
+    training_x = s_c.fit_transform(training_x.to_numpy())
     test_x = s_c.transform(testing_x)
     scalar_file_name = scalars_location + str(model_id) + '/' + str(model_id) + '_scalear.sav'
     pickle.dump(s_c, open(scalar_file_name, 'wb'))
@@ -386,6 +386,3 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
     return all_return_values
 
 
-
-
-# b = run_demo_model1(root_path, 'diabetes.csv', ['Age'], '1', '2')
