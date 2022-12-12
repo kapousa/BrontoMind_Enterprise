@@ -152,7 +152,7 @@
                     <div class="card-body">
 
                             {%  include plot_image_path %}
-                         <a class="nav-link" href="/downloadplots">
+                         <a class="nav-link" href="/{{ model_id }}/downloadplots">
                             <button type="button" class="btn btn-primary pull-right">Download All Correlations</button>
                         </a>
                         <div class="ripple-container"></div>
@@ -178,7 +178,7 @@
                     <div class="card-body">
                         <h4 class="card-title">APIs</h4>
                         <p class="card-category">APIs library to integrate your model with other system.</p>
-                        <form name="downloadapisdocument" method="get" action="/downloadapisdocument">
+                        <form name="downloadapisdocument" method="get" action="/{{ model_id }}/downloadapisdocument">
                             <button type="submit" class="btn btn-danger pull-right">Download APIs Document</button>
                         </form>
                     </div>

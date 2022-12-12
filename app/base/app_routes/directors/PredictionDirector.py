@@ -71,6 +71,11 @@ class PredictionDirector:
                                    error="There is no enugh data to build the model after removing empty rows. The data set should have mimimum 50 records to buld the model.",
                                    segment='error')
 
+        if model_controller == -1:
+            return render_template('page-501.html',
+                                   error="Error while creeating the model",
+                                   segment='error')
+
         # Webpage details
         page_url = request.host_url + "predictevalues?t=" + str(ds_goal) + "&s=" + str(ds_source) + "&m=" + str(model_controller['model_id'])
         page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
@@ -115,7 +120,7 @@ class PredictionDirector:
             if opt_param == 0:
                 # response = make_response()
                 return render_template('applications/pages/prediction/predictevalues.html', features_list=features_list,
-                                       labels_list=labels_list, ds_goal=ds_goal, mid= model_id,
+                                       labels_list=labels_list, ds_goal=ds_goal, mid= model_id, ds_source = ds_source,
                                        predicted_value='nothing', testing_values='nothing',
                                        all_gategories_values=all_gategories_values, predicted='Nothing', message='No')
             else:
@@ -129,7 +134,7 @@ class PredictionDirector:
                     # response = make_response()
                     return render_template('applications/pages/prediction/predictevalues.html',
                                            features_list=features_list,
-                                           labels_list=labels_list, ds_goal=ds_goal, mid= model_id,
+                                           labels_list=labels_list, ds_goal=ds_goal, mid= model_id, ds_source= ds_source,
                                            predicted_value=predicted_value, testing_values=testing_values,
                                            all_gategories_values=all_gategories_values, predicted='Yes', message='No')
         except Exception as e:

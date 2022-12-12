@@ -112,7 +112,7 @@ class ClassificationDirector:
     def show_model_status(self):
         try:
             model_profile = BaseController.get_model_status()
-            page_url = request.host_url + "predictevalues" + "&m=" + str(model_profile['model_id'])
+            page_url = request.host_url + "predictevalues" + str(model_profile['ds_goal']) + "&s=" + str(model_profile['ds_source']) + "&m=" + str(model_profile['model_id'])
 
             page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
 

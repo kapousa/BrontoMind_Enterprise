@@ -172,7 +172,7 @@ class ClusteringControllerHelper:
         return html_path
 
     @staticmethod
-    def plot_elbow_graph(data, model_name='file_name'):
+    def plot_elbow_graph(data, model_id, model_name='file_name'):
         data = np.reshape(data, (len(data), 1))
         mms = MinMaxScaler()
         mms.fit(data)
@@ -197,8 +197,8 @@ class ClusteringControllerHelper:
             layout_title_text="A Graph of suggested number of clusters"
         )
 
-        html_file_location = html_plots_location + model_name + ".html"
-        html_path = html_short_path + model_name + ".html"
+        html_file_location = html_plots_location + model_id + '/' +  model_name + ".html"
+        html_path = html_short_path + model_id + '/' + model_name + ".html"
         pl.offline.plot(fig, filename=html_file_location, config={'displayModeBar': False}, auto_open=False)
 
         return html_path
@@ -274,11 +274,11 @@ class ClusteringControllerHelper:
             print(e)
             return 0
 
-    def create_clustering_csv_data_set(self, csv_file_path, features_list):
+    def create_clustering_csv_data_set(self, model_id, csv_file_path, features_list):
         try:
             df = pd.read_csv(csv_file_path)
             df = df.loc[:, features_list]
-            output_file = '%s%s' % (df_location, 'data.pkl')
+            output_file = '%s%s%s%s%s' % (df_location, str(model_id), '/', str(model_id), '.pkl')
             df.to_pickle(output_file)
 
             return 1
@@ -324,8 +324,8 @@ class ClusteringControllerHelper:
         @return: path of updated data file
         """
         try:
-            data_file_location = "%s%s" % (df_location, file_name)
-            updated_data_file_location = "%s%s" % (output_docs_location, labeled_data_filename)
+            data_file_location = "%s%s%s" % (df_location, file_name, '.csv')
+            updated_data_file_location = "%s%s%s%s" % (output_docs_location, file_name, '/', labeled_data_filename)
 
             df = pd.read_csv(data_file_location)
             df['label'] = labels

@@ -32,10 +32,15 @@ except AttributeError:
     pass
 else:
     ssl._create_default_https_context = _create_unverified_https_context
-
-    nltk.download('punkt')
-    nltk.download('averaged_perceptron_tagger')
-    nltk.download('wordnet')
+    try:
+        name = "prediction, classification, clustering, forecasting time series"
+        text = nltk.word_tokenize(name)
+        pos_tagged = nltk.pos_tag(text)
+    except LookupError:
+        nltk.download("stopwords")
+        nltk.download('punkt')
+        nltk.download('averaged_perceptron_tagger')
+        nltk.download('wordnet')
 
 app = create_app(app_config)
 Migrate(app, db)

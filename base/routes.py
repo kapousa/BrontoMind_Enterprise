@@ -180,7 +180,8 @@ def uploadcsvds():
         if (session['ds_goal'] == current_app.config['CLASSIFICATION_MODULE']):  # Classification
             session['fname'] = fname
             return render_template('applications/pages/classification/selectfields.html', headersArray=headersArray,
-                                   segment='createmodel', message=message)
+                                   segment='createmodel', message=message, fname=fname,
+                               ds_source=session['ds_source'], ds_goal=session['ds_goal'])
 
         if (session['ds_goal'] == current_app.config['FORECASTING_MODULE']):  # Forecasting
             forecasting_director = ForecastingDirector()

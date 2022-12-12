@@ -79,7 +79,7 @@
                                             </td>
                                             <td class="budget" data-toggle="tooltip" data-placement="right"
                                                 title="{{ "{}".format(profile['model_description']) }}">
-                                                {{ profile.model_description[0:18] if (profile.model_description != None) else '' }}...
+                                                {{ profile.model_description[0:18] }}...
 
                                             </td>
                                             <td class="status">
@@ -110,7 +110,7 @@
                                                            href="{{ profile.model_id }}/changemodelstatus">
                                                             {% if profile.status == 'Active' %} Suspend {% else %}
                                                                 Activate {% endif %}</a>
-                                                        <a class="dropdown-item" data-toggle="modal" href="#">Delete</a>
+                                                        <a class="dropdown-item" href="{{ profile.model_id }}/deletemodel">Delete</a>
                                                     </div>
                                                 </div>
                                             </td>

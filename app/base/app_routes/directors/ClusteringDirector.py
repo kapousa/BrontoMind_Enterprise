@@ -32,6 +32,11 @@ class ClusteringDirector:
         return 0
 
     def create_text_clustering_model(self, request):
+        """
+    sdsdsdsd
+        @param request:
+        @return:
+        """
         try:
             #upload_files = Helper.upload_data_files(folderfiles, mapfile)
             #create_data_bunch = ''
@@ -53,7 +58,7 @@ class ClusteringDirector:
             model_api_details = ModelAPIDetails.query.first()
             apihelper = APIHelper()
             model_head = ModelProfile.query.with_entities(ModelProfile.model_id, ModelProfile.model_name).filter_by(model_id = return_values['model_id']).first()
-            generate_apis_docs = apihelper.generateapisdocs(0, model_head.model_id,
+            generate_apis_docs = apihelper.generateapisdocs(model_head.model_id,
                                                             str(request.host_url + 'api/' + model_api_details.api_version),
                                                             docs_templates_folder, output_docs)
 

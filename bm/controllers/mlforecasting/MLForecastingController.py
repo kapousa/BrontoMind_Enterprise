@@ -1,6 +1,8 @@
 # Data manipulation
 # ==============================================================================
 import os
+import pathlib
+import pickle
 from datetime import datetime
 from random import randint
 
@@ -11,9 +13,10 @@ import pandas as pd
 import plotly
 import plotly.express as px
 
-from app import db
-from app.base.constants.BM_CONSTANTS import html_plots_location, html_short_path
+from app import db, config_parser
+from app.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, pkls_location, df_location
 from app.base.db_models.ModelProfile import ModelProfile
+from bm.controllers.BaseController import BaseController
 from bm.datamanipulation.AdjustDataFrame import convert_data_to_sample
 from bm.db_helper.AttributesHelper import add_api_details, update_api_details_id, add_features, add_labels
 from bm.utiles.CVSReader import get_only_file_name
@@ -49,7 +52,12 @@ class MLForecastingController:
         # ==============================================================================
         data = pd.read_csv(csv_file_location, usecols=[depended_factor, time_factor], sep=',', header=0)
         model_id = Helper.generate_model_id()
-        file_name = get_only_file_name(csv_file_location)
+        file_extension = pathlib.Path(csv_file_location).suffix
+        newfilename = os.path.join(df_location, str(model_id) + file_extension)
+        os.rename(csv_file_location, newfilename)
+        file_name = get_only_file_name(newfilename)
+
+        initiate_model = BaseController.initiate_model(model_id)
 
         # Data preparation
         # ==============================================================================
@@ -153,8 +161,8 @@ class MLForecastingController:
 
         # Save model details
         # ==============================================================================
-        # model_file_name = pkls_location + file_name + '_model.pkl'
-        # pickle.dump(forecaster, open(model_file_name, 'wb'))
+        model_file_name = pkls_location + str(model_id) + '/' + str(model_id) + '_model.pkl'
+        pickle.dump(forecaster, open(model_file_name, 'wb'))
 
         # Predictions
         # ==============================================================================
@@ -172,7 +180,7 @@ class MLForecastingController:
         # Plot
         # ==============================================================================
         # Delete old visualization html
-        dir = html_plots_location
+        dir = html_plots_location + str(model_id)
         for f in os.listdir(dir):
             os.remove(os.path.join(dir, f))
         fig, ax = plt.subplots(figsize=(9, 4))
@@ -189,14 +197,15 @@ class MLForecastingController:
         }, title="")
         fig.update_traces(textposition="bottom right")
         # fig.show()
-        html_file_location = html_plots_location + file_name + ".html"
-        html_path = html_short_path + file_name + ".html"
+        html_file_location = html_plots_location + str(model_id) + "/" + file_name + ".html"
+        html_path = html_short_path + str(model_id) + "/" + file_name + ".html"
         plotly.offline.plot(fig, filename=html_file_location, config={'displayModeBar': False}, auto_open=False)
 
 
         # ------------------Predict values from the model-------------------------#
         now = datetime.now()
         all_return_values = {'model_id': model_id,
+                             'model_name': file_name,
                             'plot_image_path': html_path,
                              'file_name': file_name,
                              'forecasting_factor': forecasting_factor,
@@ -219,11 +228,11 @@ class MLForecastingController:
                       'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
                       'last_run_time': now.strftime("%d/%m/%Y %H:%M:%S"),
                       'ds_source': ds_source,
-                      'ds_goal': ds_goal}
+                      'ds_goal': ds_goal,
+                      'status': config_parser.get('ModelStatus', 'ModelStatus.active'),
+                      'description': 'No description added yet.'
+                      }
         model_model = ModelProfile(**modelmodel)
-        # Delete current profile
-        model_model.query.filter().delete()
-        db.session.commit()
         # Add new profile
         db.session.add(model_model)
         db.session.commit()
@@ -241,7 +250,7 @@ class MLForecastingController:
 
         # APIs details and create APIs document
 
-        convert_data_to_sample(csv_file_location, 5)
+        convert_data_to_sample(newfilename, 5)
 
         return all_return_values;
 

@@ -1,5 +1,6 @@
 import os
 import os
+import pathlib
 import pickle
 import random
 from datetime import datetime
@@ -17,11 +18,13 @@ from app.base.constants.BM_CONSTANTS import app_root_path
 from app.base.db_models.ModelProfile import ModelProfile
 from base.constants.BM_CONSTANTS import pkls_location, plot_locations, plot_zip_locations, \
     clustering_root_path, data_files_folder, df_location
+from bm.controllers.BaseController import BaseController
 from bm.controllers.ControllersHelper import ControllersHelper
 from bm.controllers.clustering.ClusteringControllerHelper import ClusteringControllerHelper
 from bm.core.ModelProcessor import ModelProcessor
 from bm.db_helper.AttributesHelper import add_features, add_labels, add_api_details, \
     update_api_details_id
+from bm.utiles.CVSReader import get_only_file_name
 from bm.utiles.Helper import Helper
 
 
@@ -73,25 +76,32 @@ class ClusteringController:
         try:
             # ------------------Preparing data frame-------------------------#
             model_id = Helper.generate_model_id()
+            initiate_model = BaseController.initiate_model(model_id)
             helper = Helper()
 
             # Prepare the date and creating the clustering model
             clusteringcontrollerhelper = ClusteringControllerHelper()
-            files_path = '%s%s' % (clustering_root_path, data_files_folder)
+            files_path = '%s%s%s%s' % (app_root_path, data_files_folder, str(model_id), '_files') # this code need to be rephrase to find how to get local data for new model
+            csv_file_path = '%s%s' % (df_location, session['fname'])
+            file_extension = pathlib.Path(csv_file_path).suffix
+            newfilename = os.path.join(df_location, str(model_id) + file_extension)
+            os.rename(csv_file_path, newfilename)
+            csv_file_path = newfilename
+            file_name = get_only_file_name(csv_file_path)
+
             # Create datafile (data.pkl)
             if (is_local_data == 'Yes'):
                 folders_list = ControllersHelper.get_folder_structure(files_path, req_extensions=('.txt'))
                 featuresdvalues = ['data']
                 data_set = clusteringcontrollerhelper.create_clustering_data_set(files_path)
             elif (is_local_data == 'csv'):
-                csv_file_path = '%s%s' % (df_location, session['fname'])
-                data_set = clusteringcontrollerhelper.create_clustering_csv_data_set(csv_file_path, featuresdvalues)
+                data_set = clusteringcontrollerhelper.create_clustering_csv_data_set(str(model_id), csv_file_path, featuresdvalues)
             else:
                 folders_list = helper.list_ftp_dirs(
                     location_details)
                 data_set = clusteringcontrollerhelper.create_clustering_FTP_data_set(location_details)
 
-            full_file_path = '%s%s' % (df_location, 'data.pkl')
+            full_file_path = '%s%s%s%s%s%s' % (app_root_path, data_files_folder, str(model_id), '/', str(model_id), '.pkl')
 
             X_train = pd.read_pickle(full_file_path)
             X_train = shuffle(X_train)
@@ -103,7 +113,7 @@ class ClusteringController:
             features = vectorizer.fit_transform(documents)
 
             # Store vectorized
-            vic_filename = '%s%s%s' % (app_root_path, pkls_location, 'vectorized_pkl.pkl')
+            vic_filename = '%s%s%s%s' % (pkls_location, str(model_id), '/', 'vectorized_pkl.pkl')
             pickle.dump(vectorizer, open(vic_filename, 'wb'))
 
             # Select proper model
@@ -112,27 +122,27 @@ class ClusteringController:
             model = cls.fit(features)
             y_pred = cls.predict(features)
             X_train['cluster'] = model.labels_
-            data_file_location = ClusteringControllerHelper.generate_labeled_datafile(session['fname'],
+            data_file_location = ClusteringControllerHelper.generate_labeled_datafile(str(model_id),
                                                                                       model.labels_)  # Add label column to orginal data file
 
-            model_file_name = pkls_location + self.file_name + '_model.pkl'
+            model_file_name = pkls_location + str(model_id) + '/' + str(model_id) + '_model.pkl'
             pickle.dump(cls, open(model_file_name, 'wb'))
 
             # Delete old visualization images
-            dir = plot_locations
-            for f in os.listdir(dir):
-                os.remove(os.path.join(dir, f))
-            for f in os.listdir(plot_zip_locations):
-                os.remove(os.path.join(plot_zip_locations, f))
+            # dir = plot_locations + str(model_id)
+            # for f in os.listdir(dir):
+            #     os.remove(os.path.join(dir, f))
+            # for f in os.listdir(plot_zip_locations):
+            #     os.remove(os.path.join(plot_zip_locations, f))
 
             # Show Elbow graph and get clusters' keywords
-            html_path = ClusteringControllerHelper.plot_elbow_graph(features.data)
+            html_path = ClusteringControllerHelper.plot_elbow_graph(features.data, str(model_id))
             # html_path = ClusteringControllerHelper.plot_clustering_report(features.data, model, model.labels_, file_name)
             clusters_keywords = ClusteringControllerHelper.extract_clusters_keywords(model, 5, vectorizer)
 
             # ------------------Predict values from the model-------------------------#
             now = datetime.now()
-            all_return_values = {'file_name': self.file_name,
+            all_return_values = {'file_name': str(model_id),
                                  'clusters_keywords': clusters_keywords,
                                  'created_on': now.strftime("%d/%m/%Y %H:%M:%S"),
                                  'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
@@ -141,7 +151,7 @@ class ClusteringController:
 
             # Add model profile to the database
             modelmodel = {'model_id': model_id,
-                          'model_name': self.file_name,
+                          'model_name': str(model_id),
                           'user_id': 1,
                           'model_headers': 'str(cvs_header)[1:-1]',
                           'prediction_results_accuracy': 'str(c_m)',
@@ -153,17 +163,16 @@ class ClusteringController:
                           'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
                           'last_run_time': now.strftime("%d/%m/%Y %H:%M:%S"),
                           'ds_source': ds_source,
-                          'ds_goal': ds_goal}
+                          'ds_goal': ds_goal,
+                          'status': config_parser.get('ModelStatus', 'ModelStatus.active'),
+                          'description': 'No description added yet.'}
             model_model = ModelProfile(**modelmodel)
-            # Delete current profile
-            model_model.query.filter().delete()
-            db.session.commit()
             # Add new profile
             db.session.add(model_model)
             db.session.commit()
 
             # Add features, labels, and APIs details
-            add_features_list = add_features(model_id, [self.file_name])
+            add_features_list = add_features(model_id, [model_id])
             add_labels_list = add_labels(model_id, ['cluster', 'keywords'])
             api_details_id = random.randint(0, 22)
             api_details_list = add_api_details(model_id, api_details_id, 'v1')

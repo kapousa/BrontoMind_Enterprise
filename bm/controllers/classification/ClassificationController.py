@@ -238,18 +238,18 @@ class ClassificationController:
                                  classification_label=['category']):
         try:
             model_id = Helper.generate_model_id()
+            initiate_model = BaseController.initiate_model(model_id)
             helper = Helper()
+
             # Prepare the date and creating the classifier model
             classificationcontrollerHelper = ClassificationControllerHelper()
-            files_path = '%s%s' % (app_root_path, data_files_folder)
+            files_path = '%s%s%s%s' % (app_root_path, data_files_folder, model_id, '_files') # this code need to be rephrase to find how to get local data for new model
             csv_file_path = '%s%s' % (df_location, session['fname'])
             file_extension = pathlib.Path(csv_file_path).suffix
             newfilename = os.path.join(df_location, str(model_id) + file_extension)
             os.rename(csv_file_path, newfilename)
             csv_file_path = newfilename
             file_name = get_only_file_name(csv_file_path)
-
-            initiate_model = BaseController.initiate_model(model_id)
 
             # Create datafile (data.txt)
             if (is_local_data == 'Yes'):
@@ -258,7 +258,6 @@ class ClassificationController:
                 classification_label = ['category']
                 data_set = classificationcontrollerHelper.create_classification_data_set(files_path, folders_list, model_id)
             elif (is_local_data == 'csv'):
-                initiate_model = BaseController.initiate_model(model_id)
                 data_set = classificationcontrollerHelper.create_classification_csv_data_set(csv_file_path,model_id)
             else:
                 folders_list = helper.list_ftp_dirs(
@@ -289,7 +288,8 @@ class ClassificationController:
                           'last_run_time': now.strftime("%d/%m/%Y %H:%M:%S"),
                           'ds_source': ds_source,
                           'ds_goal': ds_goal,
-                          'status': config_parser.get('ModelStatus', 'ModelStatus.active')}
+                          'status': config_parser.get('ModelStatus', 'ModelStatus.active'),
+                          'description': 'No description added yet.'}
 
             model_model = ModelProfile(**modelmodel)
             db.session.commit()

@@ -35,7 +35,7 @@ class BaseDirector:
         count_row = data.shape[0]
         message = 'No'
 
-        if (count_row < 50):
+        if (count_row < 5):
             message = 'Uploaded data document does not have enough data, the document must have minimum 50 records of data for accurate processing.'
             return render_template('applications/pages/dashboard.html',
                                    message=message,

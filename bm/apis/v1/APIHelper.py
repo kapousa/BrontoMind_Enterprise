@@ -54,12 +54,12 @@ class APIHelper:
         :return: Success = 1, Fail= error
         """
         ds_goal = session['ds_goal']
-        api_details_id = numpy.array(ModelAPIDetails.query.with_entities(ModelAPIDetails.api_details_id).filter_by(model_id = model_id).first())
-        generatemodelapimethdos = self.generatemodelapimethods(model_id, ds_goal, api_details_id[0])   # generate model api methdos
+        api_details_id = numpy.array(ModelAPIDetails.query.with_entities(ModelAPIDetails.api_details_id).filter_by(model_id = str(model_id)).first())
+        generatemodelapimethdos = self.generatemodelapimethods(str(model_id), ds_goal, api_details_id[0])   # generate model api methdos
 
         apimodelmethodsids = ModelAPIModelMethods.query.with_entities(ModelAPIModelMethods.id).filter_by(model_id = model_id).all()
         apimodelmethodsids_arr = numpy.array(apimodelmethodsids).flatten()
-        generate_apis_request_sample = self.generate_api_method_reqres_samples(apimodelmethodsids_arr, model_id)
+        generate_apis_request_sample = self.generate_api_method_reqres_samples(apimodelmethodsids_arr, str(model_id))
 
         try:
             apis_doc_cover_template = templates_folder + "Slonos_Labs_BrontoMind_APIs_document_cover_template.docx"

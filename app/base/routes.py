@@ -41,6 +41,7 @@ from bm.controllers.timeforecasting.TimeForecastingController import TimeForecas
 from bm.core.DocumentProcessor import DocumentProcessor
 from bm.core.engine.factories.ClassificationFactory import ClassificationFactory
 from bm.core.engine.factories.ClusteringFactory import ClusteringFactory
+from bm.core.engine.factories.ForecastingFactory import ForecastingFactory
 from bm.core.engine.factories.PredictionFactory import PredictionFactory
 from bm.datamanipulation.AdjustDataFrame import create_figure, import_mysql_table_csv, \
     export_mysql_query_to_csv
@@ -198,7 +199,8 @@ def uploadcsvds():
         if (session['ds_goal'] == current_app.config['CLASSIFICATION_MODULE']):  # Classification
             session['fname'] = fname
             return render_template('applications/pages/classification/selectfields.html', headersArray=headersArray,
-                                   segment='createmodel', message=message)
+                                   segment='createmodel', message=message, fname=fname,
+                               ds_source=session['ds_source'], ds_goal=session['ds_goal'])
 
         if (session['ds_goal'] == current_app.config['FORECASTING_MODULE']):  # Forecasting
             forecasting_director = ForecastingDirector()
@@ -412,56 +414,13 @@ def sendvalues():  # The main function of creating the model
                 return clusteringfactory.create_clustering_text_model(request)
 
             if (ds_goal == current_app.config['FORECASTING_MODULE']):
-                data_file_path = "%s%s" % (df_location, fname)
-                df = pd.read_csv(data_file_path, sep=",")
-                data_sample = (df.sample(n=5))
+                forecastingfactory = ForecastingFactory()
+                return forecastingfactory.create_forecasting_csv_model(request)
 
-                ml_forecasting_controller = MLForecastingController()
-                forecastingfactor = request.form.get('forecastingfactor')
-                dependedfactor = request.form.get('dependedfactor')
-                timefactor = request.form.get('timefactor')
-                all_return_values = ml_forecasting_controller.run_mlforecasting_model(
-                    data_file_path, forecastingfactor,
-                    dependedfactor, timefactor, ds_source, ds_goal)
-                # Forecasting webpage details
-                page_url = request.host_url + "embedforecasting?m=" + all_return_values['model_id']
-                page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
-
-                # APIs details and create APIs document
-                model_api_details = ModelAPIDetails.query.first()
-                apihelper = APIHelper()
-                model_head = ModelProfile.query.with_entities(ModelProfile.model_id, ModelProfile.model_name).filter_by(
-                    model_id=all_return_values['model_id']).first()
-                generate_apis_docs = apihelper.generateapisdocs(0, model_head.model_id,
-                                                                str(request.host_url + 'api/' + model_api_details.api_version),
-                                                                app.config['DOCS_TEMPLATES_FOLDER'],
-                                                                app.config['OUTPUT_DOCS'])
-
-                return render_template('applications/pages/forecasting/modelstatus.html',
-                                       depended_factor=all_return_values['depended_factor'],
-                                       forecasting_category=all_return_values['forecasting_factor'],
-                                       plot_image_path=all_return_values['plot_image_path'],
-                                       sample_data=[
-                                           data_sample.to_html(border=0, classes='table table-hover', header="false",
-                                                               justify="center").replace("<th>",
-                                                                                         "<th class='text-warning'>")],
-                                       fname=model_head.model_name,
-                                       segment='createmodel', page_url=page_url, page_embed=page_embed,
-                                       created_on=all_return_values['created_on'],
-                                       updated_on=all_return_values['updated_on'],
-                                       last_run_time=all_return_values['last_run_time']
-                                       )
             return 0
     except Exception as e:
-        # tb = sys.exc_info()[2]
-        # profile = get_model_status()
-        # if ((len(profile) > 0) and ((profile['ds_goal'] == current_app.config['PREDICTION_MODULE']) or (
-        #         profile['ds_goal'] == current_app.config['FORECASTING_MODULE']))):
-        #     return redirect(url_for('base_blueprint.showdashboard'))
-        # else:
         return render_template('page-501.html',
-                               # error="There is no enugh data to build the model after removing empty rows. The data set should have mimimum 50 records to buld the model.",
-                               error=e,
+                               error="Error loading data, please try again to load the data",
                                segment='error')
 
 
@@ -516,14 +475,15 @@ def predictevalues():
 @blueprint.route('/embedforecasting', methods=['GET', 'POST'])
 def embedforecasting():
     try:
-        profile = BaseController.get_model_status()
+        model_id = request.args.get("m")
+        profile = BaseController.get_model_status(model_id)
         if len(profile) == 0:
             # response = make_response()
             return render_template('applications/pages/forecasting/embedforecasting.html',
                                    message='There is no active model')
         else:
             # Forecasting webpage details
-            page_url = request.host_url + "embedforecasting?m=" + profile['model_id']
+            page_url = request.host_url + "embedforecasting?m=" + str(profile['model_id'])
             page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
             return render_template('applications/pages/forecasting/embedforecasting.html',
                                    depended_factor=profile['depended_factor'],
@@ -613,13 +573,13 @@ def showdashboard():
 
         if profile['ds_goal'] == current_app.config['FORECASTING_MODULE']:
             # Forecasting webpage details
-            page_url = request.host_url + "embedforecasting?m=" + profile['model_id']
+            page_url = request.host_url + "embedforecasting?m=" + str(profile['model_id'])
             page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
             return render_template('applications/pages/forecasting/dashboard.html',
                                    accuracy=profile['prediction_results_accuracy'],
                                    confusion_matrix='', depended_factor=profile['depended_factor'],
                                    forecasting_factor=profile['forecasting_category'],
-                                   error_mse=profile['mean_squared_error'],
+                                   error_mse=profile['mean_squared_error'], model_id=profile['model_id'],
                                    plot_image_path=profile['plot_image_path'], sample_data=[
                     data_sample.to_html(border=0, classes='table table-hover', header="false",
                                         justify="center").replace(
@@ -641,16 +601,14 @@ def showdashboard():
 def deletemodels():
     bc = BaseController()
     delete_model = bc.deletemodels()
-    return render_template('applications/pages/dashboard.html', message='You do not have any running model yet.',
-                           segment='deletemodel')
+    return redirect(url_for('base_blueprint.showmodels'))
 
-@blueprint.route('<model_id>/deletemodel', methods=['POST'])
+@blueprint.route('<model_id>/deletemodel', methods=['GET','POST'])
 @login_required
 def deletemodel(model_id):
     bc = BaseController()
     delete_model = bc.deletemodel(model_id)
-    return render_template('applications/pages/dashboard.html', message='You do not have any running model yet.',
-                           segment='deletemodel')
+    return redirect(url_for('base_blueprint.showmodels'))
 
 @blueprint.route('/updateinfo', methods=['GET', 'POST'])
 @login_required
@@ -724,7 +682,7 @@ def downloaddsfile():
 def downloadapisdocument(model_id):
     # # For windows you need to use drive name [ex: F:/Example.pdf]
     # fname = ModelProfile.query.with_entities(ModelProfile.model_name).first()[0]
-    path = root_path + app.config['OUTPUT_PDF_DOCS'] + '/' + model_id + '_BrontoMind_APIs_document.docx'
+    path = root_path + app.config['OUTPUT_PDF_DOCS'] + str(model_id) + '/' + str(model_id) + '_BrontoMind_APIs_document.docx'
     return send_file(path, as_attachment=True)
 
 
