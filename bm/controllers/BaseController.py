@@ -19,6 +19,8 @@ from app.base.db_models.ModelFeatures import ModelFeatures
 from app.base.db_models.ModelForecastingResults import ModelForecastingResults
 from app.base.db_models.ModelLabels import ModelLabels
 from app.base.db_models.ModelProfile import ModelProfile
+from base.constants.BM_CONSTANTS import deployment_folder
+from bm.controllers.ControllersHelper import ControllersHelper
 from bm.datamanipulation.DataCoderProcessor import DataCoderProcessor
 from bm.db_helper import AttributesHelper
 from bm.db_helper.AttributesHelper import get_model_name
@@ -112,6 +114,7 @@ class BaseController:
                                  'updated_on': profile.updated_on,
                                  'updated_by': AttributesHelper.get_user_fullname(profile.user_id),
                                  'ds_goal': profile.ds_goal,
+                                 'deployed': AttributesHelper.get_lookup_value(profile.deployed),
                                  }
                 profiles.append(model_profile)
 
@@ -151,7 +154,8 @@ class BaseController:
                                  'test_recall': profile.test_f1,
                                  'test_f1': profile.test_f1,
                                  'description': profile.description,
-                                 'status': profile.status
+                                 'status': profile.status,
+                                 'deployed': profile.deployed
                                  }
                 print(model_profile)
             return model_profile
@@ -329,3 +333,77 @@ class BaseController:
 
         except  Exception as e:
             return 'Ohh -suspendmodel...Something went wrong.'
+
+    def deploymodel(self, model_id):
+        try:
+            if(not ControllersHelper.model_deployed(model_id)):
+                try:
+                    # 1- Copy model file
+                    str_model_id = str(model_id)
+                    path = os.path.join(deployment_folder, model_id)
+                    source = "%s%s%s%s%s" % (pkls_location, str_model_id, '/', str_model_id, '_model.pkl')
+                    destination = "%s%s%s%s%s" % (deployment_folder, str_model_id, '/', str_model_id, '_model.pkl')
+
+                    # if(os.path.exists(destination)):
+                    #     return "Model already deployed"
+                    # else:
+                    os.mkdir(path)
+                    shutil.copy(source, destination)
+                    print("File copied successfully.")
+
+                    #2- Update deployment status
+                    model_profile = ModelProfile.query.filter_by(model_id=model_id).first()
+                    model_profile.deployed = 23
+                    db.session.commit()
+
+                    return "Model deployed successfully"
+                # If source and destination are same
+                except shutil.SameFileError:
+                    print("Source and destination represents the same file.")
+                    return "Model already deployed"
+
+                # If there is any permission issue
+                except PermissionError:
+                    print("Permission denied.")
+                    return "There is no permission to deploy the model"
+
+            else:
+                return self.undeploymodel(model_id)
+
+        # For other errors
+        except Exception as e:
+            print(e)
+            print("Error occurred while copying file.")
+            return "Failed to deploy the model, please try again or contact Customer Support"
+
+    def undeploymodel(self, model_id):
+            try:
+                # 1- Copy model file
+                str_model_id = str(model_id)
+                path = os.path.join(deployment_folder, model_id)
+                destination = "%s%s%s%s%s" % (deployment_folder, str_model_id, '/', str_model_id, '_model.pkl')
+                os.remove(destination)
+                os.rmdir(path)
+                print("File deleted successfully.")
+
+                # 2- Update deployment status
+                model_profile = ModelProfile.query.filter_by(model_id=model_id).first()
+                model_profile.deployed = 24
+                db.session.commit()
+
+                return "Model un-deployed successfully"
+            # If source and destination are same
+            except shutil.SameFileError:
+                print("Source and destination represents the same file.")
+                return "Model already deployed"
+
+            # If there is any permission issue
+            except PermissionError:
+                print("Permission denied.")
+                return "There is no permission to deploy the model"
+
+            # For other errors
+            except Exception as e:
+                print(e)
+                print("Error occurred while copying file.")
+                return "Failed to un-deploy the model, please try again or contact Customer Support"

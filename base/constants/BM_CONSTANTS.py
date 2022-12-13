@@ -51,3 +51,5 @@ progress_icon_path = os.path.join('images/', 'progress_icon_2.gif')
 
 demo_key = 'DEMO'
 
+deployment_folder = "deployed/"
+

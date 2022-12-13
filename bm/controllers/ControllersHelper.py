@@ -1,12 +1,14 @@
 import csv
 import os
+import pickle
+import shutil
 import string
 from collections import defaultdict
 from csv import DictReader
 from os import listdir
 from os.path import isfile, join
 from random import shuffle
-
+from app import db, config_parser
 import matplotlib.pyplot as plt
 import numpy
 import numpy as np
@@ -19,7 +21,8 @@ from nltk.corpus import stopwords
 from sklearn.preprocessing import MinMaxScaler
 
 from app.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, app_root_path, \
-    data_files_folder, df_location, scalars_location
+    data_files_folder, df_location, scalars_location, dep_path, pkls_location
+from app.base.db_models.ModelProfile import ModelProfile
 from bm.utiles.Helper import Helper
 
 plt.style.use('fivethirtyeight')
@@ -245,7 +248,7 @@ class ControllersHelper:
         return text
 
     @staticmethod
-    def scale_data(data):
+    def scale_data(data, model_file_name, encode_df_testing_values):
         """
         Adjust dataframe to standard scale
         @param data: original dataframe
@@ -260,3 +263,14 @@ class ControllersHelper:
         data_transformed = mms.transform(data)
 
         return data_transformed
+
+    @staticmethod
+    def model_deployed(model_id):
+        deployemnt_statu = ModelProfile.query.with_entities(ModelProfile.deployed).filter_by(model_id=model_id).first()
+        deployemnt_statu = numpy.array(deployemnt_statu).flatten()
+        dep_value = deployemnt_statu[0]
+
+        if (str(dep_value) == config_parser.get('DeploymentStatus', 'DeploymentStatus.notdeployed')):
+            return False
+        else:
+            return True

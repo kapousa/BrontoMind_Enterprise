@@ -193,12 +193,6 @@ def get_lookup_value(lookup_key):
     return flatten_lookup_value[0]
 
 
-def get_lookup_key(lookup_key):
-    lookup_value = numpy.array(ModelLookupTable.query.with_entities(ModelLookupTable.value).filter_by(key =lookup_key).first())
-    flatten_lookup_value = lookup_value.flatten()
-    return flatten_lookup_value[0]
-
-
 def get_user_fullname(user_id):
     user_full_name = numpy.array(Users.query.with_entities(Users.first_name, Users.last_name).filter_by(id =user_id).first())
     full_name = "%s%s%s" % (user_full_name[0]," ",user_full_name[1])

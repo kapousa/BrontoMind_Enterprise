@@ -40,6 +40,7 @@ class ModelProfile(db.Model):
     test_f1 = Column(String)
     description = Column(String)
     status = Column(Integer)
+    deployed = Column(Integer)
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():

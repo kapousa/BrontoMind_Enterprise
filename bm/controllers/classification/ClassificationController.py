@@ -160,7 +160,7 @@ class ClassificationController:
         category_values_arr = testing_y[model_labels[0]].to_numpy()
         category_values_arr = category_values_arr.flatten()
 
-        image_db_path = image_short_path + str(model_id)+ 'heatmap_plot.png'
+        image_db_path = image_short_path + str(model_id) + 'heatmap_plot.png'
         t_columns = real_x.columns
         importances = numpy.array(cls.coef_).flatten()
         classificationreport = classification_report(testing_y, y_pred,
@@ -243,7 +243,8 @@ class ClassificationController:
 
             # Prepare the date and creating the classifier model
             classificationcontrollerHelper = ClassificationControllerHelper()
-            files_path = '%s%s%s%s' % (app_root_path, data_files_folder, model_id, '_files') # this code need to be rephrase to find how to get local data for new model
+            files_path = '%s%s%s%s' % (app_root_path, data_files_folder, model_id,
+                                       '_files')  # this code need to be rephrase to find how to get local data for new model
             csv_file_path = '%s%s' % (df_location, session['fname'])
             file_extension = pathlib.Path(csv_file_path).suffix
             newfilename = os.path.join(df_location, str(model_id) + file_extension)
@@ -256,9 +257,10 @@ class ClassificationController:
                 folders_list = ControllersHelper.get_folder_structure(files_path, req_extensions=('.txt'))
                 featuresdvalues = ['data']
                 classification_label = ['category']
-                data_set = classificationcontrollerHelper.create_classification_data_set(files_path, folders_list, model_id)
+                data_set = classificationcontrollerHelper.create_classification_data_set(files_path, folders_list,
+                                                                                         model_id)
             elif (is_local_data == 'csv'):
-                data_set = classificationcontrollerHelper.create_classification_csv_data_set(csv_file_path,model_id)
+                data_set = classificationcontrollerHelper.create_classification_csv_data_set(csv_file_path, model_id)
             else:
                 folders_list = helper.list_ftp_dirs(
                     location_details)  # classificationcontrollerHelper.get_folder_structure(files_path, req_extensions=('.txt'))
@@ -289,6 +291,7 @@ class ClassificationController:
                           'ds_source': ds_source,
                           'ds_goal': ds_goal,
                           'status': config_parser.get('ModelStatus', 'ModelStatus.active'),
+                          'deployed': config_parser.get('DeploymentStatus', 'DeploymentStatus.notdeployed'),
                           'description': 'No description added yet.'}
 
             model_model = ModelProfile(**modelmodel)

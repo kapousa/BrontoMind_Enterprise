@@ -353,6 +353,7 @@ def run_demo_model(root_path, csv_file_location, featuresdvalues, predicted_colu
                       'ds_source': ds_source,
                       'ds_goal': ds_goal,
                       'status': config_parser.get('ModelStatus', 'ModelStatus.active'),
+                      'deployed': config_parser.get('DeploymentStatus', 'DeploymentStatus.notdeployed'),
                       'description': 'No description added yet.'}
         model_model = ModelProfile(**modelmodel)
         db.session.commit()

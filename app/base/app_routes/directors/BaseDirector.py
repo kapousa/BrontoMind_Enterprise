@@ -123,3 +123,8 @@ class BaseDirector:
         basecontroller = BaseController()
         suspendmodel = basecontroller.changemodelstatus(model_id)
         return redirect(url_for('base_blueprint.showmodels'))
+
+    def deploy_model(model_id):
+        basecontroller = BaseController()
+        deploy_statu = basecontroller.deploymodel(model_id)
+        return redirect(url_for('base_blueprint.showmodels', message=deploy_statu))

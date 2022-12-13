@@ -27,6 +27,11 @@
         </div>
 
     {% else %}
+        {% if call_message != None %}
+            <div class="alert alert-success" role="alert">
+                <strong>Message!</strong> {{ call_message }}
+            </div>
+        {% endif %}
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -43,17 +48,16 @@
                                         <th scope="col">
                                             Model
                                         </th>
-                                        <th scope="col" style="word-break: break-all; !important; width: 35%;">
+                                        <th scope="col" style="word-break: break-all; !important;">
                                             Description
                                         </th>
                                         <th scope="col">
-                                            Status
+                                            Deployment
                                         </th>
-                                        <th scope="col">Last Updated by</th>
                                         <th scope="col">
-                                            Last Modified Date
+                                            Last Modified By
                                         </th>
-                                        <th scope="col">Actions</th>
+                                        <th scope="col"></th>
                                     </tr>
                                     </thead>
                                     <tbody class="list">
@@ -80,39 +84,47 @@
                                             <td class="budget" data-toggle="tooltip" data-placement="right"
                                                 title="{{ "{}".format(profile['model_description']) }}">
                                                 {{ profile.model_description[0:18] }}...
-
                                             </td>
                                             <td class="status">
                                             <span class="badge badge-dot mr-4">
-                                              {% if profile.status == 'Active' %} <i class="bg-green"></i> {% else %}
-                                                  <i class="bg-red"></i> {% endif %} {{ profile['status'] }}
+                                              {% if profile.deployed == 'Deployed' %}
+                                                  <i class="bg-green"></i> {% else %}
+                                                  <i class="bg-warning"></i> {% endif %} {{ profile['deployed'] }}
                                             </span>
                                             </td>
                                             <td>
                                                 {{ profile['updated_by'] }}
-                                            </td>
-                                            <td class="date">
+                                                <br/>
                                                 {{ profile['updated_on'] }}
                                             </td>
-                                            <td class="text-right">
-                                                <div class="dropdown">
-                                                    <a class="btn btn-sm btn-icon-only text-light" href="#"
-                                                       role="button"
-                                                       data-toggle="dropdown"
-                                                       aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                        <a class="dropdown-item"
-                                                           href="/updateinfo?n=1&param={{ profile.model_id }}">Update
-                                                            info</a>
-                                                        <a class="dropdown-item"
-                                                           href="{{ profile.model_id }}/changemodelstatus">
-                                                            {% if profile.status == 'Active' %} Suspend {% else %}
-                                                                Activate {% endif %}</a>
-                                                        <a class="dropdown-item" href="{{ profile.model_id }}/deletemodel">Delete</a>
-                                                    </div>
-                                                </div>
+                                            <td class="budget">
+                                                <a href="/{{ profile['model_id'] }}/deploymodel"
+                                                   title="Deploy/Un-Deploy the model" data-toggle="tooltip"
+                                                   data-placement="bottom">
+                                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="fa fa-paper-plane"></i>
+                                            </span>
+                                                    </button>
+                                                </a>
+                                                <a href="/updateinfo?param={{ profile['model_id'] }}&n=1"
+                                                   title="Update model info"
+                                                   data-toggle="tooltip" data-placement="bottom">
+                                                    <button class="btn btn-icon btn-2 btn-default" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="fa fa-edit"></i>
+                                            </span>
+                                                    </button>
+                                                </a>
+                                                <a href="/{{ profile['model_id'] }}/deletemodel"
+                                                   title="Delete the model"
+                                                   data-toggle="tooltip" data-placement="bottom">
+                                                    <button class="btn btn-icon btn-2 btn-danger" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="fa fa-minus"></i>
+                                            </span>
+                                                    </button>
+                                                </a>
                                             </td>
                                         </tr>
                                     {% endfor %}

@@ -500,9 +500,10 @@ def embedforecasting():
 @login_required
 def showmodels():
     profiles = BaseController.get_all_models()
+    call_message = request.args.get('message')
     if len(profiles) > 0:
         return render_template('applications/pages/models.html', message='No', profiles=profiles,
-                               segment='showmodels')
+                               segment='showmodels', call_message=call_message)
 
     return render_template('applications/pages/models.html', message='You do not have any active model yet.',
                                segment='showmodels')
@@ -550,7 +551,7 @@ def showdashboard():
                                    Root_Mean_Squared_Error=profile['root_mean_squared_error'], message='No',
                                    fname=profile['model_name'], page_url=page_url, page_embed=page_embed,
                                    segment='showdashboard', created_on=profile['created_on'],
-                                   ds_goal=profile['ds_goal'],
+                                   ds_goal=profile['ds_goal'], description=profile['description'],
                                    updated_on=profile['updated_on'], last_run_time=profile['last_run_time'])
 
         if profile['ds_goal'] == current_app.config['CLASSIFICATION_MODULE']:
@@ -613,12 +614,6 @@ def deletemodel(model_id):
 @blueprint.route('/updateinfo', methods=['GET', 'POST'])
 @login_required
 def updateinfo():
-    model_id = request.args.get('param')
-    n = request.args.get('n')
-    if(n == '1'):
-        profile = BaseController.get_model_status(model_id)
-        return render_template('applications/pages/updateinfo.html', message='You do not have any running model yet.', profile= profile, modid= model_id,
-                               segment='showdashboard')
     return BaseDirector.update_model_info(request)
 
 
@@ -626,6 +621,11 @@ def updateinfo():
 @login_required
 def changemodelstatus(model_id):
     return BaseDirector.change_model_status(model_id)
+
+@blueprint.route('<model_id>/deploymodel', methods=['GET', 'POST'])
+@login_required
+def deploymodel(model_id):
+    return BaseDirector.deploy_model(model_id)
 
 
 @blueprint.route('/applications', methods=['GET', 'POST'])

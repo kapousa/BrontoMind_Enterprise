@@ -37,7 +37,7 @@ class ClusteringController:
         ''' Constructor for this class. '''
         # Create some member animals
         self.members = ['Tiger', 'Elephant', 'Wild Cat']
-        self.file_name = (self.file_name).replace("'","")
+        self.file_name = (self.file_name).replace("'", "")
 
     def get_data_cluster(self, data):
         """
@@ -81,7 +81,8 @@ class ClusteringController:
 
             # Prepare the date and creating the clustering model
             clusteringcontrollerhelper = ClusteringControllerHelper()
-            files_path = '%s%s%s%s' % (app_root_path, data_files_folder, str(model_id), '_files') # this code need to be rephrase to find how to get local data for new model
+            files_path = '%s%s%s%s' % (app_root_path, data_files_folder, str(model_id),
+                                       '_files')  # this code need to be rephrase to find how to get local data for new model
             csv_file_path = '%s%s' % (df_location, session['fname'])
             file_extension = pathlib.Path(csv_file_path).suffix
             newfilename = os.path.join(df_location, str(model_id) + file_extension)
@@ -95,13 +96,15 @@ class ClusteringController:
                 featuresdvalues = ['data']
                 data_set = clusteringcontrollerhelper.create_clustering_data_set(files_path)
             elif (is_local_data == 'csv'):
-                data_set = clusteringcontrollerhelper.create_clustering_csv_data_set(str(model_id), csv_file_path, featuresdvalues)
+                data_set = clusteringcontrollerhelper.create_clustering_csv_data_set(str(model_id), csv_file_path,
+                                                                                     featuresdvalues)
             else:
                 folders_list = helper.list_ftp_dirs(
                     location_details)
                 data_set = clusteringcontrollerhelper.create_clustering_FTP_data_set(location_details)
 
-            full_file_path = '%s%s%s%s%s%s' % (app_root_path, data_files_folder, str(model_id), '/', str(model_id), '.pkl')
+            full_file_path = '%s%s%s%s%s%s' % (
+            app_root_path, data_files_folder, str(model_id), '/', str(model_id), '.pkl')
 
             X_train = pd.read_pickle(full_file_path)
             X_train = shuffle(X_train)
@@ -165,6 +168,7 @@ class ClusteringController:
                           'ds_source': ds_source,
                           'ds_goal': ds_goal,
                           'status': config_parser.get('ModelStatus', 'ModelStatus.active'),
+                          'deployed': config_parser.get('DeploymentStatus', 'DeploymentStatus.notdeployed'),
                           'description': 'No description added yet.'}
             model_model = ModelProfile(**modelmodel)
             # Add new profile

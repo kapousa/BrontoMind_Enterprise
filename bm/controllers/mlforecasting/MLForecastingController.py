@@ -230,6 +230,7 @@ class MLForecastingController:
                       'ds_source': ds_source,
                       'ds_goal': ds_goal,
                       'status': config_parser.get('ModelStatus', 'ModelStatus.active'),
+                      'deployed': config_parser.get('DeploymentStatus', 'DeploymentStatus.notdeployed'),
                       'description': 'No description added yet.'
                       }
         model_model = ModelProfile(**modelmodel)
