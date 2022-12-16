@@ -577,7 +577,7 @@ def showdashboard():
             page_url = request.host_url + "embedforecasting?m=" + str(profile['model_id'])
             page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
             return render_template('applications/pages/forecasting/dashboard.html',
-                                   accuracy=profile['prediction_results_accuracy'],
+                                   accuracy=profile['prediction_results_accuracy'],description=profile['description'],
                                    confusion_matrix='', depended_factor=profile['depended_factor'],
                                    forecasting_factor=profile['forecasting_category'],
                                    error_mse=profile['mean_squared_error'], model_id=profile['model_id'],

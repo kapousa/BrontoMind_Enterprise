@@ -103,7 +103,8 @@ class ClassificationDirector:
                                    page_url=page_url, page_embed=page_embed,
                                    most_common=numpy.array(return_values['most_common']),
                                    categories=numpy.array(return_values['categories']),
-                                   plot_image_path = html_short_path + "file_name.html"
+                                   plot_image_path = html_short_path + "file_name.html",
+                                   model_id=str(return_values['model_id'])
                                    )
 
         except Exception as e:
@@ -144,7 +145,7 @@ class ClassificationDirector:
                                test_precision=profile['test_precision'],
                                test_recall=profile['test_recall'],
                                test_f1=profile['test_f1'],
-                               message='No',
+                               message='No', model_id= profile['model_id']  ,
                                fname=profile['model_name'], page_url=page_url, page_embed=page_embed,
                                segment='showdashboard', created_on=profile['created_on'],
                                ds_goal=profile['ds_goal'],

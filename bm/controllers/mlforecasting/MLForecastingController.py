@@ -201,20 +201,23 @@ class MLForecastingController:
         html_path = html_short_path + str(model_id) + "/" + file_name + ".html"
         plotly.offline.plot(fig, filename=html_file_location, config={'displayModeBar': False}, auto_open=False)
 
-
         # ------------------Predict values from the model-------------------------#
         now = datetime.now()
         all_return_values = {'model_id': model_id,
                              'model_name': file_name,
-                            'plot_image_path': html_path,
+                             'plot_image_path': html_path,
                              'file_name': file_name,
                              'forecasting_factor': forecasting_factor,
                              'depended_factor': depended_factor,
-                             'chart_title': "The forecasting of the " + depended_factor + " of the " + forecasting_factor + " - ( Mean squared error =" + str(round(error_mse, 3)) + ")",
+                             'chart_title': "The forecasting of the " + depended_factor + " of the " + forecasting_factor + " - ( Mean squared error =" + str(
+                                 round(error_mse, 3)) + ")",
                              'Mean_Squared_Error': error_mse,
                              'created_on': now.strftime("%d/%m/%Y %H:%M:%S"),
                              'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
-                             'last_run_time': now.strftime("%d/%m/%Y %H:%M:%S")}
+                             'last_run_time': now.strftime("%d/%m/%Y %H:%M:%S"),
+                             'status': config_parser.get('ModelStatus', 'ModelStatus.active'),
+                             'deployed': config_parser.get('DeploymentStatus', 'DeploymentStatus.notdeployed'),
+                             'description': 'No description added yet.'}
 
         # Add model profile to the database
         modelmodel = {'model_id': model_id,

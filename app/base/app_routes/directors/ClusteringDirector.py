@@ -65,7 +65,7 @@ class ClusteringDirector:
             return render_template('applications/pages/clustering/modelstatus.html',
                                    fname=return_values['file_name'],
                                    clusters_keywords=return_values['clusters_keywords'],
-                                   segment='createmodel',
+                                   segment='createmodel', model_id=return_values['model_id'],
                                    created_on=return_values['created_on'],
                                    updated_on=return_values['updated_on'],
                                    last_run_time=return_values['last_run_time'],
@@ -128,7 +128,7 @@ class ClusteringDirector:
                                plot_image_path=profile['plot_image_path'], message='No',
                                fname=profile['model_name'], page_url=page_url, page_embed=page_embed,
                                segment='showdashboard', created_on=profile['created_on'],
-                               ds_goal=profile['ds_goal'],
+                               ds_goal=profile['ds_goal'],model_id=profile['model_id'],
                                clusters_keywords=clusters_keywords,
                                updated_on=profile['updated_on'], last_run_time=profile['last_run_time'])
 

@@ -81,5 +81,6 @@ class ForecastingDirector:
                                segment='createmodel', page_url=page_url, page_embed=page_embed,
                                created_on=all_return_values['created_on'],
                                updated_on=all_return_values['updated_on'],
-                               last_run_time=all_return_values['last_run_time']
+                               last_run_time=all_return_values['last_run_time'],
+                               description=all_return_values['description']
                                )

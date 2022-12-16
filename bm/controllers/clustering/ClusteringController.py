@@ -104,7 +104,7 @@ class ClusteringController:
                 data_set = clusteringcontrollerhelper.create_clustering_FTP_data_set(location_details)
 
             full_file_path = '%s%s%s%s%s%s' % (
-            app_root_path, data_files_folder, str(model_id), '/', str(model_id), '.pkl')
+                app_root_path, data_files_folder, str(model_id), '/', str(model_id), '.pkl')
 
             X_train = pd.read_pickle(full_file_path)
             X_train = shuffle(X_train)
@@ -150,7 +150,13 @@ class ClusteringController:
                                  'created_on': now.strftime("%d/%m/%Y %H:%M:%S"),
                                  'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
                                  'last_run_time': now.strftime("%d/%m/%Y %H:%M:%S"),
-                                 'data_file_location': data_file_location}
+                                 'data_file_location': data_file_location,
+                                 'model_id': model_id,
+                                 'model_name': str(model_id),
+                                 'status': config_parser.get('ModelStatus', 'ModelStatus.active'),
+                                 'deployed': config_parser.get('DeploymentStatus', 'DeploymentStatus.notdeployed'),
+                                 'description': 'No description added yet.'
+                                 }
 
             # Add model profile to the database
             modelmodel = {'model_id': model_id,

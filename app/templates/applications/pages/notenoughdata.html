@@ -7,21 +7,17 @@
 
 {% block content %}
     <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <i class="material-icons">close</i>
-        </button>
-        <span>{{ message }}</span>
+        <strong>Alert!</strong> {{ message }}
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="stats">
-                <a class="nav-link" href="/createmodel">
+                <a class="nav-link" href="/selectmodelgoal">
                     <button class="btn btn-primary btn-lg">Create New Model</button>
                 </a>
             </div>
         </div>
     </div>
-
 
 {% endblock content %}
 
