@@ -1,7 +1,7 @@
 import json
 import numpy
 
-from bm.controllers.prediction.ModelController import predict_values_from_model
+from bm.controllers.prediction.ModelController import ModelController
 from bm.db_helper.AttributesHelper import get_features, get_model_name, get_labels
 
 
@@ -27,7 +27,8 @@ def predictvalues(model_id, content):
         feature_value = str(content[i])
         final_feature_value = feature_value # float(feature_value) if feature_value.isnumeric() else feature_value
         testing_values.append(final_feature_value)
-    predicted_value = predict_values_from_model(model_id, testing_values)
+    modelcontroller = ModelController()
+    predicted_value = modelcontroller.predict_values_from_model(model_id, testing_values)
 
     # Create predicted values json object
     predicted_values_json = {}

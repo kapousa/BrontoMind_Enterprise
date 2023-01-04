@@ -7,7 +7,7 @@ from app.base.constants.BM_CONSTANTS import progress_icon_path, loading_icon_pat
 from app.base.db_models.ModelAPIDetails import ModelAPIDetails
 from app.base.db_models.ModelProfile import ModelProfile
 from bm.apis.v1.APIHelper import APIHelper
-from bm.controllers.prediction.ModelController import run_prediction_model, predict_values_from_model
+from bm.controllers.prediction.ModelController import ModelController
 from bm.datamanipulation.DataCoderProcessor import DataCoderProcessor
 from bm.db_helper.AttributesHelper import get_labels, get_features, get_model_name
 from bm.utiles.CVSReader import improve_data_file
@@ -63,7 +63,8 @@ class PredictionDirector:
         idf = improve_data_file(fname, df_location, predictionvalues)
 
         # run model
-        model_controller = run_prediction_model(root_path, data_file_path, featuresdvalues, predictionvalues, ds_source,
+        modelcontroller = ModelController()
+        model_controller = modelcontroller.run_prediction_model(root_path, data_file_path, featuresdvalues, predictionvalues, ds_source,
                                                 ds_goal, demo_key)
 
         if model_controller == 0:
@@ -130,7 +131,8 @@ class PredictionDirector:
                         # final_feature_value = float(feature_value) if feature_value.isnumeric() else feature_value
                         final_feature_value = feature_value
                         testing_values.append(final_feature_value)
-                    predicted_value = predict_values_from_model(model_id, testing_values)
+                    modelcontroller = ModelController()
+                    predicted_value = modelcontroller.predict_values_from_model(model_id, testing_values)
                     # response = make_response()
                     return render_template('applications/pages/prediction/predictevalues.html',
                                            features_list=features_list,

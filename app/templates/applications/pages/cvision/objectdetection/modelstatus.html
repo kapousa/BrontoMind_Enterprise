@@ -1,0 +1,96 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Congratulations!</strong> Your model have been created successfully.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+    <script>
+        // Global parameters:
+        // do not resize the chart canvas when its container does (keep at 600x400px)
+        //Chart.defaults.global.responsive = false;
+
+        // define the chart data
+        var chartData = {
+            labels: [{% for item in X_test %}
+                "{{item}}".substr(0, 10),
+            {% endfor %}],
+            datasets: [{
+                label: 'Actual {{ dependedfactor }}',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(0,0,255,0.4)",
+                borderColor: "rgba(0,0,255,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(0,0,255,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(0,0,255,1)",
+                pointHoverBorderColor: "rgba(0,0,255,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [{% for item in y_test %}
+                    {{item}},
+                {% endfor %}],
+                spanGaps: false
+            },
+                {
+                    label: 'Prediected Price',
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(255,1,1,0.4)",
+                    borderColor: "rgba(255,1,1,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(255,1,1,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(255,1,1,1)",
+                    pointHoverBorderColor: "rgba(255,1,1,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [{% for item in y_pred %}
+                        {{item}},
+                    {% endfor %}],
+                    spanGaps: false
+                }]
+
+        }
+
+        // get chart canvas
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        // create the chart using the chart canvas
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: {}
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+{% endblock javascripts %}

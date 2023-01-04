@@ -1,6 +1,6 @@
 import os
 
-
+import flask
 from flask import request, render_template, session, redirect, url_for
 from werkzeug.utils import secure_filename
 from datetime import datetime
@@ -22,32 +22,41 @@ class BaseDirector:
 
     @staticmethod
     def get_data_details(request):
-        f = request.files['filename']
+        #f = request.files['filename']
+        f = flask.request.files.getlist('filename[]')
+        number_of_files = len(f)
         ds_source = session['ds_source']
         ds_goal = session['ds_goal']
-        filePath = os.path.join(df_location, secure_filename(f.filename))
-        f.save(filePath)
+        if number_of_files == 1:
+            file_name = f[0].filename
+            filePath = os.path.join(df_location, secure_filename(file_name))
+            f[0].save(filePath)
 
-        # Remove empty columns
-        data = Helper.remove_empty_columns(filePath)
+            # Remove empty columns
+            data = Helper.remove_empty_columns(filePath)
 
-        # Check if the dataset if engough
-        count_row = data.shape[0]
-        message = 'No'
+            # Check if the dataset if engough
+            count_row = data.shape[0]
+            message = 'No'
 
-        if (count_row < 5):
-            message = 'Uploaded data document does not have enough data, the document must have minimum 50 records of data for accurate processing.'
-            return render_template('applications/pages/dashboard.html',
-                                   message=message,
-                                   ds_source=ds_source, ds_goal=ds_goal,
-                                   segment='createmodel')
+            if (count_row < 5):
+                message = 'Uploaded data document does not have enough data, the document must have minimum 50 records of data for accurate processing.'
+                return render_template('applications/pages/dashboard.html',
+                                       message=message,
+                                       ds_source=ds_source, ds_goal=ds_goal,
+                                       segment='createmodel')
 
-        # Get the DS file header
-        headersArray = getcvsheader(filePath)
-        fname = secure_filename(f.filename)
-        session['fname'] = fname
+            # Get the DS file header
+            headersArray = getcvsheader(filePath)
+            fname = secure_filename(f[0].filename)
+            session['fname'] = fname
 
-        return fname, filePath, headersArray, data, message
+            return fname, filePath, headersArray, data, message
+        else:
+            print("Hi...")
+            return 0
+
+
 
     @staticmethod
     def prepare_query_results(request):

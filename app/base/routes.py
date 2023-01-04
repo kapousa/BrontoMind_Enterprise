@@ -2,11 +2,15 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
+import subprocess
 from datetime import datetime
 import io
 import os
 import shutil
 import sys
+
+from werkzeug.utils import secure_filename
+from werkzeug.datastructures import  FileStorage
 
 import numpy
 import pandas as pd
@@ -17,7 +21,6 @@ from flask import render_template, request
 from flask_login import login_required, current_user
 from jinja2 import TemplateNotFound
 from matplotlib.backends.backend_template import FigureCanvas
-from sqlalchemy import update
 
 from app import login_manager, db
 from app.base import blueprint
@@ -26,27 +29,15 @@ from app.base.app_routes.directors.ClassificationDirector import ClassificationD
 from app.base.app_routes.directors.ClusteringDirector import ClusteringDirector
 from app.base.app_routes.directors.ForecastingDirector import ForecastingDirector
 from app.base.app_routes.directors.PredictionDirector import PredictionDirector
-from app.base.constants.BM_CONSTANTS import plot_zip_download_location, progress_icon_path, \
-    loading_icon_path, df_location
-from app.base.db_models.ModelAPIDetails import ModelAPIDetails
-from app.base.db_models.ModelLabels import ModelLabels
+from app.base.constants.BM_CONSTANTS import plot_zip_download_location, progress_icon_path, loading_icon_path
 from app.base.db_models.ModelProfile import ModelProfile
-from bm.apis.v1.APIHelper import APIHelper
-from bm.apis.v1.APIsPredictionServices import predictvalues
 from bm.controllers.BaseController import BaseController
-from bm.controllers.classification.ClassificationController import ClassificationController
-from bm.controllers.mlforecasting.MLForecastingController import MLForecastingController
-from bm.controllers.prediction.ModelController import run_prediction_model, predict_values_from_model
-from bm.controllers.timeforecasting.TimeForecastingController import TimeForecastingController
 from bm.core.DocumentProcessor import DocumentProcessor
 from bm.core.engine.factories.ClassificationFactory import ClassificationFactory
 from bm.core.engine.factories.ClusteringFactory import ClusteringFactory
 from bm.core.engine.factories.ForecastingFactory import ForecastingFactory
 from bm.core.engine.factories.PredictionFactory import PredictionFactory
-from bm.datamanipulation.AdjustDataFrame import create_figure, import_mysql_table_csv, \
-    export_mysql_query_to_csv
-from bm.datamanipulation.DataCoderProcessor import DataCoderProcessor
-from bm.db_helper.AttributesHelper import get_features, get_labels, get_model_name
+from bm.datamanipulation.AdjustDataFrame import create_figure
 from bm.utiles.CVSReader import getcvsheader, adjust_csv_file
 from bm.utiles.CVSReader import improve_data_file
 
@@ -706,33 +697,34 @@ def uploaddatafiles():
         return classification_director.create_text_classification_model(ds_goal)
 
 
+@blueprint.route('/testyolo', methods=['GET', 'POST'])
+def testyolo():
+
+    pathh = "app/yolov5/detect.py"
+    uploads_dir = "app/tmep/images"
+    filename = "qwe.jpeg"
+    subprocess.run("ls")
+    subprocess.run(['python3', pathh, '0', os.path.join(uploads_dir, secure_filename(filename))])
+    print("Done")
+    return redirect(url_for('base_blueprint.register'))
+
 ## Errors
 
 @login_manager.unauthorized_handler
 def unauthorized_handler():
-    return render_template('page-403.html', segment='error'), 403
+    return render_template('page-403.html', error="Access Forbidden - Please authenticate using Login page", segment='error'), 403
 
 
 @blueprint.errorhandler(403)
 def access_forbidden(error):
-    return render_template('page-403.html', segment='error'), 403
+    return render_template('page-403.html', error="Access Forbidden - Please authenticate using Login page", segment='error'), 403
 
 
 @blueprint.errorhandler(404)
 def not_found_error(error):
-    return render_template('page-404.html', segment='error'), 404
+    return render_template('page-404.html', error="Page Not Found", segment='error'), 404
 
 
 @blueprint.errorhandler(500)
 def internal_error(error):
-    return render_template(('page-500.html'), error=error, segment='error'), 500
-
-
-@blueprint.errorhandler(501)
-def internal_error(error):
-    return render_template(('page-501.html'), error=error, segment='error'), 501
-
-
-@blueprint.errorhandler(413)
-def request_entity_too_large_error(error):
-    return render_template(('page-413.html'), segment='error'), 413
+    return render_template(('page-500.html'), error="Server Internal Error - Please Conatct Application Support", segment='error'), 500

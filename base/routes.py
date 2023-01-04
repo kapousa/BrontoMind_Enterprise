@@ -5,6 +5,7 @@ Copyright (c) 2019 - present AppSeed.us
 import io
 import os
 import shutil
+import subprocess
 import sys
 
 import numpy
@@ -16,6 +17,7 @@ from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 from matplotlib.backends.backend_template import FigureCanvas
+from werkzeug.utils import secure_filename
 
 from app import login_manager
 from app.base import blueprint
@@ -33,7 +35,6 @@ from bm.apis.v1.APIsPredictionServices import predictvalues
 from bm.controllers.BaseController import BaseController
 from bm.controllers.classification.ClassificationController import ClassificationController
 from bm.controllers.mlforecasting.MLForecastingController import MLForecastingController
-from bm.controllers.prediction.ModelController import run_prediction_model, predict_values_from_model
 from bm.controllers.timeforecasting.TimeForecastingController import TimeForecastingController
 from bm.core.DocumentProcessor import DocumentProcessor
 from bm.core.engine.factories.ClassificationFactory import ClassificationFactory
@@ -162,6 +163,15 @@ def selectphysicalfiles():
     session['ds_source'] = request.form.get('ds_source')
     return selectds()
 
+
+@blueprint.route('/testyolo', methods=['GET', 'POST'])
+@login_required
+def testyolo():
+    pathh = "yolov5/detect.py"
+    uploads_dir = "tmep/images"
+    filename = "qwe.jpeg"
+    subprocess.run(['python3', pathh, '--source', os.path.join(uploads_dir, secure_filename(filename))])
+    print("Done")
 
 def selectds():
     return render_template('applications/pages/connecttods.html', ds_id=session['ds_source'], segment='createmodel')
