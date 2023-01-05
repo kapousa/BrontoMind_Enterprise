@@ -19,3 +19,8 @@ class ObjectDetectionFactory:
         objectdetectiondirector = ObjectDetectionDirector()
 
         return objectdetectiondirector.createobjectdetection(session['ds_goal'], session['ds_soure'])
+
+    def showobjdetectrmodeldashboard(self, profile):
+        objectdetectiondirector = ObjectDetectionDirector()
+
+        return objectdetectiondirector.showobjdetectrmodeldashboard(profile)

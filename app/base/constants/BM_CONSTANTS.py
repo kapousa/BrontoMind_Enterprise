@@ -66,3 +66,5 @@ clustering_model_keyword = 'Clustering'
 forecasting_model_keyword = 'Forecasting'
 
 dep_path = 'deployed/'
+
+scripts_path = '/scripts/'

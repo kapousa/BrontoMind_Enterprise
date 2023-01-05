@@ -1,8 +1,10 @@
 import random
+import subprocess
 
 from flask import session
 
 from app import config_parser, db
+from app.base.constants.BM_CONSTANTS import scripts_path
 from app.base.db_models.ModelProfile import ModelProfile
 from bm.controllers.BaseController import BaseController
 from bm.db_helper.AttributesHelper import add_api_details, update_api_details_id
@@ -65,4 +67,14 @@ class ObjectDetectionCotroller:
             base_controller = BaseController()
             base_controller.deletemodel(model_id)
             print(e)
+            return -1
+
+    def lable_files(self):
+        try:
+            script_location = "%s%s" % (scripts_path, 'runyolo.sh')
+            #subprocess.run(['chmod', 'u+x', script_location])
+            subprocess.call(['sh', '.' + script_location])
+
+            return 1
+        except Exception as e:
             return -1

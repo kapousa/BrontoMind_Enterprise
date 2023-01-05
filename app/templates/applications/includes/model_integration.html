@@ -1,0 +1,39 @@
+ <div class="row">
+        <div class="col-md-6">
+            <div class="card card-chart">
+                <div class="card-header card-header-warning">
+                    <div>
+                        <h4 class="card-title ">Export the model</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Webpage</h4>
+                    <p class="card-category">Create web page tp predict values and also you can embed this page into
+                        your system.</p>
+                    <a class="nav-link" data-toggle="modal" data-target="#webpageModal" href="#webpageModal">
+                        <button type="button" class="btn btn-success pull-right">Create Webpage</button>
+                    </a>
+                    <div class="ripple-container"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-chart">
+                <div class="card-header card-header-warning">
+                    <div>
+                        <h4 class="card-title ">Integrate with other systems</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">APIs</h4>
+                    <p class="card-category">APIs library to integrate your model with other system without any new line
+                        of
+                        code or hardware needed.</p>
+                    <form name="downloadapisdocument" method="get" action="/{{ model_id }}/downloadapisdocument">
+                        <button type="submit" class="btn btn-danger pull-right">Download APIs Document</button>
+                    </form>
+                    <div class="ripple-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>

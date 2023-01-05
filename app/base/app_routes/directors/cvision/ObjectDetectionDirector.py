@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 
 from bm.controllers.cvision.ObjectDetectionCotroller import ObjectDetectionCotroller
 
@@ -17,9 +17,30 @@ class ObjectDetectionDirector:
     def createobjectdetection(self, ds_goal, ds_source):
         try:
             objectdetectingcotroller = ObjectDetectionCotroller()
-            createthemodel = objectdetectingcotroller.create_model(ds_goal, ds_source)
+            objectdetectionmodel = objectdetectingcotroller.create_model(ds_goal, ds_source)
 
-            return render_template('applications/pages/cvision/objectdetection/modelstatus.html', message='There is no active model')
+            page_url = request.host_url + "cvision/detectobjects" + "&m=" + str(objectdetectionmodel['model_id'])
+            page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
+            return render_template('applications/pages/cvision/objectdetection/modelstatus.html',
+                                   message='There is no active model',
+                                   fname=objectdetectionmodel['model_name'],page_url=page_url, page_embed=page_embed,
+                                   segment='createmodel', model_id=objectdetectionmodel['model_id'],
+                                   created_on=objectdetectionmodel['created_on'],
+                                   updated_on=objectdetectionmodel['updated_on'],
+                                   last_run_time=objectdetectionmodel['last_run_time'],
+                                   ds_goal=ds_goal, ds_sourc=ds_source
+                                   )
         except Exception as e:
             print(e)
             return 0
+
+    def showobjdetectrmodeldashboard(self,profile):
+        page_url = request.host_url + "getdatacluster" + "&m=" + str(profile['model_id'])
+        page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
+        return render_template('applications/pages/cvision/objectdetection/dashboard.html',
+                               message='No',
+                               fname=profile['model_name'],
+                               segment='showdashboard', created_on=profile['created_on'],
+                               ds_goal=profile['ds_goal'],model_id=profile['model_id'],
+                               updated_on=profile['updated_on'], last_run_time=profile['last_run_time'])
+

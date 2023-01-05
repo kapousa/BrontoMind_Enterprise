@@ -521,6 +521,9 @@ def showdashboard():
             clustering_director = ClusteringDirector()
             return clustering_director.show_clustermodel_dashboard(request, profile)
 
+        if profile['ds_goal'] == current_app.config['ROBOTIC_MODULE']:
+            return redirect(url_for('cvision_blueprint.showobjdetectemodel', model_id=model_id))
+
         fname = str(profile['model_id']) + '.csv'
         data_file_path = os.path.join(app.config['UPLOAD_FOLDER'], fname)
         df = pd.read_csv(data_file_path, sep=",")
@@ -700,13 +703,13 @@ def uploaddatafiles():
 @blueprint.route('/testyolo', methods=['GET', 'POST'])
 def testyolo():
 
-    pathh = "app/yolov5/detect.py"
+    pathh = "/Users/kapo/PycharmProjects/yolov5/detect.py"
     uploads_dir = "app/tmep/images"
     filename = "qwe.jpeg"
     subprocess.run("ls")
     subprocess.run(['python3', pathh, '0', os.path.join(uploads_dir, secure_filename(filename))])
     print("Done")
-    return redirect(url_for('base_blueprint.register'))
+    return redirect(url_for('base_blueprint.idea'))
 
 ## Errors
 

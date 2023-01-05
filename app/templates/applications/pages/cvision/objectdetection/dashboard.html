@@ -1,0 +1,57 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != 'No' %}
+        <div class="alert alert-default alert-dismissible fade show col-6 center" role="alert">
+            <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+            <span class="alert-inner--text">{{ message }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div class="card card-stats mb-4 mb-lg-0">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="stats">
+                            <a class="nav-link" href="/selectmodelgoal">
+                                <button class="btn btn-primary btn-lg">Start Machine Learning Model</button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+        {% include 'applications/includes/model_controllers.html' %}
+        {% include 'applications/includes/model_integration.html' %}
+
+    <a href="/cvision/objtdetect/detect">link</a>
+
+
+        <!-- Specific Page JS goes HERE  -->
+        {% block javascripts %}
+
+            <script>
+                $(document).ready(function () {
+                    // Javascript method's body can be found in assets/js/demos.js
+                    md.initDashboardPageCharts();
+
+                });
+            </script>
+
+        {% endblock javascripts %}
+
+    {% endif %}
+{% endblock content %}
+
+
+
