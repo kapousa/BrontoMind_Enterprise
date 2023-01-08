@@ -38,6 +38,7 @@ class ObjectDetectionFactory:
         uname = request.form.get("ftp_username")
         pword = request.form.get("ftp_password")
         runid = request.form.get("run_id")
+        desc = request.form.get("desc")
         objectdetectiondirector = ObjectDetectionDirector()
 
-        return objectdetectiondirector.detect_object(model_id, runid, host, uname, pword)
+        return objectdetectiondirector.detect_object(model_id, runid, desc, host, uname, pword)

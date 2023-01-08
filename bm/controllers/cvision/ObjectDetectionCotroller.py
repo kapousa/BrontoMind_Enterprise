@@ -2,9 +2,11 @@ import random
 import subprocess
 
 from flask import session
+from sqlalchemy.sql.functions import now
 
 from app import config_parser, db
 from app.base.constants.BM_CONSTANTS import scripts_path
+from app.base.db_models.ModelCvisionRun import ModelCvisionRun
 from app.base.db_models.ModelProfile import ModelProfile
 from bm.controllers.BaseController import BaseController
 from bm.db_helper.AttributesHelper import add_api_details, update_api_details_id
@@ -69,10 +71,10 @@ class ObjectDetectionCotroller:
             print(e)
             return -1
 
-    def labelfiles(self, run_identifier, host, uname, pword):
-        return self._lable_files(run_identifier, host, uname, pword)
+    def labelfiles(self, run_identifier, desc, host, uname, pword):
+        return self._lable_files(run_identifier, desc, host, uname, pword)
 
-    def _lable_files(self, run_identifier, host, uname, pword): # Run identifier is combination from model_id_run_id
+    def _lable_files(self, run_identifier, desc, host, uname, pword): # Run identifier is combination from model_id_run_id
         try:
             # Label files
             uploadtargetfiles = self._upload_target_files(run_identifier, host, uname, pword)
@@ -82,6 +84,18 @@ class ObjectDetectionCotroller:
             # Archiving results
             archive_script_location = "%s%s" % (scripts_path, 'archiveresults.sh')
             subprocess.call(['sh', '.' + archive_script_location, run_identifier])
+
+            # Add run record to db
+            runids = run_identifier.split('_')
+            modelmodel = {
+                "model_id":runids[0],
+                "run_id": runids[1],
+                "run_on": datetime.today().strftime('%Y-%m-%d %H:%M:%S'),
+                "description": desc
+            }
+            model_model = ModelCvisionRun(**modelmodel)
+            db.session.add(model_model)
+            db.session.commit()
 
             return 1
         except Exception as e:

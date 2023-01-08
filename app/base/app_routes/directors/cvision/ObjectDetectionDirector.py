@@ -44,11 +44,11 @@ class ObjectDetectionDirector:
                                ds_goal=profile['ds_goal'],model_id=profile['model_id'],
                                updated_on=profile['updated_on'], last_run_time=profile['last_run_time'])
 
-    def detect_object(self, model_id, runid, host, uname, pword):
+    def detect_object(self, model_id, runid, desc, host, uname, pword):
         try:
             objectdetectioncontroller = ObjectDetectionCotroller()
             run_identifier = "%s%s%s" % (model_id, '_', runid)
-            labelfileslink = objectdetectioncontroller.labelfiles(run_identifier, host, uname, pword)
+            labelfileslink = objectdetectioncontroller.labelfiles(run_identifier, desc, host, uname, pword)
 
             return render_template('applications/pages/cvision/objectdetection/labelfiles.html',
                                    message='No', labeled = 'Yes', model_id=model_id, run_id=runid,

@@ -21,7 +21,7 @@
             <div class="card-body">
                 <form action="/cvision/{{ model_id }}/objtdetect/detect" method="post" name="labelfiles"
                       enctype="multipart/form-data">
-                    <div class="col-md-6">
+                    <!--div class="col-md-6">
                         <div class="form-group">
                             <input type="text" value="" class="form-control" name="ftb_server"
                                    placeholder="FTP host"/>
@@ -33,11 +33,14 @@
                         <div class="form-group">
                             <input type="password" value="" class="form-control" name="ftb_password"
                                    placeholder="FTP password"/>
-                        </div>
+                        </div-->
                         <div class="form-group">
-                            <input type="text" value="" class="form-control" name="run_id" num
+                            <input type="text" value="" class="form-control" name="run_id"
                                    placeholder="Set identifier for this run" required/>
                             <p class="text-danger">No spaces or especial characters</p>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="desc" placeholder="Add short description" required maxlength="500"></textarea>
                         </div>
                         <div class="ripple-container"></div>
                         <div class="form-group text-center">
