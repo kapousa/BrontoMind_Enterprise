@@ -68,3 +68,5 @@ forecasting_model_keyword = 'Forecasting'
 dep_path = 'deployed/'
 
 scripts_path = '/scripts/'
+
+results_path = 'detection/'

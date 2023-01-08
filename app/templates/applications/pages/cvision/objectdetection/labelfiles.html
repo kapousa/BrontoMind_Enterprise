@@ -1,0 +1,106 @@
+{% extends 'layouts/blank.html' %}
+
+{% block title %} BRONTOMIND {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+{% endblock stylesheets %}
+
+</head>
+<body>
+{% block content %}
+    {% if message == 'No' %}
+        <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-success">
+                <h2>Label Files</h2>
+                <lead>Connect to your files via FTP to uplaod all files to start labeling objects in each file.
+                </lead>
+            </div>
+            <div class="card-body">
+                <form action="/cvision/{{ model_id }}/objtdetect/detect" method="post" name="labelfiles"
+                      enctype="multipart/form-data">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" value="" class="form-control" name="ftb_server"
+                                   placeholder="FTP host"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" value="" class="form-control" name="ftb_username"
+                                   placeholder="FTP username"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" value="" class="form-control" name="ftb_password"
+                                   placeholder="FTP password"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" value="" class="form-control" name="run_id" num
+                                   placeholder="Set identifier for this run" required/>
+                            <p class="text-danger">No spaces or especial characters</p>
+                        </div>
+                        <div class="ripple-container"></div>
+                        <div class="form-group text-center">
+                            <br/>
+                            <button type="submit" class="btn btn-primary pull-center"><i
+                                    class="fa fa-upload"></i> Connect
+                            </button>
+                        </div>
+                        <input type="hidden" name="ds_goal" value="{{ ds_goal }}">
+                        <input type="hidden" name="ds_source" value="{{ ds_source }}">
+                    </div>
+                </form>
+
+                {% if labeled == 'Yes' %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Congratulations!</strong> Files have been labeled successfully.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div style="text-align: center">
+                        <a href="/cvision/{{ model_id }}/{{ run_id }}/downloadresults">
+                            <button type="button" class="btn btn-danger pull-center"><i
+                                    class="fa fa-download"></i> Download Results
+                            </button>
+                        </a>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+    {% else %}
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <h2>Category</h2>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Sorry!</strong> {{ message }}
+                    </div>
+                    <a href="/predictevalues?t={{ ds_goal }}">
+                        <button type="button" class="btn btn-primary pull-right">Try again</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+{% endblock content %}
+
+
+{% include "includes/scripts.html" %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+{% endblock javascripts %}
+
+<script src="/static/assets/js/argon.js?v=1.2.0"></script>
+
+</body>
+
+</html>

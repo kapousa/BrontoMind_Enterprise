@@ -293,3 +293,16 @@ class Helper:
             print('Ohh -delete_model_files...Something went wrong.')
             print(e)
             return 0
+
+    def uploadfiles(self, uploadfolder, files):
+        try:
+            # Iterate for each file in the files List, and Save them
+            for file in files:
+                file.save(os.path.join(uploadfolder, file.filename))
+
+            return "<h1>Files Uploaded Successfully.!</h1>"
+
+        except Exception as e:
+            print('Ohh -Something went wrong.')
+            print(e)
+            return 0

@@ -69,12 +69,30 @@ class ObjectDetectionCotroller:
             print(e)
             return -1
 
-    def lable_files(self):
+    def labelfiles(self, run_identifier, host, uname, pword):
+        return self._lable_files(run_identifier, host, uname, pword)
+
+    def _lable_files(self, run_identifier, host, uname, pword): # Run identifier is combination from model_id_run_id
         try:
-            script_location = "%s%s" % (scripts_path, 'runyolo.sh')
-            #subprocess.run(['chmod', 'u+x', script_location])
-            subprocess.call(['sh', '.' + script_location])
+            # Label files
+            uploadtargetfiles = self._upload_target_files(run_identifier, host, uname, pword)
+            detect_script_location = "%s%s" % (scripts_path, 'runyolo.sh')
+            subprocess.call(['sh', '.' + detect_script_location, 'data/images', run_identifier])
+
+            # Archiving results
+            archive_script_location = "%s%s" % (scripts_path, 'archiveresults.sh')
+            subprocess.call(['sh', '.' + archive_script_location, run_identifier])
 
             return 1
         except Exception as e:
             return -1
+
+    def _upload_target_files(self, model_id, host, uname, pword):
+        try:
+            script_location = "%s%s" % (scripts_path, 'downloadfiles.sh')
+            subprocess.call(['sh', '.' + script_location, host, uname, pword, '/temp', model_id])
+
+            return 1
+        except Exception as e:
+            return -1
+

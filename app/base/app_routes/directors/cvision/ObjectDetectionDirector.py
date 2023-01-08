@@ -19,7 +19,7 @@ class ObjectDetectionDirector:
             objectdetectingcotroller = ObjectDetectionCotroller()
             objectdetectionmodel = objectdetectingcotroller.create_model(ds_goal, ds_source)
 
-            page_url = request.host_url + "cvision/detectobjects" + "&m=" + str(objectdetectionmodel['model_id'])
+            page_url =  "{0}cvision/{1}/objtdetect/detect".format(request.host_url, str(objectdetectionmodel['model_id']))
             page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
             return render_template('applications/pages/cvision/objectdetection/modelstatus.html',
                                    message='There is no active model',
@@ -35,12 +35,27 @@ class ObjectDetectionDirector:
             return 0
 
     def showobjdetectrmodeldashboard(self,profile):
-        page_url = request.host_url + "getdatacluster" + "&m=" + str(profile['model_id'])
+        page_url = "{0}cvision/{1}/objtdetect/detect".format(request.host_url, str(profile['model_id']))
         page_embed = "<iframe width='500' height='500' src='" + page_url + "'></iframe>"
         return render_template('applications/pages/cvision/objectdetection/dashboard.html',
                                message='No',
-                               fname=profile['model_name'],
+                               fname=profile['model_name'],page_url=page_url, page_embed=page_embed,
                                segment='showdashboard', created_on=profile['created_on'],
                                ds_goal=profile['ds_goal'],model_id=profile['model_id'],
                                updated_on=profile['updated_on'], last_run_time=profile['last_run_time'])
+
+    def detect_object(self, model_id, runid, host, uname, pword):
+        try:
+            objectdetectioncontroller = ObjectDetectionCotroller()
+            run_identifier = "%s%s%s" % (model_id, '_', runid)
+            labelfileslink = objectdetectioncontroller.labelfiles(run_identifier, host, uname, pword)
+
+            return render_template('applications/pages/cvision/objectdetection/labelfiles.html',
+                                   message='No', labeled = 'Yes', model_id=model_id, run_id=runid,
+                                   download= labelfileslink)
+        except Exception as e:
+            print(e)
+            return 0
+
+
 
