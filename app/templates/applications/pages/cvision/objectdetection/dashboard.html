@@ -14,7 +14,6 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-
         <div class="card card-stats mb-4 mb-lg-0">
             <div class="card-body">
                 <div class="row">
@@ -23,7 +22,6 @@
                             <a class="nav-link" href="/selectmodelgoal">
                                 <button class="btn btn-primary btn-lg">Start Machine Learning Model</button>
                             </a>
-
                         </div>
                     </div>
                 </div>
@@ -33,6 +31,63 @@
     {% else %}
         {% include 'applications/includes/model_controllers.html' %}
         {% include 'applications/includes/model_integration.html' %}
+        {% if run_history != [] %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title ">Run History</h4>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table"/>
+                                <table class="table align-items-center">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Run ID</th>
+                                        <th scope="col" style="width: 40%;">Description</th>
+                                        <th scope="col">Channel</th>
+                                        <th scope="col">Run on</th>
+                                        <th scope="col">Download</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="list">
+                                    {% for onerun in run_history %}
+                                        <tr>
+                                            <td class="budget">{{ onerun['run_id'] }}</td>
+                                            <td>{{ onerun['description'] }}</td>
+                                            <td>
+                                                {% if onerun['channel'] == 27 %}
+                                                    Web
+                                                {% endif %}
+                                                {% if onerun['channel'] == 28 %}
+                                                    API
+                                                {% endif %}
+                                            </td>
+                                            <td>{{ onerun['run_on'] }}
+                                            </td>
+                                            <td class="budget">
+                                                <a href="/cvision/{{ onerun['model_id'] }}/{{ onerun['run_id'] }}/downloadresults""
+                                                title="Downlaod labeld files" data-toggle="tooltip"
+                                                data-placement="right">
+                                                <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="fa fa-download"></i>
+                                            </span>
+                                                </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
         <!-- Specific Page JS goes HERE  -->
         {% block javascripts %}
 

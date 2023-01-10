@@ -9,7 +9,7 @@ from app.base.constants.BM_CONSTANTS import scripts_path
 from app.base.db_models.ModelCvisionRun import ModelCvisionRun
 from app.base.db_models.ModelProfile import ModelProfile
 from bm.controllers.BaseController import BaseController
-from bm.db_helper.AttributesHelper import add_api_details, update_api_details_id
+from bm.db_helper.AttributesHelper import add_api_details, update_api_details_id, add_features, add_labels
 from bm.utiles.Helper import Helper
 from datetime import datetime
 
@@ -59,6 +59,10 @@ class ObjectDetectionCotroller:
             db.session.commit()
 
             # Add features, labels, and APIs details
+            model_features = ['host', 'username', 'password', 'run_id', 'description']
+            model_labels = ['link']
+            add_features_list = add_features(model_id, model_features)
+            add_labels_list = add_labels(model_id, model_labels)
             api_details_id = random.randint(0, 22)
             api_details_list = add_api_details(model_id, api_details_id, 'v1')
             api_details_list = update_api_details_id(api_details_id)
@@ -71,10 +75,10 @@ class ObjectDetectionCotroller:
             print(e)
             return -1
 
-    def labelfiles(self, run_identifier, desc, host, uname, pword):
-        return self._lable_files(run_identifier, desc, host, uname, pword)
+    def labelfiles(self, run_identifier, desc, host, uname, pword, channel):
+        return self._lable_files(run_identifier, desc, host, uname, pword, channel)
 
-    def _lable_files(self, run_identifier, desc, host, uname, pword): # Run identifier is combination from model_id_run_id
+    def _lable_files(self, run_identifier, desc, host, uname, pword, channel): # Run identifier is combination from model_id_run_id
         try:
             # Label files
             uploadtargetfiles = self._upload_target_files(run_identifier, host, uname, pword)
@@ -91,13 +95,15 @@ class ObjectDetectionCotroller:
                 "model_id":runids[0],
                 "run_id": runids[1],
                 "run_on": datetime.today().strftime('%Y-%m-%d %H:%M:%S'),
-                "description": desc
+                "description": desc,
+                "channel": channel
             }
             model_model = ModelCvisionRun(**modelmodel)
             db.session.add(model_model)
             db.session.commit()
 
-            return 1
+            return "/cvision/{0}/{1}/downloadresults".format(runids[0], runids[1])
+
         except Exception as e:
             return -1
 

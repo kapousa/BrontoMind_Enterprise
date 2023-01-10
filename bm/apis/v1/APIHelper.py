@@ -203,7 +203,7 @@ class APIHelper:
             for modelapimethod in modelapimethods:
                 modelapimodelmethods.append({
                     'method_name': modelapimethod.method_name,
-                    'method_descrition': modelapimethod.method_description,
+                    'method_description': modelapimethod.method_description,
                     'url': "%s%s%s" % ('/', str(model_id), modelapimethod.url),
                     'sample_request': modelapimethod.sample_request,
                     'sample_response': modelapimethod.sample_response,

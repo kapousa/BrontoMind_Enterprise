@@ -15,9 +15,9 @@ class APIsClusteringServices:
         # Create some member animals
         self.members = ['Tiger', 'Elephant', 'Wild Cat']
 
-    def cluster_data(self, content):
+    def cluster_data(self, content, model_id):
         testing_values = []
-        features_list = get_features(0)
+        features_list = get_features(model_id)
         for i in features_list:
             feature_value = str(content[i])
             final_feature_value = feature_value  # float(feature_value) if feature_value.isnumeric() else feature_value

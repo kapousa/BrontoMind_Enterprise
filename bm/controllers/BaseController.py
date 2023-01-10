@@ -14,6 +14,7 @@ from app.base.constants.BM_CONSTANTS import scalars_location, pkls_location, out
 from app.base.db_models.ModelAPIDetails import ModelAPIDetails
 from app.base.db_models.ModelAPIModelMethods import ModelAPIModelMethods
 from app.base.db_models.ModelBotKeywords import ModelBotKeywords
+from app.base.db_models.ModelCvisionRun import ModelCvisionRun
 from app.base.db_models.ModelEncodedColumns import ModelEncodedColumns
 from app.base.db_models.ModelFeatures import ModelFeatures
 from app.base.db_models.ModelForecastingResults import ModelForecastingResults
@@ -47,7 +48,7 @@ class BaseController:
             print(e)
             return 0
 
-    def deletemodel(self, model_id=0):
+    def deletemodel(self, model_id):
         try:
             ModelEncodedColumns.query.filter_by(model_id=model_id).delete()
             ModelFeatures.query.filter_by(model_id=model_id).delete()
@@ -56,11 +57,14 @@ class BaseController:
             ModelAPIDetails.query.filter_by(model_id=model_id).delete()
             ModelProfile.query.filter_by(model_id=model_id).delete()
             ModelForecastingResults.query.filter_by(model_id=model_id).delete()
+            ModelCvisionRun.query.filter_by(model_id=model_id).delete()
             db.session.commit()
 
             # Delete all added files and folders
             datafilepath = "%s%s%s" % (df_location, str(model_id), '.csv')
-            deletedatafile = os.remove(datafilepath)
+            if os.path.exists(datafilepath):    # This check added to handle object detection models
+                deletedatafile = os.remove(datafilepath)
+
             paths = {
                 'ploting_path': html_plots_location + str(model_id),  # all geenrated html files
                 'zip_path': plot_zip_locations + str(model_id),  # all generated iamge files
@@ -71,6 +75,7 @@ class BaseController:
                 'scalar_location': scalars_location + str(model_id),  # scalrs location
             }
             deletefolderfiles = Helper.deletefolderfiles(*paths.values())
+            deleteobjdecfiles = Helper.deleteobjectdetectionfiles(model_id)
 
             for path in paths.values():  # Delete old folders
                 shutil.rmtree(path) if (os.path.isdir(path)) else print(0)

@@ -16,8 +16,9 @@ from werkzeug.utils import secure_filename
 
 from app import config_parser
 from app.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, data_files_folder, \
-    physical_allowed_extensions
+    physical_allowed_extensions, results_path, app_results_path
 from app.base.db_models.ModelEncodedColumns import ModelEncodedColumns
+from base.db_models.ModelLookupTables import ModelLookupTable
 
 
 class Helper:
@@ -294,6 +295,20 @@ class Helper:
             print(e)
             return 0
 
+    @staticmethod
+    def deleteobjectdetectionfiles(model_id):
+        try:
+            files_in_directory = os.listdir(app_results_path)
+            filtered_files = [file for file in files_in_directory if (not (file.endswith(".gitkeep")) and (file.startwith(model_id)))]
+            for f in filtered_files:
+                path_to_file = os.path.join(results_path, f)
+                os.remove(path_to_file)
+            return 1
+        except Exception as e:
+            print('Ohh -delete_model_files...Something went wrong.')
+            print(e)
+            return 0
+
     def uploadfiles(self, uploadfolder, files):
         try:
             # Iterate for each file in the files List, and Save them
@@ -306,3 +321,13 @@ class Helper:
             print('Ohh -Something went wrong.')
             print(e)
             return 0
+
+    @staticmethod
+    def get_lookup_value(lookup_id):
+        lookup_value = ModelLookupTable.query.with_entities(ModelLookupTable.value).filter_by(key=lookup_id).first()
+        return lookup_value['value']
+
+    @staticmethod
+    def get_lookup_key(lookup_key):
+        lookup_key = ModelLookupTable.query.with_entities(ModelLookupTable.key).filter_by(value=lookup_key).first()
+        return lookup_key['key']

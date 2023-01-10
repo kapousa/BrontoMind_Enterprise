@@ -70,3 +70,5 @@ dep_path = 'deployed/'
 scripts_path = '/scripts/'
 
 results_path = 'detection/'
+
+app_results_path = 'app/detection/'

@@ -14,9 +14,9 @@ class APIsClassificationServices:
         # Create some member animals
         self.members = ['Tiger', 'Elephant', 'Wild Cat']
 
-    def classify_data(self, content):
+    def classify_data(self, content, model_id):
         testing_values = []
-        features_list = get_features(0)
+        features_list = get_features(model_id)
         for i in features_list:
             feature_value = str(content[i])
             final_feature_value = feature_value  # float(feature_value) if feature_value.isnumeric() else feature_value
@@ -36,10 +36,10 @@ class APIsClassificationServices:
 
         return json_data
 
-    def classify_data_list(self, content):
+    def classify_data_list(self, content, model_id):
         text_category_json = {}
         for i in range(len(content)):
-            class_item = self.classify_data(content[i])
+            class_item = self.classify_data(content[i], model_id)
             text_category_json[i] = class_item
         json_data = json.dumps(text_category_json, cls=NpEncoder)
 

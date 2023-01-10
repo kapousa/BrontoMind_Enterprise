@@ -10,7 +10,7 @@ from app.apis import blueprint
 from bm.apis.v1.APIsClusteringServices import APIsClusteringServices
 from bm.apis.v1.APIsPredictionServices import predictvalues
 from bm.apis.v1.APIsClassificationServices import APIsClassificationServices
-
+from bm.apis.v1.cvision.APIsObjectDetectionServices import APIsObjectDetectionServices
 
 
 ## APIs
@@ -26,14 +26,21 @@ def predictevalues_api(model_id):
 def classifydata_api(model_id):
     content = request.json
     apis_classification_services = APIsClassificationServices()
-    apireturn_json = apis_classification_services.classify_data(content)
+    apireturn_json = apis_classification_services.classify_data(content, model_id)
     return apireturn_json
 
 @blueprint.route('/api/v1/<model_id>/labeldata', methods=['POST'])
 def labeldata_api(model_id):
     content = request.json
     apis_clustering_services = APIsClusteringServices()
-    apireturn_json = apis_clustering_services.cluster_data(content)
+    apireturn_json = apis_clustering_services.cluster_data(content, model_id)
+    return apireturn_json
+
+@blueprint.route('/api/v1/<model_id>//cvision/objdect/labelfiles', methods=['POST'])
+def labelfiles_api(model_id):
+    content = request.json
+    apisObjectdetectionservices = APIsObjectDetectionServices()
+    apireturn_json = apisObjectdetectionservices.label_files(content, model_id)
     return apireturn_json
 
 # Errors

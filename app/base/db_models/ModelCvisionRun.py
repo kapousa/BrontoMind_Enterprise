@@ -17,6 +17,8 @@ class ModelCvisionRun(db.Model):
     model_id = Column(Integer)
     run_on = Column(String)
     description = Column(String)
+    run_by = Column(String)
+    channel = Column(Integer)
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():
