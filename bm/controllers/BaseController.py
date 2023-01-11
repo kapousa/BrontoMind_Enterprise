@@ -10,7 +10,8 @@ from nltk.corpus import wordnet
 from app import db
 from app.base.constants.BM_CONSTANTS import scalars_location, pkls_location, output_docs_location, df_location, \
     plot_zip_locations, plot_locations, data_files_folder, pkls_files_folder, html_plots_location, output_document_sfx, \
-    prediction_model_keyword, classification_model_keyword, forecasting_model_keyword, clustering_model_keyword
+    prediction_model_keyword, classification_model_keyword, forecasting_model_keyword, clustering_model_keyword, \
+    dep_path
 from app.base.db_models.ModelAPIDetails import ModelAPIDetails
 from app.base.db_models.ModelAPIModelMethods import ModelAPIModelMethods
 from app.base.db_models.ModelBotKeywords import ModelBotKeywords
@@ -73,6 +74,7 @@ class BaseController:
                 'model_data_location': df_location + str(model_id),  # model data location
                 'plots_image_path': os.path.join(plot_locations, str(model_id)),  # plot images location
                 'scalar_location': scalars_location + str(model_id),  # scalrs location
+                'deployed_location': dep_path + str(model_id)
             }
             deletefolderfiles = Helper.deletefolderfiles(*paths.values())
             deleteobjdecfiles = Helper.deleteobjectdetectionfiles(model_id)
@@ -179,7 +181,8 @@ class BaseController:
             'output_document': output_docs_location + str(model_id),  # Output documents
             'data_location': df_location + str(model_id),  # data location
             'plots_image_path': os.path.join(plot_locations, str(model_id)),  # plot images location
-            'scalar_location': scalars_location + str(model_id)  # scalrs location
+            'scalar_location': scalars_location + str(model_id)  ,  # scalrs location
+            'deployed_location': dep_path + str(model_id)
         }
 
         # Delet old folders and create new

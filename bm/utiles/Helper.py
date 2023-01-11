@@ -283,12 +283,14 @@ class Helper:
     def deletefolderfiles(*argv):
         try:
             for arg in argv:
-                files_in_directory = os.listdir(arg)
-                filtered_files = [file for file in files_in_directory if not file.endswith(".gitkeep")]
-                for f in filtered_files:
-                    # os.remove(os.path.join(arg, f))
-                    path_to_file = os.path.join(arg, f)
-                    os.remove(path_to_file)
+                if os.path.isdir(arg):
+                    files_in_directory = os.listdir(arg)
+                    filtered_files = [file for file in files_in_directory if not file.endswith(".gitkeep")]
+                    if (len(filtered_files) != 0):
+                        for f in filtered_files:
+                            # os.remove(os.path.join(arg, f))
+                            path_to_file = os.path.join(arg, f)
+                            os.remove(path_to_file)
             return 1
         except Exception as e:
             print('Ohh -delete_model_files...Something went wrong.')
@@ -299,10 +301,11 @@ class Helper:
     def deleteobjectdetectionfiles(model_id):
         try:
             files_in_directory = os.listdir(app_results_path)
-            filtered_files = [file for file in files_in_directory if (not (file.endswith(".gitkeep")) and (file.startwith(model_id)))]
-            for f in filtered_files:
-                path_to_file = os.path.join(results_path, f)
-                os.remove(path_to_file)
+            filtered_files = [file for file in files_in_directory if (not (file.endswith(".gitkeep")) and (file.startswith(model_id)))]
+            if (len(filtered_files) != 0):
+                for f in filtered_files:
+                    path_to_file = os.path.join(app_results_path, f)
+                    os.remove(path_to_file)
             return 1
         except Exception as e:
             print('Ohh -delete_model_files...Something went wrong.')
